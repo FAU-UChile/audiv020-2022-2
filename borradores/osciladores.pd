@@ -1,0 +1,29 @@
+#N canvas 474 126 464 435 12;
+#X text 10 12 // osciladores // por montoyamoraga // para AUDIV020
+Diseno de instrumentos musicales digitales // v0.0.1 agosto 2022 //
+hecho con Pd v0.52-2 en Mac OS Monterey 12.5;
+#X obj 27 326 osc~;
+#X obj 26 391 dac~;
+#X obj 27 360 *~, f 13;
+#X obj 115 133 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X floatatom 115 277 5 0 0 0 - - - 0;
+#X obj 115 305 / 127;
+#X floatatom 115 332 5 0 0 0 - - - 0;
+#X obj 115 72 loadbang;
+#X floatatom 27 295 5 0 0 0 - - - 0;
+#X obj 26 240 loadbang;
+#X msg 27 269 440;
+#X msg 115 99 0;
+#X connect 1 0 3 0;
+#X connect 3 0 2 0;
+#X connect 3 0 2 1;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 3 1;
+#X connect 8 0 12 0;
+#X connect 9 0 1 0;
+#X connect 10 0 11 0;
+#X connect 11 0 9 0;
+#X connect 12 0 4 0;
