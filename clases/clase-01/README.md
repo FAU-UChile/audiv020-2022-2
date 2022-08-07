@@ -13,25 +13,25 @@ los materiales de este curso se encuentran en las siguientes web:
 
 ## códigos de conducta (15 min)
 
-- [reglamento de estudiantes de la Universidad de Chile](https://www.uchile.cl/portal/presentacion/senado-universitario/reglamentos/reglamentos-aprobados-o-modificados-por-el-senado-universitario/67177/reglamento-de-estudiantes-de-la-universidad-de-chile)
-- [berlin code of conduct](https://berlincodeofconduct.org/es/)
-- [p5.js community statement](https://p5js.org/es/community/)
+- reglamento de estudiantes de la Universidad de Chile https://www.uchile.cl/portal/presentacion/senado-universitario/reglamentos/reglamentos-aprobados-o-modificados-por-el-senado-universitario/67177/reglamento-de-estudiantes-de-la-universidad-de-chile)
+- berlin code of conduct https://berlincodeofconduct.org/es/
+- p5.js community statement https://p5js.org/es/community/
 
 ## presentación de profesor (30 min)
 
 direcciones web:
 
-- [https://montoyamoraga.io/](https://montoyamoraga.io/)
-- [https://github.com/montoyamoraga/](https://github.com/montoyamoraga/)
+- https://montoyamoraga.io/
+- https://github.com/montoyamoraga/
 
 Organizaciones:
 
-- [NYU ITP](https://tisch.nyu.edu/itp)
-- [MIT Media Lab](https://www.media.mit.edu/)
-- [Opera of the Future](https://www.media.mit.edu/groups/opera-of-the-future/)
-- [Future Sketches](https://www.media.mit.edu/groups/future-sketches/)
-- [Processing Foundation](https://processingfoundation.org/)
-- [School of Machines, Making & Make Believe](https://www.schoolofma.org/)
+- NYU ITP https://tisch.nyu.edu/itp
+- MIT Media Lab https://www.media.mit.edu/
+- Opera of the Future https://www.media.mit.edu/groups/opera-of-the-future/
+- Future Sketches https://www.media.mit.edu/groups/future-sketches/
+- Processing Foundation https://processingfoundation.org/
+- School of Machines, Making & Make Believe https://www.schoolofma.org/
 
 investigación:
 
@@ -42,12 +42,12 @@ investigación:
 
 herramientas y comunidades:
 
-- [p5.js](https://p5js.org/)
-- [Processing](https://processing.org/)
-- [openFrameworks](https://openframeworks.cc/)
-- [Tidal Cycles](https://tidalcycles.org/)
-- [ChucK](https://chuck.cs.princeton.edu/)
-- [KiCad](https://www.kicad.org/)
+- p5.js https://p5js.org/
+- Processing https://processing.org/
+- openFrameworks https://openframeworks.cc/
+- Tidal Cycles https://tidalcycles.org/
+- ChucK https://chuck.cs.princeton.edu/
+- KiCad https://www.kicad.org/
 
 ## referencias del curso (15 min)
 
