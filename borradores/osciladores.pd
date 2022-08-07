@@ -1,20 +1,36 @@
-#N canvas 474 126 464 435 12;
+#N canvas 474 126 568 509 12;
 #X text 10 12 // osciladores // por montoyamoraga // para AUDIV020
 Diseno de instrumentos musicales digitales // v0.0.1 agosto 2022 //
 hecho con Pd v0.52-2 en Mac OS Monterey 12.5;
-#X obj 27 326 osc~;
-#X obj 26 391 dac~;
-#X obj 27 360 *~, f 13;
-#X obj 115 133 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#X obj 13 307 osc~;
+#X obj 14 426 dac~;
+#X obj 14 359 *~, f 33;
+#X obj 242 133 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 #fcfcfc
 #000000 #000000 0 1;
-#X floatatom 115 277 5 0 0 0 - - - 0;
-#X obj 115 305 / 127;
-#X floatatom 115 332 5 0 0 0 - - - 0;
-#X obj 115 72 loadbang;
-#X floatatom 27 295 5 0 0 0 - - - 0;
-#X obj 26 240 loadbang;
-#X msg 27 269 440;
-#X msg 115 99 0;
+#X floatatom 242 277 5 0 0 0 - - - 0;
+#X obj 242 305 / 127;
+#X floatatom 242 332 5 0 0 0 - - - 0;
+#X obj 242 72 loadbang;
+#X floatatom 13 276 5 0 0 0 - - - 0;
+#X obj 13 224 loadbang;
+#X msg 13 250 440;
+#X msg 242 99 0;
+#X text 276 99 mensaje 0 para valor inicial;
+#X text 262 180 slider horizontal valores enteros entre 0-127;
+#X text 289 299 divide valor izquierdo por valor derecha valor derecha
+es 127;
+#X text 286 276 valor original del slider entre 0-127;
+#X text 285 331 valor del slider entre 0.0-1.0;
+#X text 260 357 multiplicar audio multiplica oscilador en la izquierda
+por numero en la derecha;
+#X text 54 421 conversor digital analogo convierte del mundo del computador
+a la salida analoga del computador como parlantes o audifonos \, stereo
+;
+#X text 312 71 bang cuando carga el parche;
+#X text 20 202 bang cuando carga el parche;
+#X text 44 242 mensaje 440 para valor inicial;
+#X text 52 274 numero para frecuencia del oscilador;
+#X text 24 323 oscilador sinusoidal entrada izquierda: frecuencia;
 #X connect 1 0 3 0;
 #X connect 3 0 2 0;
 #X connect 3 0 2 1;
