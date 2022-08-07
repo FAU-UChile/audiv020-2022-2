@@ -20,6 +20,7 @@ facultad: Facultad de Arquitectura y Urbanismo
 
 ## repositorio
 
+- [borradores/](./borradores/): borradores de distintos aspectos de la clase
 - [clases/](./clases/): una subcarpeta por cada clase
 
 ## clases
