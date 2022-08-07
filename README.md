@@ -20,7 +20,7 @@ facultad: Facultad de Arquitectura y Urbanismo
 
 ## repositorio
 
-- [](./clases/)
+- [clases/](./clases/): una subcarpeta por cada clase
 
 ## clases
 
