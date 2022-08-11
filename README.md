@@ -3,7 +3,7 @@
 ## acerca de
 
 - universidad: Universidad de Chile
-- facultad: Facultad de Arquitectura y Urbanimos
+- facultad: Facultad de Arquitectura y Urbanismo
 - departamento: Departamento de Diseño
 - curso: AUDIV020 Diseño de instrumentos musicales digitales
 - sección: 01
