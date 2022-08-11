@@ -2,21 +2,16 @@
 
 ## acerca de
 
-curso: AUDIV020 Diseño de instrumentos musicales digitales
-
-profesor: [aarón montoya-moraga](https://montoyamoraga.io)
-
-estudiantes inscritos: 24
-
-créditos: 3
-
-semestre: 2022-2
-
-requisitos: no tiene
-
-universidad: Universidad de Chile
-
-facultad: Facultad de Arquitectura y Urbanismo
+- universidad: Universidad de Chile
+- facultad: Facultad de Arquitectura y Urbanimos
+- departamento: Departamento de Diseño
+- curso: AUDIV020 Diseño de instrumentos musicales digitales
+- sección: 01
+- créditos: 03
+- semestre: Segundo semestre 2022
+- profesor: [aarón montoya-moraga](https://montoyamoraga.io)
+- estudiantes inscritos: 40
+- requisitos: sin requisitos
 
 ## repositorio
 
