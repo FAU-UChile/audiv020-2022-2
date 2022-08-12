@@ -34,9 +34,10 @@ los materiales de este curso se encuentran en las siguientes web:
 
 investigación:
 
-- educación, archivo y publicación en artes mediales
-- diseño de instrumentos reprogramables y de fuente abierta
-- ética en tecnologías digitales
+- fuente abierta y éticas digitales
+- educación en artes mediales
+- construcción de herramientas para artes mediales
+- diseño de instrumentos reprogramables con microcontroladores
 - redes peer-to-peer y decentralizadas para artes
 
 ## referencias del curso (60 min)
