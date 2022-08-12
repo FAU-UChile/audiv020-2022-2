@@ -2,7 +2,7 @@
 
 viernes 12 agosto 2022, presencial
 
-## repaso semestre anterior y programa hoy
+## repaso semestre anterior y programa hoy (30 min)
 
 preguntas para estudiantes:
 
