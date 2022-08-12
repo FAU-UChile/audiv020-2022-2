@@ -32,8 +32,6 @@
 
 las clases son los viernes en la tarde, entre 3pm y 6:15pm, durante el segundo semestre del año 2022.
 
-porHacer: actualizar fechas
-
 | clase                  | fecha      | tema                                          |
 | :--------------------- | :--------- | :-------------------------------------------- |
 | [01](clases/clase-01/) | 2022-08-12 | clase de repaso y diagnóstico                 |
