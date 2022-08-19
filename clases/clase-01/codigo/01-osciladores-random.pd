@@ -1,0 +1,51 @@
+#N canvas 474 171 703 455 12;
+#X obj 21 277 osc~;
+#X obj 22 396 dac~;
+#X obj 22 329 *~, f 39;
+#X obj 331 98 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X floatatom 331 242 5 0 0 0 - - - 0;
+#X obj 331 270 / 127;
+#X floatatom 331 297 5 0 0 0 - - - 0;
+#X floatatom 21 246 5 0 0 0 - - - 0;
+#X text 377 239 valor original del slider entre 0-127;
+#X text 373 300 valor del slider entre 0.0-1.0;
+#X text 150 348 multiplicar audio multiplica oscilador en la izquierda
+por numero en la derecha, f 41;
+#X text 62 391 conversor digital analogo convierte del mundo del computador
+a la salida analoga del computador como parlantes o audifonos \, stereo
+, f 52;
+#X text 60 244 numero para frecuencia del oscilador;
+#X text 351 145 slider horizontal valores enteros entre 0-127;
+#X text 30 296 oscilador sinusoidal;
+#X text 379 270 divide valor izquierdo por valor derecha;
+#X obj 15 94 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000
+0 1;
+#X obj 15 144 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X floatatom 75 89 5 0 0 0 - - - 0;
+#X text 7 7 01-osciladores-random \, v0.0.1 agosto 2022 \, por montoyamoraga
+\, AUDIV020 Diseno de instrumentos musicales digitales \, hecho con
+Pd v0.52-2 en Mac OS Monterey 12.5, f 33;
+#X obj 16 170 random 500;
+#X floatatom 16 195 5 0 0 0 - - - 0;
+#X obj 19 219 + 200;
+#X obj 331 67 random 127;
+#X obj 14 116 metro 100;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 2 0 1 1;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 2 1;
+#X connect 7 0 0 0;
+#X connect 16 0 24 0;
+#X connect 17 0 20 0;
+#X connect 17 0 23 0;
+#X connect 18 0 24 1;
+#X connect 20 0 21 0;
+#X connect 21 0 22 0;
+#X connect 22 0 7 0;
+#X connect 23 0 3 0;
+#X connect 24 0 17 0;

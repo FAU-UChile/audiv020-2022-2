@@ -27,7 +27,7 @@ a la salida analoga del computador como parlantes o audifonos \, stereo
 #X text 397 20 bang cuando carga el parche;
 #X text 30 281 oscilador sinusoidal;
 #X text 379 255 divide valor izquierdo por valor derecha;
-#X text 12 7 osciladores \, v0.0.1 agosto 2022 \, por montoyamoraga
+#X text 12 7 00-osciladores \, v0.0.1 agosto 2022 \, por montoyamoraga
 \, AUDIV020 Diseno de instrumentos musicales digitales \, hecho con
 Pd v0.52-2 en Mac OS Monterey 12.5, f 33;
 #X connect 0 0 2 0;

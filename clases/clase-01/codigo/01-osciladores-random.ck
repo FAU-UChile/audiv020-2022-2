@@ -1,4 +1,4 @@
-// osciladores
+// 01-osciladores-random
 // por montoyamoraga
 // para AUDIV020 Diseno de instrumentos musicales digitales
 // v0.0.1 agosto 2022
@@ -14,10 +14,10 @@ sinusoide => dac;
 
 // frecuencia del oscilador
 // rango humano audible entre 20 y 20,000 Hz
-440 => sinusoide.freq;
+Std.rand2f(200, 1000) => sinusoide.freq;
 
 // ganancia es volumen, entre 0.0 y 1.0
-0.7 => sinusoide.gain;
+Std.rand2f(0.0, 0.3) => sinusoide.gain;
 
 // dejar que transcurran 2 segundos
-1 :: second => now;
+Std.rand2(10, 1000) :: ms => now;
