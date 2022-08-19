@@ -152,6 +152,8 @@ si corremos este código, notaremos que no hay sonido.
 
 en ChucK, tenemos que explicitar cuánto tiempo queremos que transcurra, con el comando now.
 
+y también tenemos que prender la máquina virtual.
+
 ## introducción a Pure Data
 
 Pure Data es un lenguaje de programación creado por Miller Puckette.
@@ -175,3 +177,37 @@ creamos un slider horizontal y una cajita de número, y conectamos la salida del
 notamos que ese número es entero, sin parte decimal, entre 0 y 127. así que creamos una cajita que dice / 127, y conectamos el número a esta cajita de división.
 
 para ver el resultado, creamos otra cajita de número, donde obtenemos el número que queríamos, entre 0.0 y 1.0, y su salida la conectamos a la entrada derecha del multiplicador de audio.
+
+## análisis del instrumento que hemos creado
+
+nuestro instrumento tiene las siguientes características:
+
+- entrada: movimiento mecánico, para lograr que el ratón se mueva, para así controlar los parámetros de amplitud y frecuencia.
+- sonido: oscilador sinusoidal
+- hardware: computador de escritorio
+- software: Pure Data o ChucK.
+- salida: parlantes o audífonos, 2 canales (stereo).
+
+## números aleatorios y música
+
+para darle incertidumbre a nuestro instrumento, podemos hacer que la frecuencia o la amplitud no sean siempre la misma, gracias al objeto o función random, presente en los lenguajes de programación.
+
+random generalmente necesita saber un valor máximo, opcionalmente un valor mínimo, opcionalmente el tipo de resultado, si es número entero (int) o con decimales (float).
+
+## discusión de hardware
+
+| hardware | lenguaje               | pros                           | contras                        |
+| :------- | :--------------------- | :----------------------------- | ------------------------------ |
+| Arduino  | Arduino (C++)          | muchos ejemplos, barato (~30K) | audio de baja calidad          |
+| Teensy   | Teensy/Arduino (C++)   | buena documentación, audio HD  | más caro (~50k)                |
+| Adafruit | CircuitPython (Python) | Python es muy útil             | más caro (~50k), menos popular |
+
+ejemplos:
+
+con Arduino, vamos a hacer pequeños instrumentos con perillas, botones, que pueden hacer sonidos de osciladores, listo.
+
+con Teensy, tenemos micrófono, tarjeta SD, y podemos hacer un sampler que grabe y reproduzca y manipule sonido.
+
+con Adafruit podemos hacer , pero escribiendo más código, y con muchos menos ejemplos. la gracia es que aprendemos Python, que es muy útil para todo!
+
+Reactable está hecho en Pure Data!
