@@ -6,7 +6,8 @@ viernes 19 de agosto 2022, presencial
 
 la clase pasada vimos:
 
-#
+- conocimientos previos de estudiantes sobre música y programación
+- artistas mediales, herramientas y empresas de instrumentos musicales digitales
 
 esta clase veremos una breve introducción al sonido digital:
 
@@ -14,6 +15,9 @@ esta clase veremos una breve introducción al sonido digital:
 - percepción humana de sonido
 - análisis de Fourier
 - sistemas digitales
+- introducción a ChucK
+- introducción a Pure Data
+- discusión materiales de hardware
 
 ## códigos de conducta (15 min)
 
@@ -28,23 +32,25 @@ esta clase veremos una breve introducción al sonido digital:
 
 ## sonido analógico
 
-el sonido es una vibración
+el sonido es una vibración / oscilación. el sonido que escuchamos es una onda que se propaga a través de la atmósfera. esa onda es de cambios en presión atmosférica.
 
 con nuestros oídos e incluso el resto de nuestro cuerpo podemos percibir vibraciones.
 
-son vibraciones en torno a la presión atmosférica.
+para hacer sonido, tenemos que ser capaces de mover aire. el sonido mientras se propaga por el aire, lo hace de forma radial en todas direcciones y a medida que viaja su energía se va disipando.
+
+como el sonido es una magnitud física, podemos modelarla matemáticamente para entenderlo.
+
+lo que hacemos, es fijar un punto (x, y, z) de escucha, nuestro oído o un micrófono, y medir la presión atmósferica en ese punto, como una función del tiempo, que podemos graficar.
 
 ## análisis de Fourier
 
-Fourier postuló que cualquier onda puede ser descompuesta como la suma de otras ondas. en particular podemos usar ondas sinusoidales.
+Jean-Baptiste Fourier (1768 - 1830) fue un matemático y físico francés, cuyo apellido le da el nombre al análisis de Fourier y la transformada de Fourier, que son las bases del sonido digital como lo conocemos.
 
-podemos ver cualquier onda, en particular, de sonido, como la suma de ciertas ondas sinusoidales.
+El análisis de Fourier, nos permite entre otras cosas, tomar una onda graficable x(t), y descomponerla como la suma de ondas sinusoidales. esto nos permite pensar en cualquier onda como una combinación de ondas sinusoidales, y a la inversa, si tenemos control sobre ondas sinusoidales, podemos construir cualquier sonido!
 
-entonces el corolario es que si tenemos acceso a crear y controlar ondas sinusoidales, podemos recrear otras ondas, otros sonidos.
+gracias al análisis de Fourier, podemos cambiar entre distintos dominios, podemos pensar en el sonido como una magnitud de presión atmosférica en el tiempo, o podemos analizar en cada ventana de tiempo, cuál es la combinación de ondas sinusoidales que nos permiten recrear ese sonido.
 
-## percepción humana de sonido
-
-escuchamos sonido entre 20 Hz y 20 kHz.
+## ondas sinusoidales
 
 una onda sinusoidal $A * sin ( 2 \cdot \pi \cdot f \cdot t + \phi)$ se puede describir con las siguientes 3 características:
 
@@ -52,7 +58,17 @@ una onda sinusoidal $A * sin ( 2 \cdot \pi \cdot f \cdot t + \phi)$ se puede des
 - frecuencia (f): cuán frecuentemente alterna entre su máxima y mínima amplitud.
 - fase ($\phi$): la distancia entre el origen del sistema de coordenadas y el cero.
 
-nuestra percepción no es lineal. revisemos un gráfico de intensidad de volumen igual.
+cada una de estas descripciones matemáticas o físicas, que aplican a ondas sinusoidales, pero también a cualquier onda periódica que podemos escuchar, tiene una correspondencia sensorial así:
+
+- la amplitud la percibimos como intensidad (o volumen).
+- la frecuencia la percibimos como altura (o nota, en inglés pitch).
+- la fase no somos capaz de percibirla en sí misma, solamente en combinación con más sonidos.
+
+## rango humana de sonido
+
+escuchamos frecuencias entre 20 Hz y 20 kHz. experimento para medir cuál es la frecuencia máxima que podemos escuchar: https://www.youtube.com/watch?v=qNf9nzvnd1k. otros animales tienen distintos rangos de audición (Laurie Anderson hizo un concierto para perros en NYC en 2016 https://www.nytimes.com/2016/01/04/arts/music/laurie-anderson-puts-on-a-concert-for-dogs-in-times-square.html)
+
+nuestra percepción no es lineal. revisemos las curvas isofónicas: https://es.wikipedia.org/wiki/Curva_isof%C3%B3nica. esto nos muestra que en cada curva tenemos la misma percepción de volumen, pero se requieren distintas amplitudes de la onda, según la frecuencia.
 
 para más información, estudiar el área de psicoacústica.
 
@@ -60,8 +76,35 @@ para más información, estudiar el área de psicoacústica.
 
 para tomar un sonido analógico en el mundo, tenemos que hacer varios procesos:
 
-- podemos tomar un sonido en el aire, una variación en la presión atmosférica, y usar un micrófono, para hacer transducción, convertir esa energía mecánica en energía eléctrica.
--
+- podemos tomar un sonido en el aire, una variación en la presión atmosférica, y usar un micrófono, para hacer transducción, convertir esa energía mecánica en energía eléctrica (voltaje).
+- ese voltaje, sigue estando en el mundo real, es analógico, tiene un valor con infinitos decimales, en todo instante de tiempo.
+
+nota sobre imposibilidad: si queremos grabar ese valor analógico en memoria digital, como tiene infinitos decimales, necesitamos infinita memoria, por lo que necesitamos truncar o aproximar ese valor si queremos grabarlo. ahora ya grabado, nos damos cuenta que tenemos valores finitos, pero tenemos infinitos de ellos, uno por cada instante de tiempo!
+
+- para poder grabar entonces, primero hacemos sampleo o muestreo, que es perder información en el tiempo, tomar una cantidad de muestras con una cierta frecuencia, decidiendo así la resolución temporal.
+
+- ahora tenemos un número finito de valores, pero cada uno tiene infinitos decimales, así que ahora hacemos el proceso de cuantización, donde decidimos la resolución en valores.
+
+- después de estos 2 procesos, muestreo y cuantización, obtenemos un número finito de valores en el tiempo, que tienen una resolución finita en valores, y que podemos grabar en memoria digital!
+
+## aritmética digital
+
+en decimal, si tenemos el número 123, eso equivale a $1 \cdot 10^2 + 2 \cdot 10^1 + 3 \cdot 10^0$
+
+el sistema decimal se llama así porque la base es 10, lo que implica que usamos 10 números distintos (0, 1, 2, 3, 4, 5, 6, 7, 8, 9), y con la combinación de ellos, podemos escribir todos los otros números como la suma de potencias de la base 10.
+
+en el sistema digital, usamos 2 números: 0 y 1, y escribimos todos los números como una suma de potencias de base 2!
+
+entonces los números quedan así entre decimal y digital:
+
+- 000 -> 000
+- 001 -> 001
+- 002 -> 010
+- 003 -> 011
+- 004 -> 100
+- 005 -> 101
+- 006 -> 110
+- 007 -> 111
 
 ## introducción a ChucK
 
