@@ -1,4 +1,4 @@
-// osciladores
+// ej_00_osciladores
 // por montoyamoraga
 // para AUDIV020 Diseno de instrumentos musicales digitales
 // v0.0.1 agosto 2022
