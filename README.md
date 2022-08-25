@@ -63,3 +63,10 @@ su nota final del curso será el promedio de las siguientes notas:
 - controles en clase:
   - en grupos de 2-3 integrantes, en clase, uno al mes
 - proyecto grupal: desarrollado en clase
+
+## bibliografía
+
+- https://github.com/montoyamoraga/programming-for-musicians-and-digital-artists-spanish traducción al español incompleta e inoficial del libro de ChucK.
+- https://chuck.cs.princeton.edu/doc/ documentación de ChucK en inglés.
+- https://puredata.info/docs documentación de Pure Data en inglés.
+- https://puredata.info/docs/ComienzaAqui documentación introductoria de Pure Data en español.
