@@ -1,0 +1,68 @@
+#N canvas 168 181 744 477 12;
+#X obj 21 262 osc~;
+#X obj 22 381 dac~;
+#X obj 22 314 *~, f 39;
+#X floatatom 21 231 5 0 0 0 - - - 0;
+#X obj 21 179 loadbang;
+#X msg 21 205 440;
+#X text 150 333 multiplicar audio multiplica oscilador en la izquierda
+por numero en la derecha, f 41;
+#X text 62 376 conversor digital analogo convierte del mundo del computador
+a la salida analoga del computador como parlantes o audifonos \, stereo
+, f 52;
+#X text 28 157 bang cuando carga el parche;
+#X text 60 229 numero para frecuencia del oscilador;
+#X text 52 197 mensaje 440 para valor inicial;
+#X text 30 281 oscilador sinusoidal;
+#X obj 552 291 metro 100;
+#X obj 550 269 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 484 265 vline~;
+#X obj 553 346 snapshot~;
+#X obj 553 319 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X floatatom 554 388 5 0 0 0 - - - 0;
+#X obj 346 108 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 483 178 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 346 50 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 606 144 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 346 75 sel 1 0;
+#X msg 606 202 0 1000 0;
+#X msg 347 204 0 0 0 \, 1 1000 0;
+#X obj 483 149 delay 1000;
+#X msg 484 204 0.5 1000 0;
+#X text 480 578;
+#X text 369 183 attack;
+#X text 509 182 decay;
+#X text 636 180 release;
+#X text 12 7 02-envolventes \, v0.0.1 agosto 2022 \, por montoyamoraga
+\, AUDIV020 Diseno de instrumentos musicales digitales \, hecho con
+Pd v0.52-2 en Mac OS Monterey 12.5, f 33;
+#X text 371 48 click aqui para empezar envolvente y terminar;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 2 0 1 1;
+#X connect 3 0 0 0;
+#X connect 4 0 5 0;
+#X connect 5 0 3 0;
+#X connect 12 0 16 0;
+#X connect 13 0 12 0;
+#X connect 14 0 15 0;
+#X connect 14 0 2 1;
+#X connect 15 0 17 0;
+#X connect 16 0 15 0;
+#X connect 18 0 24 0;
+#X connect 18 0 25 0;
+#X connect 19 0 26 0;
+#X connect 20 0 22 0;
+#X connect 21 0 23 0;
+#X connect 22 0 18 0;
+#X connect 22 1 21 0;
+#X connect 23 0 14 0;
+#X connect 24 0 14 0;
+#X connect 25 0 19 0;
+#X connect 26 0 14 0;

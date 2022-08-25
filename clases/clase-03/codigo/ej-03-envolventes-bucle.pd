@@ -1,0 +1,77 @@
+#N canvas 168 181 908 613 12;
+#X obj 55 346 osc~;
+#X obj 56 465 dac~;
+#X obj 56 398 *~, f 39;
+#X floatatom 55 315 5 0 0 0 - - - 0;
+#X text 184 417 multiplicar audio multiplica oscilador en la izquierda
+por numero en la derecha, f 41;
+#X text 96 460 conversor digital analogo convierte del mundo del computador
+a la salida analoga del computador como parlantes o audifonos \, stereo
+, f 52;
+#X text 94 313 numero para frecuencia del oscilador;
+#X text 64 365 oscilador sinusoidal;
+#X obj 586 375 metro 100;
+#X obj 584 353 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 518 349 vline~;
+#X obj 587 430 snapshot~;
+#X obj 587 403 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X floatatom 588 472 5 0 0 0 - - - 0;
+#X obj 380 192 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 517 262 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 380 134 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 640 228 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 380 159 sel 1 0;
+#X text 514 662 comment;
+#X text 403 267 attack;
+#X text 543 266 decay;
+#X text 670 264 release;
+#X obj 378 48 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 380 103 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X text 404 46 prender y apagar;
+#X obj 55 233 random 500;
+#X obj 56 285 + 200;
+#X floatatom 55 258 5 0 0 0 - - - 0;
+#X msg 381 288 0 0 0 \, 1 100 0;
+#X obj 517 233 delay 100;
+#X msg 518 288 0.5 200 0;
+#X msg 640 286 0 300 0;
+#X obj 379 75 metro 1000;
+#X text 17 15 03-envolventes-bucle \, v0.0.1 agosto 2022 \, por montoyamoraga
+\, AUDIV020 Diseno de instrumentos musicales digitales \, hecho con
+Pd v0.52-2 en Mac OS Monterey 12.5, f 33;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 2 0 1 1;
+#X connect 3 0 0 0;
+#X connect 8 0 12 0;
+#X connect 9 0 8 0;
+#X connect 10 0 11 0;
+#X connect 10 0 2 1;
+#X connect 11 0 13 0;
+#X connect 12 0 11 0;
+#X connect 14 0 29 0;
+#X connect 14 0 30 0;
+#X connect 15 0 31 0;
+#X connect 16 0 18 0;
+#X connect 17 0 32 0;
+#X connect 18 0 14 0;
+#X connect 18 1 17 0;
+#X connect 18 1 26 0;
+#X connect 23 0 33 0;
+#X connect 24 0 16 0;
+#X connect 26 0 28 0;
+#X connect 27 0 3 0;
+#X connect 28 0 27 0;
+#X connect 29 0 10 0;
+#X connect 30 0 15 0;
+#X connect 31 0 10 0;
+#X connect 32 0 10 0;
+#X connect 33 0 24 0;
