@@ -31,11 +31,8 @@ a la salida analoga del computador como parlantes o audifonos \, stereo
 #X text 403 267 attack;
 #X text 543 266 decay;
 #X text 670 264 release;
-#X obj 378 48 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
 #X obj 380 103 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X text 404 46 prender y apagar;
 #X obj 55 233 random 500;
 #X obj 56 285 + 200;
 #X floatatom 55 258 5 0 0 0 - - - 0;
@@ -47,6 +44,11 @@ a la salida analoga del computador como parlantes o audifonos \, stereo
 #X text 17 15 03-envolventes-bucle \, v0.0.1 agosto 2022 \, por montoyamoraga
 \, AUDIV020 Diseno de instrumentos musicales digitales \, hecho con
 Pd v0.52-2 en Mac OS Monterey 12.5, f 33;
+#X obj 377 26 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X text 403 24 prender y apagar;
+#X floatatom 488 53 5 0 0 0 - - - 0;
+#X text 533 53 frecuencia de repeticion;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
 #X connect 2 0 1 1;
@@ -57,21 +59,22 @@ Pd v0.52-2 en Mac OS Monterey 12.5, f 33;
 #X connect 10 0 2 1;
 #X connect 11 0 13 0;
 #X connect 12 0 11 0;
-#X connect 14 0 29 0;
-#X connect 14 0 30 0;
-#X connect 15 0 31 0;
+#X connect 14 0 27 0;
+#X connect 14 0 28 0;
+#X connect 15 0 29 0;
 #X connect 16 0 18 0;
-#X connect 17 0 32 0;
+#X connect 17 0 30 0;
 #X connect 18 0 14 0;
 #X connect 18 1 17 0;
-#X connect 18 1 26 0;
-#X connect 23 0 33 0;
-#X connect 24 0 16 0;
-#X connect 26 0 28 0;
-#X connect 27 0 3 0;
-#X connect 28 0 27 0;
+#X connect 18 1 24 0;
+#X connect 23 0 16 0;
+#X connect 24 0 26 0;
+#X connect 25 0 3 0;
+#X connect 26 0 25 0;
+#X connect 27 0 10 0;
+#X connect 28 0 15 0;
 #X connect 29 0 10 0;
-#X connect 30 0 15 0;
-#X connect 31 0 10 0;
-#X connect 32 0 10 0;
-#X connect 33 0 24 0;
+#X connect 30 0 10 0;
+#X connect 31 0 23 0;
+#X connect 33 0 31 0;
+#X connect 35 0 31 1;

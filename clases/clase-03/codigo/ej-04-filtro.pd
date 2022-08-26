@@ -38,12 +38,18 @@ a la salida analoga del computador como parlantes o audifonos \, stereo
 #X msg 640 286 0 300 0;
 #X obj 379 75 metro 1000;
 #X obj 55 497 lop~;
-#X floatatom 120 462 5 0 0 0 - - - 0;
-#X text 166 465 frecuencia de corte;
+#X floatatom 89 460 5 0 0 0 - - - 0;
+#X text 135 463 frecuencia de corte;
 #X obj 56 356 noise~;
 #X text 17 15 04-filtro \, v0.0.1 agosto 2022 \, por montoyamoraga
 \, AUDIV020 Diseno de instrumentos musicales digitales \, hecho con
 Pd v0.52-2 en Mac OS Monterey 12.5, f 33;
+#X floatatom 135 292 5 0 0 0 - - - 0;
+#X obj 135 151 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 135 323 mtof;
+#X floatatom 137 350 5 0 0 0 - - - 0;
+#X obj 138 121 random 128;
 #X connect 1 0 27 0;
 #X connect 4 0 8 0;
 #X connect 5 0 4 0;
@@ -60,6 +66,7 @@ Pd v0.52-2 en Mac OS Monterey 12.5, f 33;
 #X connect 14 1 13 0;
 #X connect 19 0 26 0;
 #X connect 20 0 12 0;
+#X connect 20 0 36 0;
 #X connect 22 0 6 0;
 #X connect 23 0 11 0;
 #X connect 24 0 6 0;
@@ -69,3 +76,8 @@ Pd v0.52-2 en Mac OS Monterey 12.5, f 33;
 #X connect 27 0 0 1;
 #X connect 28 0 27 1;
 #X connect 30 0 1 0;
+#X connect 32 0 34 0;
+#X connect 33 0 32 0;
+#X connect 34 0 35 0;
+#X connect 35 0 28 0;
+#X connect 36 0 33 0;
