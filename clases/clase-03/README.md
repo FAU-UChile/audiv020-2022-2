@@ -37,6 +37,13 @@ el sonido digital es bipolar, tiene valores positivos y negativos, y generalment
 
 estas ondas de audios bipolares, queremos cambiar su amplitud máxima, y para esto nos basta con ondas unipolares, solamente con valores positivos, entre 0 y 1.0, que usamos para multiplicar las ondas de sonido, y así cambiar su amplitud.
 
+más info:
+
+- https://es.wikipedia.org/wiki/Envolvente_ac%C3%BAstico
+- https://en.wikipedia.org/wiki/Envelope_(music)
+- https://learningsynths.ableton.com/en/envelopes/change-over-time
+- https://learningsynths.ableton.com/en/envelopes/synthesizer-envelopes
+
 ## envolvente AD
 
 la forma más simple de envolvente, es en la que un gesto acciona el inicio del envolvente, y luego este va de silencio a un valor máximo en una cierta cantidad de tiempo, y luego baja inmediatamente a un valor mínimo en otra cantidad de tiempo.
@@ -73,6 +80,17 @@ el ruido blanco es el resultado de sumar todas las sinusoides posibles con igual
 existen otros tipos de ruidos, como el ruido rosado o el ruido café, que veremos en otra clase.
 
 usaremos este sonido rico en frecuencias, como un gran cubo de piedra, y usaremos los filtros para recortar frecuencias de este sonido y sentir sus efectos en los sonidos.
+
+## envolventes para otros parámetros
+
+también podemos usar envolventes para controlar otros parámetros de sonidos:
+
+- en un oscilador, podemos usar un envolvente para cambiar su frecuencia.
+- en un filtro, podemos usar un envolvente para cambiar su frecuencia de corte.
+
+- https://learningsynths.ableton.com/en/envelopes/attack
+- https://learningsynths.ableton.com/en/envelopes/release
+- https://learningsynths.ableton.com/en/envelopes/putting-the-envelope-together
 
 ## definición de filtro y sabores de filtros
 
