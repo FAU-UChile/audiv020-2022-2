@@ -37,13 +37,13 @@ las clases son los viernes en la tarde, entre 3pm y 6:15pm, durante el segundo s
 | [01](clases/clase-01/) | 2022-08-12 | clase de repaso y diagnóstico                 |
 | [02](clases/clase-02/) | 2022-08-19 | intro al sonido digital y osciladores         |
 | [03](clases/clase-03/) | 2022-08-26 | envolventes y filtros digitales               |
-| [04](clases/clase-04/) | 2022-09-02 | grabar, samplear, buffers                     |
-| [05](clases/clase-05/) | 2022-09-09 | secuenciadores y máquinas de ritmo            |
+| [04](clases/clase-04/) | 2022-09-02 | arreglos y secuenciadores                     |
+| [05](clases/clase-05/) | 2022-09-09 | intro a MIDI y teoría musical occidental      |
 | semana receso          | 2022-09-16 | no hay clase ni evaluaciones                  |
-| [06](clases/clase-06/) | 2022-09-23 | git y control de versiones (sin evaluaciones) |
-| [07](clases/clase-07/) | 2022-09-30 | efectos de delay                              |
-| [08](clases/clase-08/) | 2022-10-07 | protocolo MIDI y OSC                          |
-| [09](clases/clase-09/) | 2022-10-14 | ruido digital                                 |
+| [06](clases/clase-06/) | 2022-09-23 | grabar, samplear, buffers (sin evaluaciones)  |
+| [07](clases/clase-07/) | 2022-09-30 | efectos de delay y reverb                     |
+| [08](clases/clase-08/) | 2022-10-07 | protocolo OSC y redes                         |
+| [09](clases/clase-09/) | 2022-10-14 | ruido digital, portamento, glide              |
 | [10](clases/clase-10/) | 2022-10-21 | introducción a microcontroladores y parlantes |
 | [11](clases/clase-11/) | 2022-10-28 | parametrización con potenciómetros y botones  |
 | [12](clases/clase-12/) | 2022-11-04 | gestualidad y sensores                        |
