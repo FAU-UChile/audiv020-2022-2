@@ -15,7 +15,7 @@ la clase pasada vimos:
 esta clase veremos los conceptos de envolvente y filtros:
 
 - generadores de envolventes
-- envolvente AD
+- envolvente AR
 - envolvente ADSR
 - ruido blanco
 - definición de filtro y sabores de filtros
@@ -44,22 +44,21 @@ más info:
 - https://learningsynths.ableton.com/en/envelopes/change-over-time
 - https://learningsynths.ableton.com/en/envelopes/synthesizer-envelopes
 
-## envolvente AD
+## envolvente AR
 
 la forma más simple de envolvente, es en la que un gesto acciona el inicio del envolvente, y luego este va de silencio a un valor máximo en una cierta cantidad de tiempo, y luego baja inmediatamente a un valor mínimo en otra cantidad de tiempo.
 
 - A viene de "attack", inglés de ataque. lo reemplazaremos por arribo, para fomentar lenguaje no violento.
-- D viene de "decay", inglés de decaimiento.
+- R viene de "release", inglés de relajo.
 
-este tipo de envolvente posee estos dos parámetros, A y D, que son los tiempos
-que le dan dinamismo a nuestros sonidos, y tradicionalmente se usan en sonidos percusivos.
+este tipo de envolvente posee estos dos parámetros, A y R, que son los tiempos que le dan dinamismo a nuestros sonidos, y tradicionalmente se usan en sonidos percusivos.
 
 ## envolvente ADSR
 
-la envolvente ADSR tiene 2 parámetros adicionales a los que ya conocemos AD, que significan:
+la envolvente ADSR tiene 2 parámetros adicionales a los que ya conocemos AR, que significan:
 
+- D viene de "decay", inglés de decaimientos.
 - S viene de "sustain", inglés de sostenimiento.
-- R viene de "release", inglés de relajo.
 
 ahora la coreografía de nuestro generador envolvente es la siguiente:
 
