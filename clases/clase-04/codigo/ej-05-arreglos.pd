@@ -1,0 +1,75 @@
+#N canvas 608 304 787 712 12;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array arreglo 100 float 3;
+#A 0 -0.128571 0.0142857 -0.957143 -0.942857 -0.928571 -0.907143 -0.885714
+-0.871428 -0.857142 -0.842856 -0.824999 -0.807142 -0.789285 -0.771427
+-0.757142 -0.742856 -0.72857 -0.714284 -0.699998 -0.682141 -0.664284
+-0.646427 -0.628569 -0.616665 -0.60476 -0.592855 -0.58095 -0.569045
+-0.55714 -0.545236 -0.533331 -0.521426 -0.509521 -0.497616 -0.485711
+-0.471426 -0.45714 -0.442854 -0.428568 -0.419044 -0.40952 -0.399996
+-0.391425 -0.382854 -0.374282 -0.365711 -0.357139 -0.346425 -0.33571
+-0.324996 -0.314282 -0.303567 -0.292853 -0.282139 -0.271424 -0.262853
+-0.254281 -0.24571 -0.237138 -0.228567 -0.219043 -0.209519 -0.199995
+-0.185709 -0.171424 -0.1619 -0.152376 -0.142852 -0.11428 -0.0999947
+-0.0857089 -0.078566 -0.0714231 -0.0428514 -0.0285656 -0.0142798 5.96046e-06
+0.0142918 0.0428634 0.0500063 0.0571492 0.071435 0.0857208 0.100007
+0.114292 0.128578 0.142864 0.15715 0.171436 0.185721 0.200007 0.214293
+0.242865 0.25715 0.271436 0.285722 0.314294 0.328579 0.342865 0.757154
+;
+#X coords 0 1 100 -1 200 140 1 0 0;
+#X restore 47 54 graph;
+#X text 104 197 crear con Put -> Array;
+#X obj 46 356 array size arreglo;
+#X obj 47 331 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X floatatom 45 384 5 0 0 0 - - - 0;
+#X text 71 331 obtener tamano del array llamado arreglo;
+#X obj 41 254 array get arreglo;
+#X obj 40 226 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X text 61 226 obtener valores del array llamado arreglo;
+#X listbox 42 285 32 0 0 0 - - - 0;
+#X obj 42 501 array get arreglo;
+#X obj 41 449 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X listbox 43 532 32 0 0 0 - - - 0;
+#X floatatom 77 445 5 0 0 0 - - - 0;
+#X text 82 423 empezar desde esta esa posicion;
+#X text 175 463 desde la posicion \, mostrar estos numeros;
+#X floatatom 127 471 5 0 0 0 - - - 0;
+#X listbox 494 252 20 0 0 0 - - - 0;
+#X msg 485 123 append \$1;
+#X floatatom 331 152 5 0 0 0 - - - 0;
+#X obj 606 124 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X floatatom 451 63 5 0 0 0 - - - 0;
+#X obj 460 196 list store;
+#X text 571 178 borrar;
+#X text 329 132 numero inicial;
+#X obj 451 87 t b i;
+#X obj 450 124 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 516 157 t b b;
+#X obj 542 182 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X text 466 45 numero adicional;
+#X text 630 122 borrar y emitir;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 6 0 9 0;
+#X connect 7 0 6 0;
+#X connect 10 0 12 0;
+#X connect 11 0 10 0;
+#X connect 13 0 10 0;
+#X connect 16 0 10 1;
+#X connect 18 0 22 0;
+#X connect 19 0 22 0;
+#X connect 20 0 27 0;
+#X connect 21 0 25 0;
+#X connect 22 0 17 0;
+#X connect 25 0 26 0;
+#X connect 25 1 18 0;
+#X connect 26 0 22 0;
+#X connect 27 0 22 0;
+#X connect 27 1 28 0;
+#X connect 28 0 22 1;

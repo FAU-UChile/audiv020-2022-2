@@ -4,6 +4,23 @@ viernes 02 de septiembre 2022, presencial
 
 arreglos y secuenciadores
 
+la clase pasada vimos:
+
+- generadores de envolventes
+- envolvente AR
+- envolvente ADSR
+- ruido blanco
+- definición de filtro y sabores de filtros
+- filtro pasabandas
+- implementaciones en ChucK
+- implementaciones en Pure Data
+
+esta clase veremos los conceptos de arreglos y secuenciadores:
+
+- diferencia entre variables y arreglos
+- implementaciones en ChucK
+- implementaciones en Pure Data
+
 ## arreglo
 
 nuestros computadores tienen distintas maneras de almacenar información.
