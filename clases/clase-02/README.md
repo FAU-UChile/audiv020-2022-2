@@ -64,7 +64,7 @@ cada una de estas descripciones matemáticas o físicas, que aplican a ondas sin
 - la frecuencia la percibimos como altura (o nota, en inglés pitch).
 - la fase no somos capaz de percibirla en sí misma, solamente en combinación con más sonidos.
 
-## rango humana de sonido
+## rango humano de percepción de sonido
 
 escuchamos frecuencias entre 20 Hz y 20 kHz. experimento para medir cuál es la frecuencia máxima que podemos escuchar: https://www.youtube.com/watch?v=qNf9nzvnd1k. otros animales tienen distintos rangos de audición (Laurie Anderson hizo un concierto para perros en NYC en 2016 https://www.nytimes.com/2016/01/04/arts/music/laurie-anderson-puts-on-a-concert-for-dogs-in-times-square.html)
 
