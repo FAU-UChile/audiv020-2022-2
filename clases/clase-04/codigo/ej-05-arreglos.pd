@@ -1,59 +1,62 @@
-#N canvas 608 304 787 712 12;
+#N canvas 851 52 835 646 12;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array arreglo 100 float 3;
-#A 0 -0.128571 0.0142857 -0.957143 -0.942857 -0.928571 -0.907143 -0.885714
--0.871428 -0.857142 -0.842856 -0.824999 -0.807142 -0.789285 -0.771427
--0.757142 -0.742856 -0.72857 -0.714284 -0.699998 -0.682141 -0.664284
--0.646427 -0.628569 -0.616665 -0.60476 -0.592855 -0.58095 -0.569045
--0.55714 -0.545236 -0.533331 -0.521426 -0.509521 -0.497616 -0.485711
--0.471426 -0.45714 -0.442854 -0.428568 -0.419044 -0.40952 -0.399996
--0.391425 -0.382854 -0.374282 -0.365711 -0.357139 -0.346425 -0.33571
--0.324996 -0.314282 -0.303567 -0.292853 -0.282139 -0.271424 -0.262853
--0.254281 -0.24571 -0.237138 -0.228567 -0.219043 -0.209519 -0.199995
--0.185709 -0.171424 -0.1619 -0.152376 -0.142852 -0.11428 -0.0999947
--0.0857089 -0.078566 -0.0714231 -0.0428514 -0.0285656 -0.0142798 5.96046e-06
-0.0142918 0.0428634 0.0500063 0.0571492 0.071435 0.0857208 0.100007
-0.114292 0.128578 0.142864 0.15715 0.171436 0.185721 0.200007 0.214293
-0.242865 0.25715 0.271436 0.285722 0.314294 0.328579 0.342865 0.757154
-;
+#A 0 -1.04286 -0.921434 -0.800005 -0.779052 -0.7581 -0.737147 -0.716195
+-0.695242 -0.67429 -0.653337 -0.632385 -0.611432 -0.59048 -0.569527
+-0.548575 -0.527622 -0.50667 -0.485717 -0.46692 -0.448123 -0.429326
+-0.410529 -0.391732 -0.372934 -0.354137 -0.33534 -0.316543 -0.297746
+-0.278949 -0.260152 -0.241355 -0.222558 -0.203761 -0.184963 -0.166166
+-0.147369 -0.128572 -0.109524 -0.0904766 -0.0714289 -0.0523812 -0.0333334
+-0.0142857 0.00476205 0.0238098 0.0428575 0.0619053 0.080953 0.100001
+0.119048 0.138096 0.157144 0.174491 0.191838 0.209185 0.226532 0.243879
+0.261226 0.278573 0.29592 0.313267 0.330614 0.347961 0.365309 0.382656
+0.400003 0.416886 0.433769 0.450652 0.467536 0.484419 0.501302 0.518185
+0.535068 0.551952 0.568835 0.585718 0.604085 0.622453 0.64082 0.659188
+0.677555 0.695923 0.71429 0.731433 0.748576 0.765719 0.782862 0.800005
+0.814291 0.828577 0.842862 0.857148 0.878577 0.900006 0.907149 0.914292
+0.942863 0.971435 0.871434;
 #X coords 0 1 100 -1 200 140 1 0 0;
-#X restore 47 54 graph;
-#X text 104 197 crear con Put -> Array;
-#X obj 46 356 array size arreglo;
-#X obj 47 331 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#X restore 24 117 graph;
+#X text 81 260 crear con Put -> Array;
+#X obj 23 419 array size arreglo;
+#X obj 24 394 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
-#X floatatom 45 384 5 0 0 0 - - - 0;
-#X text 71 331 obtener tamano del array llamado arreglo;
-#X obj 41 254 array get arreglo;
-#X obj 40 226 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#X floatatom 22 447 5 0 0 0 - - - 0;
+#X text 48 394 obtener tamano del array llamado arreglo;
+#X obj 18 317 array get arreglo;
+#X obj 17 289 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
-#X text 61 226 obtener valores del array llamado arreglo;
-#X listbox 42 285 32 0 0 0 - - - 0;
-#X obj 42 501 array get arreglo;
-#X obj 41 449 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#X text 38 289 obtener valores del array llamado arreglo;
+#X listbox 19 348 32 0 0 0 - - - 0;
+#X obj 19 564 array get arreglo;
+#X obj 18 512 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
-#X listbox 43 532 32 0 0 0 - - - 0;
-#X floatatom 77 445 5 0 0 0 - - - 0;
-#X text 82 423 empezar desde esta esa posicion;
-#X text 175 463 desde la posicion \, mostrar estos numeros;
-#X floatatom 127 471 5 0 0 0 - - - 0;
-#X listbox 494 252 20 0 0 0 - - - 0;
-#X msg 485 123 append \$1;
-#X floatatom 331 152 5 0 0 0 - - - 0;
-#X obj 606 124 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X listbox 20 595 32 0 0 0 - - - 0;
+#X floatatom 54 508 5 0 0 0 - - - 0;
+#X text 59 486 empezar desde esta esa posicion;
+#X text 152 526 desde la posicion \, mostrar estos numeros;
+#X floatatom 104 534 5 0 0 0 - - - 0;
+#X listbox 439 290 20 0 0 0 - - - 0;
+#X msg 503 105 append \$1;
+#X floatatom 308 215 5 0 0 0 - - - 0;
+#X obj 583 145 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X floatatom 451 63 5 0 0 0 - - - 0;
-#X obj 460 196 list store;
-#X text 571 178 borrar;
-#X text 329 132 numero inicial;
-#X obj 451 87 t b i;
-#X obj 450 124 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X floatatom 470 45 5 0 0 0 - - - 0;
+#X obj 437 259 list store;
+#X text 641 197 borrar;
+#X text 306 195 numero inicial;
+#X obj 434 202 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 516 157 t b b;
-#X obj 542 182 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X obj 583 170 t b b;
+#X obj 614 202 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X text 466 45 numero adicional;
-#X text 630 122 borrar y emitir;
+#X text 485 27 numero adicional;
+#X text 607 143 borrar y emitir;
+#X text 391 168 emitir;
+#X text 17 6 05-arreglos \, v0.0.1 septiembre 2022 \, por montoyamoraga
+\, AUDIV020 Diseno de instrumentos musicales digitales \, hecho con
+Pd v0.52-2 en Mac OS Monterey 12.5, f 33;
+#X obj 470 69 t b f;
 #X connect 2 0 4 0;
 #X connect 3 0 2 0;
 #X connect 6 0 9 0;
@@ -64,12 +67,12 @@
 #X connect 16 0 10 1;
 #X connect 18 0 22 0;
 #X connect 19 0 22 0;
-#X connect 20 0 27 0;
-#X connect 21 0 25 0;
+#X connect 20 0 26 0;
+#X connect 21 0 32 0;
 #X connect 22 0 17 0;
-#X connect 25 0 26 0;
-#X connect 25 1 18 0;
-#X connect 26 0 22 0;
-#X connect 27 0 22 0;
-#X connect 27 1 28 0;
-#X connect 28 0 22 1;
+#X connect 25 0 22 0;
+#X connect 26 0 25 0;
+#X connect 26 1 27 0;
+#X connect 27 0 22 1;
+#X connect 32 0 25 0;
+#X connect 32 1 18 0;

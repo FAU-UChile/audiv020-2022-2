@@ -1,42 +1,48 @@
-#N canvas 1283 177 637 542 12;
-#X obj 91 76 key;
-#X floatatom 72 112 5 0 0 0 - - - 0;
-#X floatatom 154 111 5 0 0 0 - - - 0;
-#X obj 154 74 keyup;
-#X obj 123 111 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#N canvas 1172 177 637 542 12;
+#X obj 78 105 key;
+#X floatatom 77 140 5 0 0 0 - - - 0;
+#X floatatom 159 139 5 0 0 0 - - - 0;
+#X obj 159 102 keyup;
+#X obj 128 139 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 209 114 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X obj 214 142 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X text 252 79 notar que ASCII;
-#X text 250 97 de teclas 0-9;
-#X text 253 114 es 48 + tecla;
-#X text 253 132 asi que si restamos 48;
-#X text 253 148 recuperamos el numero;
-#X obj 72 147 - 48;
-#X floatatom 71 175 5 0 0 0 - - - 0;
-#X obj 155 147 - 48;
-#X floatatom 154 175 5 0 0 0 - - - 0;
-#X obj 71 232 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#X text 250 129 notar que ASCII;
+#X text 248 147 de teclas 0-9;
+#X text 251 164 es 48 + tecla;
+#X text 251 182 asi que si restamos 48;
+#X text 251 198 recuperamos el numero;
+#X obj 77 175 - 48;
+#X floatatom 76 203 5 0 0 0 - - - 0;
+#X obj 160 175 - 48;
+#X floatatom 159 203 5 0 0 0 - - - 0;
+#X obj 76 260 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
-#X obj 147 231 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X obj 134 260 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 220 233 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X obj 194 260 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 300 235 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X obj 242 269 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X msg 299 267 0;
-#X msg 70 264 200;
-#X msg 146 263 300;
-#X msg 219 265 400;
-#X obj 142 339 osc~;
-#X floatatom 143 310 5 0 0 0 - - - 0;
-#X obj 150 437 *~;
-#X obj 153 478 dac~;
-#X obj 71 202 select 1 2 3, f 34;
-#X obj 300 299 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#X msg 241 301 0;
+#X msg 75 292 200;
+#X msg 133 292 300;
+#X msg 193 292 400;
+#X obj 147 367 osc~;
+#X floatatom 148 338 5 0 0 0 - - - 0;
+#X obj 155 465 *~;
+#X obj 158 506 dac~;
+#X obj 76 230 select 1 2 3, f 25;
+#X obj 314 279 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 #fcfcfc
 #000000 #000000 0 1;
-#X obj 301 439 / 127;
-#X floatatom 306 465 5 0 0 0 - - - 0;
+#X obj 314 415 / 127;
+#X floatatom 316 441 5 0 0 0 - - - 0;
+#X text 13 10 06-info-teclado \, v0.0.1 septiembre 2022 \, por montoyamoraga
+\, AUDIV020 Diseno de instrumentos musicales digitales \, hecho con
+Pd v0.52-2 en Mac OS Monterey 12.5, f 33;
+#X text 341 356 control de volumen;
+#X text 272 224 con select podemos detectar entradas;
+#X text 273 240 select tiene una salida extra \, para otros casos;
 #X connect 0 0 1 0;
 #X connect 0 0 4 0;
 #X connect 1 0 11 0;

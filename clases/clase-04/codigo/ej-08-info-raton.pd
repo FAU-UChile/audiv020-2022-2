@@ -1,14 +1,20 @@
 #N canvas 1086 387 497 340 12;
-#X obj 76 51 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#X obj 57 119 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 #fcfcfc
 #000000 #000000 0 1;
-#X obj 131 44 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#X obj 202 121 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
 #000000 #000000 0 1;
-#X obj 76 204 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#X obj 57 272 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
-#X obj 131 83 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
-#X floatatom 112 205 5 0 0 0 - - - 0;
-#X floatatom 156 82 5 0 0 0 - - - 0;
+#X obj 202 160 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X floatatom 93 273 5 0 0 0 - - - 0;
+#X floatatom 227 159 5 0 0 0 - - - 0;
+#X text 14 11 06-info-raton \, v0.0.1 septiembre 2022 \, por montoyamoraga
+\, AUDIV020 Diseno de instrumentos musicales digitales \, hecho con
+Pd v0.52-2 en Mac OS Monterey 12.5, f 33;
+#X text 136 271 numero entre 0-127;
+#X text 273 145 lo mismo pero horizontal;
+#X text 60 296 bang cuando click;
 #X connect 0 0 2 0;
 #X connect 0 0 4 0;
 #X connect 1 0 3 0;

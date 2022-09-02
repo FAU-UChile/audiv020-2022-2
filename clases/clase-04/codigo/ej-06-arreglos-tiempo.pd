@@ -1,0 +1,84 @@
+#N canvas 574 208 855 603 12;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array arreglo 100 float 3;
+#A 0 0.228567 -0.157142 -0.371426 -0.385712 -0.399997 -0.414283 -0.442854
+-0.457139 -0.471425 -0.471425 -0.485711 -0.492853 -0.499996 -0.499996
+-0.499996 -0.514282 -0.514282 -0.514282 -0.514282 -0.514282 -0.514282
+-0.514282 -0.514282 -0.514282 -0.499996 -0.48571 -0.466663 -0.447616
+-0.428568 -0.392854 -0.35714 -0.319046 -0.280951 -0.242856 -0.199999
+-0.157143 -0.114286 -0.042858 0.0285698 0.10714 -1.3113e-06 -0.0571436
+-0.114286 -0.171428 -0.210713 -0.249999 -0.289284 -0.328569 -0.360712
+-0.392854 -0.424997 -0.457139 -0.473806 -0.490472 -0.507139 -0.523805
+-0.540472 -0.557138 -0.571424 -0.585709 -0.599995 -0.614281 -0.628566
+-0.632138 -0.635709 -0.63928 -0.642852 -0.639995 -0.637137 -0.63428
+-0.631423 -0.628566 -0.610709 -0.592852 -0.574995 -0.557138 -0.514282
+-0.471425 -0.428568 -0.385712 -0.342855 -0.299998 -0.257141 -0.190476
+-0.12381 -0.0571436 0.0357126 0.128569 0.271424 0.385709 0.514279 0.399994
+0.328567 0.292853 0.257139 0.199997 0.142854 0.121426 0.0999976 -1.3113e-06
+;
+#X coords 0 1 100 -1 200 140 1 0 0;
+#X restore 30 118 graph;
+#X text 17 257 crear con Put -> Array;
+#X obj 344 293 array size arreglo;
+#X obj 345 268 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X floatatom 343 321 5 0 0 0 - - - 0;
+#X text 369 268 obtener tamano del array llamado arreglo;
+#X obj 127 454 array get arreglo;
+#X text 24 11 06-arreglos-tiempo \, v0.0.1 septiembre 2022 \, por montoyamoraga
+\, AUDIV020 Diseno de instrumentos musicales digitales \, hecho con
+Pd v0.52-2 en Mac OS Monterey 12.5, f 33;
+#X obj 319 22 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X text 316 -19 toggle \, para prender o apagar;
+#X text 316 -3 crear en Put -> Toggle;
+#X obj 319 111 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X floatatom 376 55 5 0 0 0 - - - 0;
+#X text 419 44 reemplazar valor de tiempo;
+#X text 416 61 luego de cambiar \, reiniciar metro con toggle;
+#X obj 321 197 int;
+#X floatatom 339 167 5 0 0 0 - - - 0;
+#X floatatom 320 225 5 0 0 0 - - - 0;
+#X obj 340 136 + 1;
+#X obj 320 349 %;
+#X floatatom 320 376 5 0 0 0 - - - 0;
+#X obj 380 229 loadbang;
+#X obj 187 339 loadbang;
+#X msg 188 366 1;
+#X floatatom 187 393 5 0 0 0 - - - 0;
+#X obj 64 529 *~;
+#X floatatom 129 486 5 0 0 0 - - - 0;
+#X obj 27 429 osc~;
+#X floatatom 28 397 5 0 0 0 - - - 0;
+#X obj 67 558 dac~;
+#X obj 318 84 metro 10;
+#X obj 128 532 line~;
+#X msg 188 506 \$1 5;
+#X text 231 505 ir al valor en 5 milisegundos;
+#X text 182 533 hacer una rampa para suavizar;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 4 0 19 1;
+#X connect 6 0 26 0;
+#X connect 8 0 30 0;
+#X connect 11 0 15 0;
+#X connect 12 0 30 1;
+#X connect 15 0 17 0;
+#X connect 16 0 15 1;
+#X connect 17 0 18 0;
+#X connect 17 0 19 0;
+#X connect 18 0 16 0;
+#X connect 19 0 20 0;
+#X connect 20 0 6 0;
+#X connect 21 0 3 0;
+#X connect 22 0 23 0;
+#X connect 23 0 24 0;
+#X connect 24 0 6 1;
+#X connect 25 0 29 0;
+#X connect 26 0 32 0;
+#X connect 27 0 25 0;
+#X connect 28 0 27 0;
+#X connect 30 0 11 0;
+#X connect 31 0 25 1;
+#X connect 32 0 31 0;
