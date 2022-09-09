@@ -38,7 +38,7 @@ las clases son los viernes en la tarde, entre 3pm y 6:15pm, durante el segundo s
 | [02](clases/clase-02/) | 2022-08-19 | intro al sonido digital y osciladores         |
 | [03](clases/clase-03/) | 2022-08-26 | envolventes y filtros digitales               |
 | [04](clases/clase-04/) | 2022-09-02 | arreglos y entrada de teclado y ratón         |
-| [05](clases/clase-05/) | 2022-09-09 | intro a MIDI y teoría musical occidental      |
+| [05](clases/clase-05/) | 2022-09-09 | intro a teoría musical occidental y MIDI      |
 | semana receso          | 2022-09-16 | no hay clase ni evaluaciones                  |
 | [06](clases/clase-06/) | 2022-09-23 | grabar, samplear, buffers (sin evaluaciones)  |
 | [07](clases/clase-07/) | 2022-09-30 | efectos de delay y reverb                     |
