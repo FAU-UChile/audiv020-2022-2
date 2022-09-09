@@ -1,6 +1,6 @@
 # clase-04
 
-viernes 02 de septiembre 2022, presencial
+viernes 02 de septiembre 2022, presencial y online
 
 arreglos y entrada de teclado y ratón
 
@@ -19,7 +19,6 @@ esta clase veremos los conceptos de arreglos y secuenciadores:
 
 - diferencia entre variables y arreglos
 - estrategias de arreglos
-
 - implementaciones en ChucK
 - implementaciones en Pure Data
 
