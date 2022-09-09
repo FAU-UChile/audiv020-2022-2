@@ -14,7 +14,7 @@
 #X obj 42 270 mtof;
 #X floatatom 43 244 5 0 0 0 - - - 0;
 #X floatatom 42 297 5 0 0 0 - - - 0;
-#X text 6 5 07-notas-midi \, v0.0.1 septiembre 2022 \, por montoyamoraga
+#X text 6 5 08-notas-midi \, v0.0.1 septiembre 2022 \, por montoyamoraga
 \, AUDIV020 Diseno de instrumentos musicales digitales \, hecho con
 Pd v0.52-2 en Mac OS Monterey 12.5, f 33;
 #X connect 0 0 2 0;

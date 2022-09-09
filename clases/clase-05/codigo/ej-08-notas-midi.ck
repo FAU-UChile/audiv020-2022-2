@@ -1,4 +1,4 @@
-// ej-07-notas-midi.ck
+// ej-08-notas-midi.ck
 // por montoyamoraga
 // para AUDIV020 Diseno de instrumentos musicales digitales
 // v0.0.1 septiembre 2022
