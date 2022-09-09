@@ -1,0 +1,32 @@
+#N canvas 631 378 335 532 12;
+#X obj 41 327 osc~;
+#X obj 14 455 dac~;
+#X obj 40 412 *~;
+#X obj 123 175 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X floatatom 122 323 5 0 0 0 - - - 0;
+#X obj 123 351 / 127;
+#X floatatom 122 380 5 0 0 0 - - - 0;
+#X obj 43 101 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 125 123 loadbang;
+#X msg 124 148 20;
+#X obj 42 270 mtof;
+#X floatatom 43 244 5 0 0 0 - - - 0;
+#X floatatom 42 297 5 0 0 0 - - - 0;
+#X text 6 5 07-notas-midi \, v0.0.1 septiembre 2022 \, por montoyamoraga
+\, AUDIV020 Diseno de instrumentos musicales digitales \, hecho con
+Pd v0.52-2 en Mac OS Monterey 12.5, f 33;
+#X connect 0 0 2 0;
+#X connect 2 0 1 1;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 2 1;
+#X connect 7 0 11 0;
+#X connect 8 0 9 0;
+#X connect 9 0 3 0;
+#X connect 10 0 12 0;
+#X connect 11 0 10 0;
+#X connect 12 0 0 0;

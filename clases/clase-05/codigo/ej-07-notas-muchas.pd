@@ -1,0 +1,45 @@
+#N canvas 1010 1284 370 629 12;
+#X obj 179 429 osc~;
+#X obj 153 565 dac~;
+#X obj 179 522 *~;
+#X obj 261 277 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X floatatom 260 425 5 0 0 0 - - - 0;
+#X obj 261 453 / 127;
+#X floatatom 260 482 5 0 0 0 - - - 0;
+#X obj 187 111 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 176 311 pow;
+#X floatatom 113 271 5 0 0 0 - - - 0;
+#X obj 111 206 loadbang;
+#X floatatom 188 251 5 0 0 0 - - - 0;
+#X floatatom 178 338 5 0 0 0 - - - 0;
+#X obj 187 274 t b f;
+#X msg 111 235 1.05946;
+#X floatatom 178 402 5 0 0 0 - - - 0;
+#X obj 178 373 * 8.18;
+#X obj 263 225 loadbang;
+#X msg 262 250 20;
+#X text 6 5 07-notas-muchas \, v0.0.1 septiembre 2022 \, por montoyamoraga
+\, AUDIV020 Diseno de instrumentos musicales digitales \, hecho con
+Pd v0.52-2 en Mac OS Monterey 12.5, f 33;
+#X connect 0 0 2 0;
+#X connect 2 0 1 1;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 2 1;
+#X connect 7 0 11 0;
+#X connect 8 0 12 0;
+#X connect 9 0 8 0;
+#X connect 10 0 14 0;
+#X connect 11 0 13 0;
+#X connect 12 0 16 0;
+#X connect 13 0 8 0;
+#X connect 13 1 8 1;
+#X connect 14 0 9 0;
+#X connect 15 0 0 0;
+#X connect 16 0 15 0;
+#X connect 17 0 18 0;
+#X connect 18 0 3 0;
