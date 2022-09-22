@@ -56,15 +56,28 @@ cuando pasamos de audio analógico a audio digital, ocurren todos estos pasos
 
 - el micrófono influye
 - tenemos que decidir la frecuencia de muestreo, que influye en cuánta información almacenamos.
-- tenemos que decidir 
+- tenemos que decidir la resolución, que influye en si el sonido va a ser distorsionado o de alta fidelidad.
 
 ## instrumentos de inspiración: Critter & Guitari Kaleidoloop
 
 ![critter-and-guitari-kaleidoloop](./imagenes/critter-and-guitari-kaleidoloop.jpg "critter-and-guitari-kaleidoloop")
 
-este instrumento
+este instrumento tiene las siguientes características:
 
-https://www.youtube.com/watch?v=nt6CW3oEItk
+- entradas y salidas
+  - 1 entrada con cable 1/4" TS mono, o un micrófono condensador incluido
+  - 1 salida con cable 1/4" TS mono, o el parlante incorporado.
+- almacenamiento
+  - 1 tarjeta SD para escribir y leer audio.
+- interfaz de usuario
+  - 1 perilla de volumen
+  - 1 perilla de velocidad de reproducción
+  - 1 botón para alternar entre grabar o reproducir
+  - 1 botón para alternar entre modo continuo o escalonado de frecuencia
+  - 2 botones para navegar samples, adelante y atrás
+
+más info:
+- https://www.youtube.com/watch?v=nt6CW3oEItk
 
 
 
