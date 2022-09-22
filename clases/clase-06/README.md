@@ -60,6 +60,8 @@ cuando pasamos de audio analógico a audio digital, ocurren todos estos pasos
 
 ## instrumentos de inspiración: Critter & Guitari Kaleidoloop
 
+![critter-and-guitari-kaleidoloop](./imagenes/critter-and-guitari-kaleidoloop.jpg "critter-and-guitari-kaleidoloop")
+
 este instrumento
 
 https://www.youtube.com/watch?v=nt6CW3oEItk
