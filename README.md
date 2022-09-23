@@ -32,25 +32,25 @@
 
 las clases son los viernes en la tarde, entre 3pm y 6:15pm, durante el segundo semestre del año 2022.
 
-| clase                  | fecha      | tema                                          |
-| :--------------------- | :--------- | :-------------------------------------------- |
-| [01](clases/clase-01/) | 2022-08-12 | clase de repaso y diagnóstico                 |
-| [02](clases/clase-02/) | 2022-08-19 | intro al sonido digital y osciladores         |
-| [03](clases/clase-03/) | 2022-08-26 | envolventes y filtros digitales               |
-| [04](clases/clase-04/) | 2022-09-02 | arreglos y entrada de teclado y ratón         |
-| [05](clases/clase-05/) | 2022-09-09 | intro a teoría musical occidental y MIDI      |
-| semana receso          | 2022-09-16 | no hay clase ni evaluaciones                  |
-| [06](clases/clase-06/) | 2022-09-23 | grabar, samplear, buffers (sin evaluaciones)  |
-| [07](clases/clase-07/) | 2022-09-30 | efectos de delay y reverb                     |
-| [08](clases/clase-08/) | 2022-10-07 | protocolo OSC y redes                         |
-| [09](clases/clase-09/) | 2022-10-14 | ruido digital, portamento, glide              |
-| [10](clases/clase-10/) | 2022-10-21 | introducción a microcontroladores y parlantes |
-| [11](clases/clase-11/) | 2022-10-28 | parametrización con potenciómetros y botones  |
-| [12](clases/clase-12/) | 2022-11-04 | gestualidad y sensores                        |
-| [13](clases/clase-13/) | 2022-11-11 | proyecto grupal final en clase                |
-| trabajo autónomo       | 2022-11-18 | autónomo, sin clases, con trabajos            |
-| [14](clases/clase-14/) | 2022-11-25 | recursos adicionales del curso                |
-| cierre acta            | 2022-12-16 | plazo máximo envío actas                      |
+| clase                  | fecha      | tema                                                            |
+| :--------------------- | :--------- | :-------------------------------------------------------------- |
+| [01](clases/clase-01/) | 2022-08-12 | clase de repaso y diagnóstico                                   |
+| [02](clases/clase-02/) | 2022-08-19 | intro al sonido digital y osciladores                           |
+| [03](clases/clase-03/) | 2022-08-26 | envolventes y filtros digitales                                 |
+| [04](clases/clase-04/) | 2022-09-02 | arreglos y entrada de teclado y ratón                           |
+| [05](clases/clase-05/) | 2022-09-09 | intro a teoría musical occidental y MIDI                        |
+| semana receso          | 2022-09-16 | no hay clase ni evaluaciones                                    |
+| [06](clases/clase-06/) | 2022-09-23 | ecología aplicada a tecnología computacional (sin evaluaciones) |
+| [07](clases/clase-07/) | 2022-09-30 | grabar, samplear, buffers                                       |
+| [08](clases/clase-08/) | 2022-10-07 | efectos de delay y reverb                                       |
+| [09](clases/clase-09/) | 2022-10-14 | ruido digital, portamento, glide                                |
+| [10](clases/clase-10/) | 2022-10-21 | introducción a microcontroladores y parlantes                   |
+| [11](clases/clase-11/) | 2022-10-28 | parametrización con potenciómetros y botones                    |
+| [12](clases/clase-12/) | 2022-11-04 | gestualidad y sensores                                          |
+| [13](clases/clase-13/) | 2022-11-11 | proyecto grupal final en clase                                  |
+| trabajo autónomo       | 2022-11-18 | autónomo, sin clases, con trabajos                              |
+| [14](clases/clase-14/) | 2022-11-25 | protocolo OSC y redes                                           |
+| cierre acta            | 2022-12-16 | plazo máximo envío actas                                        |
 
 ## evaluaciones
 
