@@ -117,13 +117,13 @@ para nombrarlas, podemos usar:
 
 y con eso queda:
 
-| descripción nota solfeo | nombre nota con sostenido | nombre nota con bemol |
-| :---------------------- | :------------------------ | --------------------- |
-| entre do y re           | do# o C#                  | reb o Db              |
-| entre re y mi           | re# o D#                  | mib o Eb              |
-| entre fa y sol          | fa# o F#                  | solb o Gb             |
-| entre sol y la          | sol# o G#                 | lab o Ab              |
-| entre la y si           | la# o A#                  | sib o Bb              |
+| nombre nota solfeo | nombre nota con sostenido | nombre nota con bemol |
+| :----------------- | :------------------------ | --------------------- |
+| entre do y re      | do# o C#                  | reb o Db              |
+| entre re y mi      | re# o D#                  | mib o Eb              |
+| entre fa y sol     | fa# o F#                  | solb o Gb             |
+| entre sol y la     | sol# o G#                 | lab o Ab              |
+| entre la y si      | la# o A#                  | sib o Bb              |
 
 ## escala Do mayor
 
