@@ -1,6 +1,6 @@
 # clase-06
 
-viernes 29 de septiembre 2022, asincrónica por paro por cambio climático
+viernes 22 de septiembre 2022, asincrónica por paro por cambio climático
 
 en esta clase veremos ecología aplicada a tecnología computacional
 
