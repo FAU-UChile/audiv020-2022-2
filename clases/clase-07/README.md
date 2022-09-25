@@ -6,15 +6,13 @@ esta clase veremos los conceptos de grabar, samplear y buffers
 
 la clase pasada vimos:
 
-- percepción de alturas y notas musicales
-- notación musical
-- mensajes de notas MIDI
-- mensajes de control MIDI
+- ecología en la obra de Peter Blasser
+- ecología en la obra de Hundred Rabbits
+- ecología en la obra de compudanzas
 
-esta clase veremos intro a teoría musical occidental Y MIDI:
+esta clase veremos los conceptos de grabar, samplear y buffers
 
-- diferencia entre variables y arreglos
-- estrategias de arreglos
+-
 - implementaciones en ChucK
 - implementaciones en Pure Data
 
@@ -38,7 +36,15 @@ los instrumentos que nos permiten grabar sonido, manipularlo y luego reproducirl
 
 el instrumento que permitió esta revolución es el Akai MPC diseñado por Roger Linn.
 
-mostrar ejemplo de J Dilla, The Avalanches, Paul's Boutique.
+mostrar ejemplo de J Dilla,
+Paul's Boutique.
+
+- The Avalanches - Frontier Psichiatrist (2001) https://www.youtube.com/watch?v=qLrnkK2YEcE
+- Björk - Triumph of a heart https://www.youtube.com/watch?v=0z-rhM-dcO8
+- Mark Ronson - How sampling transformed music (2014) https://www.youtube.com/watch?v=H3TF-hI7zKc
+- El sueño de la casa propia - Acomódate en el suelo https://www.youtube.com/watch?v=4SpiGFQ_98c
+- Danger Mouse - The Grey Album (2004) https://www.youtube.com/watch?v=X-iA7AyFlU0
+- M.I.A. - Paper Planes (2009) https://www.youtube.com/watch?v=ewRjZoRtu0Y
 
 ## buffers
 
@@ -80,6 +86,11 @@ más info:
 
 - https://www.youtube.com/watch?v=nt6CW3oEItk
 
+inspiración:
+
+- The Beatles - In My Life (1965) https://www.youtube.com/watch?v=YBcdt6DsLQA
+- The Beatles - Tomorrow Never Knows (1966) https://www.youtube.com/watch?v=pHNbHn3i9S4
+
 ## instrumentos de inspiración: Akai MPC 2000
 
 fuente: https://nmaahc.si.edu/object/nmaahc_2014.139.1
@@ -93,6 +104,10 @@ The XX - Intro https://www.youtube.com/watch?v=9f__FGEfQ14
 Korg Volca Sample https://www.youtube.com/watch?v=THImd641WXk
 
 https://www.tatsuyatakahashi.com/2014-korg-volca-sample
+
+obras:
+
+- J. Dilla - Don't Cryhttps://www.youtube.com/watch?v=hXeywtmWKzU
 
 ## instrumentos de inspiración: BASTL microgranny
 
