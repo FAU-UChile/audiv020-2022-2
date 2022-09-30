@@ -6,10 +6,10 @@
 #X obj 35 562 tabread~ arreglo;
 #X obj 157 385 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 #fcfcfc
 #000000 #000000 0 1;
-#X obj 116 291 samplerate~;
-#X floatatom 116 321 5 0 0 0 - - - 0;
-#X obj 115 240 loadbang;
-#X obj 115 266 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X obj 129 303 samplerate~;
+#X floatatom 129 333 5 0 0 0 - - - 0;
+#X obj 128 252 loadbang;
+#X obj 128 278 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
 #X obj 35 621 dac~;
 #X obj 33 509 phasor~ 1;
@@ -28,9 +28,10 @@
 #X text 18 10 10-cargar-sonido \, v0.0.1 septiembre 2022 \, por montoyamoraga
 \, AUDIV020 Diseno de instrumentos musicales digitales \, hecho con
 Pd v0.52-2 en Mac OS Monterey 12.5, f 34;
-#X text 194 475 volumen;
+#X text 185 467 volumen;
 #X obj 35 432 - 0.5;
 #X obj 34 459 * 10;
+#X text 53 324 velocidad;
 #X connect 1 0 10 0;
 #X connect 2 0 11 0;
 #X connect 3 0 4 0;

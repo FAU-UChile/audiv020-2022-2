@@ -136,9 +136,12 @@ https://www.youtube.com/watch?v=z0KoI95DfZU
 PanicGirlVids - The Cocoquantus by Ciat-Lonbarde - Basic Patch From Scratch
 https://www.youtube.com/watch?v=lQAHxeVrEqM
 
-## implementación en ChucK
+## implementaciones en ChucK y Pure Data
 
-## implementación en Pure Data
+hay 3 ejemplos hoy:
 
-- más info
-  https://en.wikipedia.org/wiki/Sampler_(musical_instrument)
+1. ejemplos en ChucK y Pure Data para cargar sonido a partir de un archivo de audio y reproducirlos.
+
+2. ejemplo en Pure Data de grabar micrófono en vivo y reproducir ese sonido.
+
+3. ejemplo en Pure Data de grabar micrófono en vivo, reproducir, y exportar el archivo, para luego poder cargarlo y seguir manipulándolo.
