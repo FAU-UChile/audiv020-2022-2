@@ -72,11 +72,6 @@ cuando convertimos audio analógico a audio digital, ocurren todos estos pasos:
 - luego tenemos que decidir una frecuencia de muestreo, se mide en Hz, por ejemplo para CDs es 44,100 Hz. esto influye en la calidad de audio, al cambiar la máxima frecuencia que escucharemos.
 - luego tenemos que decidir la resolución de cada una de esas muestras. en un CD es 16 bits, lo que equivale a 2^16 posibles valores, lo que da una alta fidelidad de audio. en contraste, los sistemas de videojuegos ochenteros usan calidades de 8 bits, lo que introduce distorsión y falta de fidelidad en la onda.
 
-entonces, resumiendo:
-
-- la frecuencia de muestreo impacta en el ancho de banda o máximas frecuencias que seremos capaces de escuchar. se mide en Hz.
-- la
-
 ## instrumentos de inspiración: Critter & Guitari Kaleidoloop
 
 ![critter-and-guitari-kaleidoloop](./imagenes/critter-and-guitari-kaleidoloop.jpg 'critter-and-guitari-kaleidoloop')
