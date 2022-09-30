@@ -12,32 +12,38 @@ la clase pasada vimos:
 
 esta clase veremos los conceptos de grabar, samplear y buffers
 
--
+- grabar sonido
+- samplear sonido
+- buffers de audio
+- consideraciones técnicas y estéticas del sampleo
 - implementaciones en ChucK
 - implementaciones en Pure Data
 
-## grabar
+## grabar sonido
 
-grabar será tomar un sonido, obtener números a partir de ese sonido, y esos números ordenarlos y guardarlos en un archivo, lo que nos permitirá usarlo posteriormente.
+a grandes rasgos, hasta hace 150 años podíamos solamente escuchar lo que nos rodeaba, una vez. con la invención de la radio, logramos transmitir sonido a través de distancias y así no solamente escuchar lo que nos rodea físicamente. ya con la invención de la grabación y reproducción pudimos ser capaces de grabar sonido y volver a escucharlo.
 
-por ejemplo, podemos usar ChucK y Pure Data para no solamente emitir el sonido que estamos creando a nuestros parlantes, sino que podemos crear un espacio en la memoria de nuestro computador y luego almacenar ese resultado en un archivo que podemos copiar, almacenar y reproducir.
+para grabar es tomar un sonido acústico, usar un sensor para transducir esa energía y almacenarla en un medio físico. ese medio físico puede ser análogo, como una cinta o un vinilo, o digital, como en un computador, que es lo que veremos en este curso.
 
-antecedentes históricos de grabar sonido, hace 100 años.
+al grabar de forma digital, estamos representando un sonido como una secuencia de números, que ordenamos y guardamos en un archivo, para luego poder usarlo.
 
-## samplear
+otro enfoque es usar un software y un computador como en nuestro caso con ChucK y Pure Data, para no solamente emitir el sonido que estamos creando a nuestros parlantes, sino que podemos directamente crear un espacio en la memoria de nuestro computador y luego almacenar ese resultado en un archivo que podemos grabar, copiar, almacenar y reproducir.
 
-por samplear, del inglés "sample" que significa muestra, se entiende tomar un sonido que ya existe.
+ojo, ningún método de grabación es perfecto y totalmente fiel, siempre el sonido al pasar por un sensor para su captura, el sensor le imprime una cierta calidad sonora, y así se forman estéticas distintas, a veces deseadas, a veces indeseadas.
 
-es la base del hip hop.
+lo mismo ocurre con los parlantes, todos los parlantes tienen sus particularidades, y a su vez, todas las personas escuchan distinto, entonces la experiencia de escuchar es única y personal.
 
-ya no es necesario hacer un gesto para mover cuerdas, sino que usamos sonido preexistente como la base de nuestro sonido.
+## samplear sonido
 
-los instrumentos que nos permiten grabar sonido, manipularlo y luego reproducirlo reciben el nombre de samplers.
+samplear (del inglés "sample", muestra) es el nombre que recibe el uso de una porción de una grabación de sonido existente, para crear otro sonido.
 
-el instrumento que permitió esta revolución es el Akai MPC diseñado por Roger Linn.
+samplear es un cambio de paradigma: ya no necesitamos usar un gesto físico para tocar un instrumento acústico o electrónico que sea capaz de transducir a un sonido, sino que reusamos un sonido grabado, independiente de su fuente, para crear nuevos sonidos.
 
-mostrar ejemplo de J Dilla,
-Paul's Boutique.
+los instrumentos llamados samplers nos permiten cargar archivos de sonido, manipularlos creativamente y reproducirlos, a veces incluso tienen mecanismos para grabar directamente en el instrumento.
+
+uno de los instrumento que permitió esta revolución es el Akai MPC diseñado por Roger Linn, al que le atribuimos la popularidad del hip hop, y también calidades estéticas por su cuantización a 12 bits.
+
+revisemos estos ejemplos de sampleo.
 
 - The Avalanches - Frontier Psichiatrist (2001) https://www.youtube.com/watch?v=qLrnkK2YEcE
 - Björk - Triumph of a heart https://www.youtube.com/watch?v=0z-rhM-dcO8
@@ -46,7 +52,7 @@ Paul's Boutique.
 - Danger Mouse - The Grey Album (2004) https://www.youtube.com/watch?v=X-iA7AyFlU0
 - M.I.A. - Paper Planes (2009) https://www.youtube.com/watch?v=ewRjZoRtu0Y
 
-## buffers
+## buffers de audio
 
 en la estructura de un computador tenemos nuestro disco duro donde tenemos archivos.
 
@@ -54,15 +60,22 @@ nuestros programas en ChucK, Pure Data, o similares, nos permiten crear pequeño
 
 esa información pueden ser números que calculamos, como una variable, o dibujos que hacemos en la pantalla con nuestra gestualidad capturada por sensores, o puede ser un archivo de audio que vive en nuestro disco duro.
 
-cuando lo cargamos en un buffer, podemos copiarlo, reproducirlo a distintas velocidades, invertirlo, incluso destruirlo, y todo esto sin pasar a llevar nuestro archivo original.
+el lugar de memoria donde cargamos y luego leemos sonido le llamaremos buffer de audio, y será la base para construir un sampler.
 
-## consideraciones estéticas y técnicas
+la gracia de un buffer, es que nos permite leer un archivo, cargarlo, y luego hacer manipulaciones creativas como reproducir el archivo a distintas velocidades y direcciones, o incluso filtrarlo y manipularlo, sin hacer modificaciones en el archivo original. los buffers nos permiten manipulación creativa de forma no destructiva.
 
-cuando pasamos de audio analógico a audio digital, ocurren todos estos pasos
+## consideraciones técnicas y estéticas del sampleo digital
 
-- el micrófono influye
-- tenemos que decidir la frecuencia de muestreo, que influye en cuánta información almacenamos.
-- tenemos que decidir la resolución, que influye en si el sonido va a ser distorsionado o de alta fidelidad.
+cuando convertimos audio analógico a audio digital, ocurren todos estos pasos:
+
+- usamos un sensor como un micrófono para capturar una onda continua análoga. el sensor no es ideal, e introduce una cierta distorsión o compresión al sonido.
+- luego tenemos que decidir una frecuencia de muestreo, se mide en Hz, por ejemplo para CDs es 44,100 Hz. esto influye en la calidad de audio, al cambiar la máxima frecuencia que escucharemos.
+- luego tenemos que decidir la resolución de cada una de esas muestras. en un CD es 16 bits, lo que equivale a 2^16 posibles valores, lo que da una alta fidelidad de audio. en contraste, los sistemas de videojuegos ochenteros usan calidades de 8 bits, lo que introduce distorsión y falta de fidelidad en la onda.
+
+entonces, resumiendo:
+
+- la frecuencia de muestreo impacta en el ancho de banda o máximas frecuencias que seremos capaces de escuchar. se mide en Hz.
+- la
 
 ## instrumentos de inspiración: Critter & Guitari Kaleidoloop
 
@@ -126,3 +139,6 @@ https://www.youtube.com/watch?v=lQAHxeVrEqM
 ## implementación en ChucK
 
 ## implementación en Pure Data
+
+- más info
+  https://en.wikipedia.org/wiki/Sampler_(musical_instrument)

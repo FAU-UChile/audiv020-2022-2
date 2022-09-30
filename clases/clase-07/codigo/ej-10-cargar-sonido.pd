@@ -1,0 +1,53 @@
+#N canvas 347 80 493 670 12;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array arreglo 44101 float 2;
+#X coords 0 1 44101 -1 200 140 1 0 0;
+#X restore 231 218 graph;
+#X obj 35 562 tabread~ arreglo;
+#X obj 157 385 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 116 291 samplerate~;
+#X floatatom 116 321 5 0 0 0 - - - 0;
+#X obj 115 240 loadbang;
+#X obj 115 266 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 35 621 dac~;
+#X obj 33 509 phasor~ 1;
+#X obj 34 536 *~ 44100, f 12;
+#X obj 35 589 *~, f 18;
+#X floatatom 157 528 5 0 0 0 - - - 0;
+#X obj 158 556 / 127;
+#X obj 36 240 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X floatatom 36 379 5 0 0 0 - - - 0;
+#X obj 36 403 / 127;
+#X floatatom 33 484 5 0 0 0 - - - 0;
+#X obj 26 183 soundfiler;
+#X msg 20 108 read -resize ./sonido-aplauso.wav arreglo;
+#X msg 49 149 read -resize ./sonido-silbido.wav arreglo;
+#X text 18 10 10-cargar-sonido \, v0.0.1 septiembre 2022 \, por montoyamoraga
+\, AUDIV020 Diseno de instrumentos musicales digitales \, hecho con
+Pd v0.52-2 en Mac OS Monterey 12.5, f 34;
+#X text 194 475 volumen;
+#X obj 35 432 - 0.5;
+#X obj 34 459 * 10;
+#X connect 1 0 10 0;
+#X connect 2 0 11 0;
+#X connect 3 0 4 0;
+#X connect 4 0 9 1;
+#X connect 5 0 6 0;
+#X connect 6 0 3 0;
+#X connect 8 0 9 0;
+#X connect 9 0 1 0;
+#X connect 10 0 7 0;
+#X connect 10 0 7 1;
+#X connect 11 0 12 0;
+#X connect 12 0 10 1;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 15 0 22 0;
+#X connect 16 0 8 0;
+#X connect 18 0 17 0;
+#X connect 19 0 17 0;
+#X connect 22 0 23 0;
+#X connect 23 0 16 0;
