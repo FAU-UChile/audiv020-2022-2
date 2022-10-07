@@ -1,4 +1,4 @@
-#N canvas 440 241 768 690 12;
+#N canvas 499 55 768 690 12;
 #X obj 23 536 *~, f 38;
 #X obj 390 619 dac~;
 #X obj 24 576 delwrite~ linea 10000;
