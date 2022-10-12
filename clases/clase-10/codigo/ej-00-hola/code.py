@@ -1,4 +1,4 @@
-# ejemplo-00-hola
+# ej-00-hola
 # por montoyamoraga, ipassala
 # para AUDIV020 Diseno de instrumentos musicales digitales
 # v0.0.1 octubre 2022
