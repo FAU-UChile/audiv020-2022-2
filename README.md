@@ -44,7 +44,7 @@ las clases son los viernes en la tarde, entre 3pm y 6:15pm, durante el segundo s
 | [06](clases/clase-06/) | 2022-09-23 | ecología aplicada a tecnología computacional (sin evaluaciones) |
 | [07](clases/clase-07/) | 2022-09-30 | grabar, samplear, buffers                                       |
 | [08](clases/clase-08/) | 2022-10-07 | efectos de delay y reverb                                       |
-| [09](clases/clase-09/) | 2022-10-14 | ruido digital, portamento, glide                                |
+| [09](clases/clase-09/) | 2022-10-14 | aleatoriedad, ruido digital                                     |
 | [10](clases/clase-10/) | 2022-10-21 | introducción a microcontroladores y parlantes                   |
 | [11](clases/clase-11/) | 2022-10-28 | parametrización con potenciómetros y botones                    |
 | [12](clases/clase-12/) | 2022-11-04 | gestualidad y sensores                                          |
