@@ -16,7 +16,6 @@
 
 ## repositorio
 
-- [borradores/](./borradores/): borradores de distintos aspectos de la clase
 - [clases/](./clases/): una subcarpeta por cada clase
 
 ## unidades
@@ -27,7 +26,7 @@
 - organización de eventos musicales y secuenciadores
 - tipos de instrumentos: sintetizadores, samplers, máquinas de ritmo
 - efectos y filtros
-- protocolos MIDI y OSC
+- protocolo MIDI
 
 ## clases
 
@@ -50,7 +49,7 @@ las clases son los viernes en la tarde, entre 3pm y 6:15pm, durante el segundo s
 | [12](clases/clase-12/) | 2022-11-04 | gestualidad y sensores                                          |
 | [13](clases/clase-13/) | 2022-11-11 | proyecto grupal final en clase                                  |
 | trabajo autónomo       | 2022-11-18 | autónomo, sin clases, con trabajos                              |
-| [14](clases/clase-14/) | 2022-11-25 | protocolo OSC y redes                                           |
+| [14](clases/clase-14/) | 2022-11-25 | presentación proyecto grupal final en clase                     |
 | cierre acta            | 2022-12-16 | plazo máximo envío actas                                        |
 
 ## evaluaciones
@@ -61,8 +60,6 @@ su nota final del curso será el promedio de las siguientes notas:
   - 1.0 por venir a clase.
   - 0.5 por inasistencia justificada.
   - 0.0 por inasistencia.
-- controles en clase:
-  - en grupos de 2-3 integrantes, en clase, uno al mes
 - proyecto grupal: desarrollado en clase
 
 ## bibliografía
