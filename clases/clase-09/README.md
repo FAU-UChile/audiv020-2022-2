@@ -14,13 +14,17 @@ esta clase veremos los conceptos de aleatoriedad y ruido digital
 - aleatoriedad y pseudo-aleatoriedad
 - estrategias para aleatoriedad
 - composiciones con aleatoriedad
-- ruido digital
+- ruido
 - composiciones con ruido
 - próxima clase
 
 ## aleatoriedad y pseudo-aleatoriedad
 
 los computadores no son capaces de generar aleatoriedad.
+
+para aleatoriedad en computación, existen servicios como https://www.random.org/, que usa información proveniente de ruido atmosférico.
+
+existe el concepto de semilla o "seed" en inglés, que permite recrear secuencias de números pseudo aleatorios en un sistema computacional, lo que no es posible con un sistema aleatorio. esto es útil para experimentos o replicar secuencias, pero demuestra que los números que un computador es capaz de generar no son realmente aleatorios.
 
 ## estrategias para aleatoriedad
 
@@ -34,13 +38,25 @@ lanzar dado cargado:
 
 - los números posibles tienen distintas probabilidades.
 
+tomar carta:
+
+- el mazo tiene N cartas
+- cualquier carta puede salir
+- podemos fijarnos en número, color, u otro parámetro
+
 número aleatorio normalizado:
 
 - resultado es un número decimal entre 0 y 1.
-- la probabilidad puede ser uniforme, normal, u otra.
+- la probabilidad puede ser uniforme, normal https://es.wikipedia.org/wiki/Distribuci%C3%B3n_normal u otra.
 - podemos trasladar el resultado a cualquier otro rango usando suma y multiplicación.
 
-Brian Eno y Peter Schmidt - Oblique Strategies https://stoney.sb.org/eno/oblique.html
+## instrumentos con aleatoriedad
+
+- Brian Eno y Peter Schmidt - Oblique Strategies https://stoney.sb.org/eno/oblique.html
+- Buchla - 266E Source of Uncertainty https://buchla.com/product/266e/
+- Macumbista - Benjolin https://www.youtube.com/watch?v=H-B82VLzu1E&t=65s
+- Make Noise - WoggleBug https://makenoisemusic.com/modules/richter-wogglebug
+- Mutable Instruments - Marbles https://mutable-instruments.net/modules/marbles/
 
 ## composiciones con aleatoriedad
 
@@ -49,29 +65,21 @@ Brian Eno y Peter Schmidt - Oblique Strategies https://stoney.sb.org/eno/oblique
 - Radiohead - The National Anthem https://www.youtube.com/watch?v=DcCSTs9UHhY
 - Terry Riley - In C https://www.youtube.com/watch?v=DpYBhX0UH04
 
-## instrumentos con aleatoriedad
+## ruido
 
-- Buchla - 266E Source of Uncertainty https://buchla.com/product/266e/
-- Macumbista - Benjolin https://www.youtube.com/watch?v=H-B82VLzu1E&t=65s
-- Make Noise - WoggleBug https://makenoisemusic.com/modules/richter-wogglebug
-- Mutable Instruments - Marbles https://mutable-instruments.net/modules/marbles/
+- ruido blanco: https://es.wikipedia.org/wiki/Ruido_blanco
 
-## ruido digital
+- ruido café: https://es.wikipedia.org/wiki/Ruido_marr%C3%B3n
 
-ruido blanco
+- ruido rosado: https://es.wikipedia.org/wiki/Ruido_rosa
 
-ruido café
+- ruido Perlin: https://es.wikipedia.org/wiki/Ruido_Perlin
 
-ruido rosado
+videos:
 
-ruido Perlin
-
-## composiciones con ruido
-
-- The Beatles - I Want You https://www.youtube.com/watch?v=tAe2Q_LhY8g
-- Evic Shen - live at Kaneko 5.13.22 https://www.youtube.com/watch?v=SrKZrbKObco
-- clipping. - Full Performance (Live on KEXP) https://www.youtube.com/watch?v=1qd97k4Jr80
-- Marc Ribot's Ceramic Dog - Your Turn https://www.youtube.com/watch?v=V9HhkU9AbeQ
+- comparación entre ruido blanco, rosado y café https://www.youtube.com/watch?v=Rb0M5cCdoPg
+- The Nature of Code https://natureofcode.com/book/introduction/
+- video Daniel Shiffman sobre Perlin Noise https://www.youtube.com/watch?v=YcdldZ1E9gU
 
 ## instrumentos con ruido
 
@@ -79,6 +87,13 @@ ruido Perlin
 - Flower Electronics - Jealous Heart https://www.youtube.com/watch?v=6V_Enilh4wg
 - Moog - DFAM https://www.moogmusic.com/products/dfam-drummer-another-mother
 - Tristan Perich - Microtonal wall https://www.youtube.com/watch?v=MJSgaEaZytg
+
+## composiciones con ruido
+
+- The Beatles - I Want You https://www.youtube.com/watch?v=tAe2Q_LhY8g
+- Evic Shen - live at Kaneko 5.13.22 https://www.youtube.com/watch?v=SrKZrbKObco
+- clipping. - Full Performance (Live on KEXP) https://www.youtube.com/watch?v=1qd97k4Jr80
+- Marc Ribot's Ceramic Dog - Your Turn https://www.youtube.com/watch?v=V9HhkU9AbeQ
 
 ## implementaciones en ChucK
 
