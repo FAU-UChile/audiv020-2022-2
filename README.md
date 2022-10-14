@@ -10,6 +10,7 @@
 - créditos: 03
 - semestre: Segundo semestre 2022
 - profesor: [aarón montoya-moraga](https://montoyamoraga.io)
+- ayudante: ignacio passalacqua
 - estudiantes inscritos: 40
 - requisitos: sin requisitos
 
