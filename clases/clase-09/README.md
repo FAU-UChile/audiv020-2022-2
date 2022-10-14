@@ -90,7 +90,7 @@ entre ellas:
 Math.random();
 Math.random2(min, max);
 Math.randomf();
-Math.random2f();
+Math.random2f(min, max);
 ```
 
 ## implemenentaciones en Pure Data
@@ -99,4 +99,6 @@ el objeto random tiene un argumento de número entero. ese número entero define
 
 ## próxima clase
 
-con nuestras placas Adafruit Circuit Playground Express / Bluefruit!
+- empezaremos a usar nuestras placas Adafruit Circuit Playground Express / Bluefruit!
+- trabajaremos en grupos de 2 o 3 personas!
+- aprenderemos Python!
