@@ -42,8 +42,29 @@ número aleatorio normalizado:
 
 ## composiciones con aleatoriedad
 
+- John Cage - 4'33" https://www.youtube.com/watch?v=AWVUp12XPpU
+- John Lennon, Yoko Ono - Radio Play https://www.youtube.com/watch?v=tSXYsQy3FW0
+- Marc Ribot's Ceramic Dog - Your Turn https://www.youtube.com/watch?v=V9HhkU9AbeQ
+- Radiohead - The National Anthem https://www.youtube.com/watch?v=DcCSTs9UHhY
+
+## instrumentos con aleatoriedad
+
+- Buchla - 266E Source of Uncertainty https://buchla.com/product/266e/
+- Make Noise - WoggleBug https://makenoisemusic.com/modules/richter-wogglebug
+- Mutable Instruments - Marbles https://mutable-instruments.net/modules/marbles/
+
 ## ruido digital
+
+ruido blanco
+
+ruido café
 
 ## composiciones con ruido
 
+## instrumentos con ruido
+
+- Moog - DFAM https://www.moogmusic.com/products/dfam-drummer-another-mother
+
 ## próxima clase
+
+con nuestras placas!
