@@ -40,11 +40,12 @@ número aleatorio normalizado:
 - la probabilidad puede ser uniforme, normal, u otra.
 - podemos trasladar el resultado a cualquier otro rango usando suma y multiplicación.
 
+Brian Eno y Peter Schmidt - Oblique Strategies https://stoney.sb.org/eno/oblique.html
+
 ## composiciones con aleatoriedad
 
 - John Cage - 4'33" https://www.youtube.com/watch?v=AWVUp12XPpU
 - John Lennon, Yoko Ono - Radio Play https://www.youtube.com/watch?v=tSXYsQy3FW0
-
 - Radiohead - The National Anthem https://www.youtube.com/watch?v=DcCSTs9UHhY
 - Terry Riley - In C https://www.youtube.com/watch?v=DpYBhX0UH04
 
@@ -60,6 +61,10 @@ número aleatorio normalizado:
 ruido blanco
 
 ruido café
+
+ruido rosado
+
+ruido Perlin
 
 ## composiciones con ruido
 
@@ -77,9 +82,20 @@ ruido café
 
 ## implementaciones en ChucK
 
+esta es la referencia de distintas funciones aleatorias que usaremos en ChucK hoy https://chuck.cs.princeton.edu/doc/program/stdlib.html
+
+entre ellas:
+
+```chuck
+Math.random();
+Math.random2(min, max);
+Math.randomf();
+Math.random2f();
+```
+
 ## implemenentaciones en Pure Data
 
-el objeto random tiene un argumento de número entero. ese número entero define cuántas posibilidades tiene este número aleatorio. si el argumento es N, los números posibles de salida van entre 0 y N-1.
+el objeto random tiene un argumento de número entero. ese número entero define cuántas posibilidades tiene este número aleatorio. si el argumento es N, los números posibles de salida van entre 0 y N-1. entonces usaremos el argumento para definir cuántas posibilidades existen, y luego con aritmética podemos cambiar el rango de operación.
 
 ## próxima clase
 
