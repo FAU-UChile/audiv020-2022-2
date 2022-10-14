@@ -44,12 +44,14 @@ número aleatorio normalizado:
 
 - John Cage - 4'33" https://www.youtube.com/watch?v=AWVUp12XPpU
 - John Lennon, Yoko Ono - Radio Play https://www.youtube.com/watch?v=tSXYsQy3FW0
-- Marc Ribot's Ceramic Dog - Your Turn https://www.youtube.com/watch?v=V9HhkU9AbeQ
+
 - Radiohead - The National Anthem https://www.youtube.com/watch?v=DcCSTs9UHhY
+- Terry Riley - In C https://www.youtube.com/watch?v=DpYBhX0UH04
 
 ## instrumentos con aleatoriedad
 
 - Buchla - 266E Source of Uncertainty https://buchla.com/product/266e/
+- Macumbista - Benjolin https://www.youtube.com/watch?v=H-B82VLzu1E&t=65s
 - Make Noise - WoggleBug https://makenoisemusic.com/modules/richter-wogglebug
 - Mutable Instruments - Marbles https://mutable-instruments.net/modules/marbles/
 
@@ -61,10 +63,18 @@ ruido café
 
 ## composiciones con ruido
 
+- The Beatles - I Want You https://www.youtube.com/watch?v=tAe2Q_LhY8g
+- Evic Shen - live at Kaneko 5.13.22 https://www.youtube.com/watch?v=SrKZrbKObco
+- clipping. - Full Performance (Live on KEXP) https://www.youtube.com/watch?v=1qd97k4Jr80
+- Marc Ribot's Ceramic Dog - Your Turn https://www.youtube.com/watch?v=V9HhkU9AbeQ
+
 ## instrumentos con ruido
 
+- ARP- 2600 https://www.korg.com/cl/products/synthesizers/arp2600_fs/
+- Flower Electronics - Jealous Heart https://www.youtube.com/watch?v=6V_Enilh4wg
 - Moog - DFAM https://www.moogmusic.com/products/dfam-drummer-another-mother
+- Tristan Perich - Microtonal wall https://www.youtube.com/watch?v=MJSgaEaZytg
 
 ## próxima clase
 
-con nuestras placas!
+con nuestras placas Adafruit Circuit Playground Express / Bluefruit!
