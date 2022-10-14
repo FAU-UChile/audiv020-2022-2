@@ -75,6 +75,12 @@ ruido café
 - Moog - DFAM https://www.moogmusic.com/products/dfam-drummer-another-mother
 - Tristan Perich - Microtonal wall https://www.youtube.com/watch?v=MJSgaEaZytg
 
+## implementaciones en ChucK
+
+## implemenentaciones en Pure Data
+
+el objeto random tiene un argumento de número entero. ese número entero define cuántas posibilidades tiene este número aleatorio. si el argumento es N, los números posibles de salida van entre 0 y N-1.
+
 ## próxima clase
 
 con nuestras placas Adafruit Circuit Playground Express / Bluefruit!
