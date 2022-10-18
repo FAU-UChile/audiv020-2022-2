@@ -2,9 +2,17 @@
 
 ## Tarjetas de desarrollo
 
+Las tarjetas de desarrollo son pequeños circuitos que pueden ser programados para ejecutar funciones específicas.
+
+La tarjeta de desarrollo más popular hasta ahora es el Arduino UNO, al ser el primer proyecto *open hardware* orientado a principiantes.
+
+Actualmente existen una infinidad de tarjetas de desarrollo en el mercado, cada una con sus ventajas y desventajas.
+
+En nuestro curso utilizaremos la tarjeta *circuit playground* desarrollada por la empresa Adafruit, ya que integra una gran cantidad de sensores, un micrófono y un pequeño parlante.
+
 Circuit Playground Bluefruit | Circuit Playground Express
 :-------------------------:|:-------------------------:
-<img src="./imagenes/circuit-playground-bluefruit.jpg" width="200" >  |  <img src="./imagenes/circuit-playground-express.jpg" width="223" >
+<img src="./imagenes/circuit-playground-bluefruit.jpg">  |  <img src="./imagenes/circuit-playground-express.jpg">
 
 Características generales:
 
@@ -19,7 +27,7 @@ Características generales:
 - Salidas:
     - 1 x LED verde de encendido (ON)
     - 1 x LED rojo de uso genereal (D13)
-    - 10 x mini NeoPixels (LEDs RGB que pueden mostrarcualquier color de forma independiente)
+    - 10 x mini NeoPixels (LEDs RGB que pueden mostrar cualquier color)
     - 1 x Mini parlante
 
 - 1 x puerto USB para programación y debugging
@@ -31,11 +39,13 @@ Características generales:
 
 - 8 x Pines digitales de entrada o salida (Encendidos o apagados)
 
-[Documentación oficial Circuit Playground Express](https://learn.adafruit.com/adafruit-circuit-playground-express "Circuit Playground Express")
+Recursos: 
 
-[Documentación oficial Circuit Playground Bluefruit](https://learn.adafruit.com/adafruit-circuit-playground-bluefruit "Circuit Playground Bluefruit")
+- [Documentación oficial Circuit Playground Express](https://learn.adafruit.com/adafruit-circuit-playground-express "Circuit Playground Express")
 
-[El primer "bug"](https://en.wikipedia.org/wiki/Software_bug 'El primer "bug"')
+- [Documentación oficial Circuit Playground Bluefruit](https://learn.adafruit.com/adafruit-circuit-playground-bluefruit "Circuit Playground Bluefruit")
+
+- [El primer "bug"](https://en.wikipedia.org/wiki/Software_bug 'El primer "bug"')
 
 ## CircuitPython
 
@@ -147,9 +157,9 @@ Los objetos nos permiten agrupar variables y funciones para darles un sentido l�
 
 Solo como ejemplo, Python podría tener un objeto llamado ```Perro``` que contiene las características y acciones que pueden hacer los perros. 
 
-Si yo quisiera saber el nombre o la edad de mi perro yo podría acceder a estos datos de esta forma: ```Perro.nombre``` o ```Perro.edad```. O si quisiera hacer que mi perro ladre yo puedo escribir ```Perro.ladra()```.
-
 El operador ```.``` permite interactuar con los objetos en Python.
+
+Si yo quisiera saber el nombre o la edad de mi perro yo podría acceder a estos datos de esta forma: ```Perro.nombre``` o ```Perro.edad```. O si quisiera hacer que mi perro ladre yo puedo escribir ```Perro.ladra()```.
 
 MicroPython y Adafruit nos provee una biblioteca de objetos que nos permiten interactuar con los componentes de nuestra placa. En los siguientes ejemplos se muestra como encender o apagar un LED.
 
