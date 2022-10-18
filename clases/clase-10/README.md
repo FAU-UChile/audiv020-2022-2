@@ -160,9 +160,11 @@ Los objetos nos permiten agrupar variables y funciones para darles un sentido l�
 
 Solo como ejemplo, Python podría tener un objeto llamado ```Perro``` que contiene las características y acciones que pueden hacer los perros. 
 
-El operador ```.``` permite interactuar con los objetos en Python. ```Perro.nombre``` o ```Perro.edad``` me permite acceder al nombre y la edad de mi perro. Si quisiera hacer que mi perro ladre yo puedo escribir ```Perro.ladra()```.
+El operador ```.``` permite interactuar con los objetos en Python. 
 
-MicroPython y Adafruit nos provee una biblioteca de objetos que nos permiten interactuar con los componentes de nuestra placa. 
+```Perro.nombre``` o ```Perro.edad``` me permite acceder al nombre y la edad de mi perro. Si quisiera hacer que mi perro ladre, puedo escribir ```Perro.ladra()```.
+
+MicroPython y Adafruit nos provee una biblioteca de objetos que nos permiten interactuar con los componentes de nuestra placa de desarrollo. 
 
 En los siguientes ejemplos se muestra como encender o apagar un LED.
 
@@ -174,7 +176,7 @@ cp.red_led = True
 
 ```python
 # Ejemplo 8: Apagando el LED de la placa
-from adafruit_circuitplayground import cp # importa biblioteca
+from adafruit_circuitplayground import cp
 cp.red_led = False
 ```
 
@@ -182,7 +184,7 @@ cp.red_led = False
 
 Hasta ahora todos nuestros programas se han ejecutado una sola vez. Es decir, el computador ha leído línea por línea de arriba hacia abajo, ejecutando las instrucciones y luego se deteniéndose.
 
-Si queremos que nuestro programa se ejecute por un tiempo indefinido podemos usar un pequeño truco: Definir un bloque de código usando la notación ```while True```
+Si queremos que nuestro programa se ejecute por un tiempo indefinido podemos usar un pequeño truco: Definir un bloque de código usando la notación ```while True:```
 
 ```python
 # Ejemplo 9: Usando "while True" para que nuestro programa no se detenga
