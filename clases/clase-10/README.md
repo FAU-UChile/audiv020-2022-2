@@ -41,16 +41,13 @@ Características generales:
 
 Aprenderemos a utilizar los abundantes recursos que la placa *circuit playground* pone a nuestra disposición, y a combinarlos para diseñar dispositivos interactivos. 
 
-Afortunadamente estas placas son compatibles con *CircuitPython*, que facilita en gran parte su uso.
+Estas placas son compatibles con *CircuitPython*, que facilita en gran parte su uso.
 
 Recursos: 
 
 - [Sitio oficial Adafruit](https://www.adafruit.com "Adafruit")
-
 - [Documentación oficial Circuit Playground Express](https://learn.adafruit.com/adafruit-circuit-playground-express "Circuit Playground Express")
-
 - [Documentación oficial Circuit Playground Bluefruit](https://learn.adafruit.com/adafruit-circuit-playground-bluefruit "Circuit Playground Bluefruit")
-
 - [El primer "bug"](https://en.wikipedia.org/wiki/Software_bug 'El primer "bug"')
 
 ## CircuitPython
@@ -74,8 +71,8 @@ Para hacerlo más amigable, en este curso usaremos el software *Mu Editor* para 
 
 ![Mu Editor](./imagenes/mu-editor-2.png 'Mu Editor')
 
-Recursos oficiales:
-    - [Web oficial de Mu Editor](https://codewith.mu/ 'Descarga Mu Editor')
+Recursos:
+- [Descarga Mu Editor](https://codewith.mu/ 'Descarga Mu Editor')
 
 ## Conectando nuestra placa por primera vez
 
