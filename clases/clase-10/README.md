@@ -52,12 +52,17 @@ Contiene un conjunto de librerías que permiten programar más de 300 placas de 
 ### Mu Editor
 
 CircuitPython permite escribir el código en cualquier editor de texto.
+
 Para hacerlo más amigable, en este curso usaremos el software Mu Editor para escribir nuestros programas.
 
 ![Mu Editor](./imagenes/mu-editor-2.png 'Mu Editor')
 
 - Recursos oficiales:
     - [Web oficial de Mu Editor](https://codewith.mu/ 'Descarga Mu Editor').
+
+### Usando nuestra placa por primera vez
+
+
 
 ### Introducción MUY SIMPLIFICADA para programar en CircuitPython
 
@@ -74,15 +79,18 @@ Las variables son *cajoncitos de memoria* donde se pueden guardar cosas para lue
 Los nombres de las variables no pueden contener espacios, ni tampoco comenzar con un número.
 
 ```python
+# Ejemplo 1: Definiendo variables
 x = 5
 y = "John"
 mi_variable = 4.5
+
 print(x)
 print(y)
 print(mi_variable)
 ```
 
 ```python
+# Ejemplo 2: Sumando números
 x = 5
 y = 4.5
 z = x + y
@@ -90,6 +98,7 @@ print(z)
 ```
 
 ```python
+# Ejemplo 3: Concatenando texto
 x = "Juan"
 y = "Gonzáles"
 z = x + " " + y
@@ -100,17 +109,29 @@ print(z)
 
 Las funciones nos permiten ejecutar acciones. 
 
-Como en matemáticas, éstas reciben datos de entrada *inputs*, y entregan un resultado *output*. 
+Éstas reciben datos de entrada *inputs*, y entregan un resultado *output*. El resultado se puede guardar en una variable o hacer lo que quieras con él.
 
-Este resultado se puede guardar en una variable o hacer lo que quieras con él.
-
-Python nos ofrece muchas funciones listas para usar. En los ejemplos anteriores ya usamos la función ```print()```
+Python nos ofrece muchas funciones listas para usar. En los ejemplos anteriores ya usamos la función ```print()``` que permite mostrar datos en la consola.
 
 Tu también puedes crear tus propias funciones.
 
 ```python
-x = "Juan"
-y = "Gonzáles"
-z = x + " " + y
-print(z)
+# Ejemplo 4: Usando la función str() para convertir números a texto
+x = "Temperatura: "
+y = 27.2
+z = str(y)
+
+msg = x + z + "°C"
+print(msg)
+```
+
+```python
+# Ejemplo 5: Definiendo nuestra propia función y usándola
+def imprimeTemperatura(temp):
+    msg = "Temperatura: " + str(temp) + "°C"
+    print(msg)
+
+imprimeTemperatura(27.2)
+imprimeTemperatura(26.9)
+imprimeTemperatura(26.3)
 ```
