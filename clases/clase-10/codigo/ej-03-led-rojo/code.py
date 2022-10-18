@@ -11,10 +11,6 @@ from adafruit_circuitplayground import cp
 # importar biblioteca para tiempo
 import time
 
-# crear variable x
-# darle valor inicial 0
-x = 0
-
 # while es un bucle
 # que se repite mientras la condicion
 # sea verdadera
