@@ -158,11 +158,11 @@ imprimeTemperatura(26.3)
 
 Los objetos nos permiten agrupar variables y funciones para darles un sentido lógico.
 
-Solo como ejemplo, Python podría tener un objeto llamado ```Perro``` que contiene las características y acciones que pueden hacer los perros. 
+Solo como ejemplo, Python podría tener un objeto llamado ```perro``` que contiene las características y acciones que pueden hacer los perros. 
 
 El operador ```.``` permite interactuar con los objetos en Python. 
 
-```Perro.nombre``` o ```Perro.edad``` me permite acceder al nombre y la edad de mi perro. Si quisiera hacer que mi perro ladre, puedo escribir ```Perro.ladra()```.
+```perro.nombre``` o ```perro.edad``` me permite acceder al nombre y la edad de mi perro. Si quisiera hacer que mi perro ladre, puedo escribir ```perro.ladra()```.
 
 MicroPython y Adafruit nos provee una biblioteca de objetos que nos permiten interactuar con los componentes de nuestra placa de desarrollo. 
 
