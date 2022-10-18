@@ -166,7 +166,7 @@ El operador ```.``` permite interactuar con los objetos en Python.
 
 MicroPython y Adafruit nos provee una biblioteca de objetos que nos permiten interactuar con los componentes de nuestra placa de desarrollo. 
 
-En los siguientes ejemplos se muestra como encender o apagar un LED.
+En los siguientes ejemplos se muestra como encender o apagar un LED utilizando el objeto ```cp``` incluido en la biblioteca ```adafruit_circuitplayground```.
 
 ```python
 # Ejemplo 7: Encendiendo el LED de la placa
