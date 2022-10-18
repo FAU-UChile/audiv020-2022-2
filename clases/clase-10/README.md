@@ -216,7 +216,7 @@ while True:
     time.sleep(0.5) # Dormimos medio segundo 
 ```
 
-### Prueba básica: Encendiendo y apagando un LED
+## Prueba clásica: Encendiendo y apagando un LED
 
 Ya hemos revisado los conceptos básicos que nos permitirán crear nuestros primeros programas. 
 
@@ -243,7 +243,7 @@ while True:
     time.sleep(1.0)
 ```
 
-### Ejercicios:
+### Ejercicios para practicar:
 
 1. Modificar el tiempo de parpadeo, hacerlo más rápido o más lento.
 2. Hacer que el tiempo de encendido sea más largo que el tiempo de apagado.
