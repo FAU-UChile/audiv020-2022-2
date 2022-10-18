@@ -73,6 +73,8 @@ En Python tenemos 3 entidades principales:
     
 Las variables son *cajoncitos de memoria* donde se pueden guardar cosas para luego usarlas. Puede ser un número, un texto, u objetos más complejos. El valor de estos cajoncitos puede cambiar, por eso se llaman "variables".
 
+Los nombres de las variables no pueden contener espacios, ni tampoco comenzar con un número.
+
 ```python
 x = 5
 y = "John"
@@ -97,8 +99,6 @@ print(z)
 ```
 
 ### Funciones
-
-![Función](./imagenes/func.png 'Función')
 
 Las funciones nos permiten ejecutar acciones. 
 
