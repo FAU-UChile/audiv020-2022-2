@@ -40,13 +40,78 @@ Características generales:
 
 ## CircuitPython
 
-[Web oficial de CircuitPython](https://circuitpython.org/ "CircuitPython")
+CircuitPython es un lenguaje de programación open source diseñado específicamente para programar microcontroladores (computadores pequeños). 
 
-[Introducción a CircuitPython por Adafruit](https://learn.adafruit.com/welcome-to-circuitpython/what-is-circuitpython "Introducción a CircuitPython")
+Es una versión más acotada del lenguaje de programación Python.
+
+Contiene un conjunto de librerías que permiten programar más de 300 placas de desarrollo. Este número sigue creciendo.
+
+- Recursos oficiales:
+    - [Web oficial de CircuitPython](https://circuitpython.org/ "CircuitPython")
+    - [Placas de desarrollo soportadas](https://circuitpython.org/downloads "Placas")
+    - [Introducción a CircuitPython por Adafruit](https://learn.adafruit.com/welcome-to-circuitpython/what-is-circuitpython "Introducción a CircuitPython")
     
 ### Mu Editor
 
-Descarga Mu Editor en [este enlace](./imagenes/mu-editor.jpg 'Descarga Mu Editor').
+CircuitPython permite escribir el código en cualquier editor de texto.
+Para hacerlo más amigable, en este curso usaremos el software Mu Editor para escribir nuestros programas.
 
+![Mu Editor](./imagenes/mu-editor-2.jpg 'Mu Editor')
 
-![Mu Editor](./imagenes/mu-editor.jpg 'Mu Editor')
+- Recursos oficiales:
+    - [Web oficial de Mu Editor](https://codewith.mu/ 'Descarga Mu Editor').
+
+### Introducción MUY SIMPLIFICADA para programar en CircuitPython
+
+En Python tenemos 3 entidades principales:
+    - Variables
+    - Funciones
+    - Objetos
+
+#### Variables
+    
+Las variables son *cajoncitos de memoria* donde se pueden guardar cosas para luego usarlas. Puede ser un número, un texto, u objetos más complejos. El valor de estos cajoncitos puede cambiar, por eso se llaman "variables".
+
+```python
+x = 5
+y = "John"
+mi_variable = 4.5
+print(x)
+print(y)
+print(mi_variable)
+```
+
+```python
+x = 5
+y = 4.5
+z = x + y
+print(z)
+```
+
+```python
+x = "Juan"
+y = "Gonzáles"
+z = x + " " + y
+print(z)
+```
+
+#### Funciones
+
+![Función](./imagenes/func.png 'Función')
+
+Las funciones nos permiten ejecutar acciones. 
+
+Como en matemáticas, éstas reciben datos de entrada *inputs*, y entregan un resultado *output*. 
+
+Este resultado se puede guardar en una variable o hacer lo que quieras con él.
+
+Python nos ofrece muchas funciones listas para usar. En los ejemplos anteriores ya usamos la función ```print()```
+
+Tu también puedes crear tus propias funcinoes.
+
+```python
+x = "Juan"
+y = "Gonzáles"
+z = x + " " + y
+print(z)
+```
