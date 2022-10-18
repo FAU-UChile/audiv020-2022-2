@@ -107,7 +107,7 @@ Este resultado se puede guardar en una variable o hacer lo que quieras con él.
 
 Python nos ofrece muchas funciones listas para usar. En los ejemplos anteriores ya usamos la función ```print()```
 
-Tu también puedes crear tus propias funcinoes.
+Tu también puedes crear tus propias funciones.
 
 ```python
 x = "Juan"
