@@ -117,8 +117,6 @@ Las funciones nos permiten ejecutar acciones.
 
 Python nos ofrece muchas funciones listas para usar. En los ejemplos anteriores ya usamos la función ```print()``` que permite mostrar datos en la consola.
 
-Éstas reciben datos de entrada *inputs*, y entregan un resultado *output*. El resultado se puede guardar en una variable o hacer lo que quieras con él.
-
 Tu también puedes crear tus propias funciones.
 
 ```python
