@@ -64,7 +64,7 @@ Para hacerlo más amigable, en este curso usaremos el software Mu Editor para es
 
 
 
-### Introducción MUY SIMPLIFICADA para programar en CircuitPython
+### Introducción para programar en CircuitPython
 
 En Python tenemos 3 entidades principales:
 
