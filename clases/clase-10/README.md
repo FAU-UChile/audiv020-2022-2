@@ -64,11 +64,12 @@ Para hacerlo más amigable, en este curso usaremos el software Mu Editor para es
 ### Introducción MUY SIMPLIFICADA para programar en CircuitPython
 
 En Python tenemos 3 entidades principales:
+
     - Variables
     - Funciones
     - Objetos
 
-#### Variables
+### Variables
     
 Las variables son *cajoncitos de memoria* donde se pueden guardar cosas para luego usarlas. Puede ser un número, un texto, u objetos más complejos. El valor de estos cajoncitos puede cambiar, por eso se llaman "variables".
 
@@ -95,7 +96,7 @@ z = x + " " + y
 print(z)
 ```
 
-#### Funciones
+### Funciones
 
 ![Función](./imagenes/func.png 'Función')
 
