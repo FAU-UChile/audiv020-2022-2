@@ -39,7 +39,13 @@ Características generales:
 
 - 8 x Pines digitales de entrada o salida (Encendidos o apagados)
 
+Aprenderemos a utilizar los abundantes recursos que la placa *circuit playground* pone a nuestra disposición, y a combinarlos para diseñar dispositivos interactivos. 
+
+Afortunadamente estas placas son compatibles con *CircuitPython*, que facilita en gran parte su uso.
+
 Recursos: 
+
+- [Sitio oficial Adafruit](https://www.adafruit.com "Adafruit")
 
 - [Documentación oficial Circuit Playground Express](https://learn.adafruit.com/adafruit-circuit-playground-express "Circuit Playground Express")
 
@@ -55,10 +61,10 @@ Es una versión más acotada del lenguaje de programación Python.
 
 Contiene un conjunto de librerías que permiten programar más de 300 placas de desarrollo. Este número sigue creciendo.
 
-Recursos oficiales:
-    - [Web oficial de CircuitPython](https://circuitpython.org/ "CircuitPython")
-    - [Placas de desarrollo soportadas](https://circuitpython.org/downloads "Placas")
-    - [Introducción a CircuitPython por Adafruit](https://learn.adafruit.com/welcome-to-circuitpython/what-is-circuitpython "Introducción a CircuitPython")
+Recursos:
+- [Web oficial de CircuitPython](https://circuitpython.org/ "CircuitPython")
+- [Placas de desarrollo soportadas](https://circuitpython.org/downloads "Placas")
+- [Introducción a CircuitPython por Adafruit](https://learn.adafruit.com/welcome-to-circuitpython/what-is-circuitpython "Introducción a CircuitPython")
     
 ## Mu Editor
 
