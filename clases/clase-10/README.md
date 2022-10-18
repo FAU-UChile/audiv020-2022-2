@@ -217,7 +217,7 @@ Existen algunas técnicas para controlar los tiempos de ejecución de nuestro c�
 import time # importar biblioteca para tiempo
 
 while True:
-    print("Estaré haciendo esto cada 1 segundo.")
+    print("Hola!")
     time.sleep(1.0) # Dormimos 1.0 segundo (no se hace nada)
 ```
 
