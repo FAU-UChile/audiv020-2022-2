@@ -54,7 +54,7 @@ Contiene un conjunto de librerías que permiten programar más de 300 placas de 
 CircuitPython permite escribir el código en cualquier editor de texto.
 Para hacerlo más amigable, en este curso usaremos el software Mu Editor para escribir nuestros programas.
 
-[Mu Editor](./imagenes/mu-editor-2.png 'Mu Editor')
+![Mu Editor](./imagenes/mu-editor-2.png 'Mu Editor')
 
 - Recursos oficiales:
     - [Web oficial de Mu Editor](https://codewith.mu/ 'Descarga Mu Editor').
