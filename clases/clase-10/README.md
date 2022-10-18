@@ -115,9 +115,9 @@ print(z)
 
 Las funciones nos permiten ejecutar acciones. 
 
-Éstas reciben datos de entrada *inputs*, y entregan un resultado *output*. El resultado se puede guardar en una variable o hacer lo que quieras con él.
-
 Python nos ofrece muchas funciones listas para usar. En los ejemplos anteriores ya usamos la función ```print()``` que permite mostrar datos en la consola.
+
+Éstas reciben datos de entrada *inputs*, y entregan un resultado *output*. El resultado se puede guardar en una variable o hacer lo que quieras con él.
 
 Tu también puedes crear tus propias funciones.
 
@@ -152,7 +152,7 @@ Si yo quisiera saber el nombre o la edad de mi perro yo podría acceder a estos 
 
 El operador ```.``` permite interactuar con los objetos en Python.
 
-MicroPython nos provee de muchos objetos que nos permiten interactuar con los componentes de nuestra placa.
+MicroPython y Adafruit nos provee una biblioteca de objetos que nos permiten interactuar con los componentes de nuestra placa. En los siguientes ejemplos se muestra como encender o apagar un LED.
 
 ```python
 # Ejemplo 7: Encendiendo el LED de la placa
@@ -252,7 +252,7 @@ while True:
 3. Hacer que el tiempo de encendido sea más corto que el tiempo de apagado.
 4. ¿Cuál es el tiempo de parpadeo más rápido que puedes ejecutar? ¿Qué pasa si el tiempo de parpadeo es demasiado rápido?
 5. Hacer que el LED parpadee 3 veces muy rápido y luego se apague 1 segundo.
-6. Hacer que el LED parpadee 3 veces, luego 2 veces, luego 1 vez, con una pausa de un segundo entre cada una de ellas.
+6. Hacer que el LED parpadee 3 veces, luego 2 veces, luego 1 vez, con una pausa de tres segundos entre cada una de ellas.
 7. Utiliza una variable para que el tiempo de encendido y apagado sean iguales y puedas cambiarlo fácilmente modificando una sola línea de código.
 8.  Crea una función llamada ```LED_ON(n)``` que te permita encender el LED durante "n" segundos, y otra llamada ```LED_OFF(n)``` que permita apagar el LED durante "n" segundos.
 9.  Utiliza las funciones recién creadas para generar el parpadeo.
