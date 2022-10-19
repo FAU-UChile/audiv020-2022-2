@@ -17,19 +17,20 @@ Circuit Playground Bluefruit | Circuit Playground Express
 Características generales:
 
 - Entradas:
-    - 1 x Sensor de movimiento (Acelerómetro de tres ejes)
-    - 1 x Sensor de temperatura (Termistor)
-    - 1 x Sensor de luz (Fototransistor)
-    - 1 x Sensor de sonido (Micrófono)
+    - 7 x Sensores *touch* (A1-A7)
+    - 1 x Sensor de movimiento y orientación
+    - 1 x Sensor de temperatura
+    - 1 x Sensor de luz
+    - 1 x Sensor de sonido básico
     - 2 x Pulsadores (Botones A y B)
     - 1 x Interruptor deslizante
     - 1 x Botón de RESET
 - Salidas:
+    - 10 x mini NeoPixels (LEDs RGB)
+    - 1 x Mini parlante
     - 1 x LED verde de encendido (ON)
     - 1 x LED rojo de uso genereal (D13)
-    - 10 x mini NeoPixels (LEDs RGB que pueden mostrar cualquier color)
-    - 1 x Mini parlante
-
+    
 - 1 x puerto USB para programación y debugging
 
 - El puerto USB puede actuar como:
@@ -76,7 +77,24 @@ Recursos:
 
 ## Conectando nuestra placa por primera vez
 
+Para empezar, es necesario instalar CircuitPython en tu placa. 
 
+Sigue los siguientes pasos:
+
+1. Descarga CircuitPython para tu placa:
+   - [CircuitPython para Circuit Playground Bluefruit](https://circuitpython.org/board/circuitplayground_bluefruit/ 'Descarga') 
+   - [CircuitPython para Circuit Playground Express](https://circuitpython.org/board/circuitplayground_express/ 'Descarga') 
+2. Conecta la placa por USB a tu computador.
+3. Presiona el botón RESET que se encuentra al medio de la placa. Prueba presionando una vez, o dos veces seguidas.
+4. Si todo sale bien, los LEDs se encenderán en color verde y en tu computador aparecerá un disco extraible llamado ```CPLAYBOOT```, como si hubieras conectado un pendrive. <img src="./imagenes/cplayboot.png">
+5. Copia el archivo que descargaste dentro de ```CPLAYBOOT```.
+6. En este momento CircuitPython se instalará automáticamente, ```CPLAYBOOT``` desaparecerá y se conectará un nuevo disco extraible llamado ```CIRCUITPI```. <img src="./imagenes/circuitpi.png">
+7. Ahora abre Mu editor, la primera vez suele demorar unos 2 minutos en abrir.
+8. Si te pregunta, elije CircuitPython y debería reconocer automáticamente a tu placa.
+9. Escribe el código que se muestra en la imágen, y guarda el archivo como ```code.py``` dentro de ```CIRCUITPI```.
+10. Si todo está bien, al presionar el botón "Seriado" se debería desplegar el mensaje "hola" más un número que va creciendo. Este mensaje lo envía la placa por el cable USB y se nos muestra en el computador.
+
+<img src="./imagenes/mueditor-test.png">
 
 ## Introducción a programar en CircuitPython
 
