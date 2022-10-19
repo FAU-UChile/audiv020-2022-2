@@ -195,14 +195,20 @@ En los siguientes ejemplos se muestra como encender o apagar un LED utilizando e
 
 ```python
 # Ejemplo 7: Encendiendo el LED de la placa
-from adafruit_circuitplayground import cp # importa biblioteca de Adafruit CircuitPlayground
-cp.red_led = True
+
+# importa biblioteca de Adafruit CircuitPlayground
+from adafruit_circuitplayground import cp 
+
+while True:
+    cp.red_led = True
 ```
 
 ```python
 # Ejemplo 8: Apagando el LED de la placa
 from adafruit_circuitplayground import cp
-cp.red_led = False
+
+while True:
+    cp.red_led = False
 ```
 
 ### Haciéndo que nuestro programa se ejecute por siempre
@@ -213,32 +219,20 @@ Si queremos que nuestro programa se ejecute por un tiempo indefinido podemos usa
 
 ```python
 # Ejemplo 9: Usando "while True" para que nuestro programa no se detenga
-while True:
-    print("Estaré ")
-    print("haciendo ")
-    print("esto ")
-    print("por ")
-    print("siempre... ")
-```
-
-```python
-# Ejemplo 10: Mostrando el número de ejecuciones en consola
 x = 0
 while True:
     x = x + 1
     print("Ejecución número:", x)
-
-# ¿Qué pasa si dejas este programa corriendo durante mucho tiempo?
 ```
 
-Notarás que estos códigos se ejecutan indefinidamente y muy rápido.
+Notarás que estos códigos se ejecutan indefinidamente y muy rápido, haciendo que Mu Editor colapse. Necesitamos una forma para controlar los tiempos de ejecución de nuestro código.
 
 ### Haciéndo que nuestro programa tome descansos
 
 Existen algunas técnicas para controlar los tiempos de ejecución de nuestro código, una de las más simples es usar el objeto ```time``` y su función ```sleep(segundos)```, que permite ejecutar pausas en nuestro programa.
 
 ```python
-# Ejemplo 11: Ejecutando pausas en nuestro programa
+# Ejemplo 10: Ejecutando pausas en nuestro programa
 import time # importar biblioteca para tiempo
 
 while True:
@@ -247,7 +241,7 @@ while True:
 ```
 
 ```python
-# Ejemplo 12: Ejecutando pausas en nuestro programa
+# Ejemplo 11: Ejecutando pausas en nuestro programa
 import time 
 x = 0
 
@@ -268,7 +262,7 @@ Usualmente, la prueba más simple para probar que nuestro circuito está program
 Todo lo que se necesita lo hemos visto en las secciones anteriores.
 
 ```python
-# Ejemplo 13: Encendiendo y apagando un LED
+# Ejemplo 12: Encendiendo y apagando un LED
 from adafruit_circuitplayground import cp
 import time 
 
