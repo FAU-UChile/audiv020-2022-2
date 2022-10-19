@@ -98,11 +98,10 @@ Sigue los siguientes pasos:
 7. Ahora abre Mu editor, la primera vez suele demorar unos 2 minutos en abrir.
 8.  Si te pregunta, elige CircuitPython y debería reconocer automáticamente tu placa.
 9.  Escribe ```print("hola")``` y guarda el archivo como ```code.py``` dentro de ```CIRCUITPI```.
-
-<img src="./imagenes/mueditor-test.png">
-
 10.  Si todo está bien, al presionar el botón "Seriado" se debería desplegar el mensaje "hola". Este mensaje lo envía la placa por el cable USB y se nos muestra en el computador.
 11.  Si quieres volver a ejecutar el código, presiona ```CTRL + D```.
+
+<img src="./imagenes/mueditor-test.png">
 
 ## Introducción a programar en CircuitPython
 
