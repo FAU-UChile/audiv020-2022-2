@@ -289,3 +289,6 @@ while True:
 7. Utiliza una variable para que el tiempo de encendido y apagado sean iguales y puedas cambiarlo fácilmente modificando una sola línea de código.
 8.  Crea una función llamada ```LED_ON(n)``` que te permita encender el LED durante "n" segundos, y otra llamada ```LED_OFF(n)``` que permita apagar el LED durante "n" segundos.
 9.  Utiliza las funciones recién creadas para generar el parpadeo.
+
+## LEDs RGB (NeoPixel)
+
