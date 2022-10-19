@@ -86,15 +86,23 @@ Sigue los siguientes pasos:
    - [CircuitPython para Circuit Playground Express](https://circuitpython.org/board/circuitplayground_express/ 'Descarga') 
 2. Conecta la placa por USB a tu computador.
 3. Presiona el botón RESET que se encuentra al medio de la placa. Prueba presionando una vez, o dos veces seguidas.
-4. Si todo sale bien, los LEDs se encenderán en color verde y en tu computador aparecerá un disco extraible llamado ```CPLAYBOOT```, como si hubieras conectado un pendrive. <img src="./imagenes/cplayboot.png">
+4. Si todo sale bien, los LEDs se encenderán en color verde y en tu computador aparecerá un disco extraible llamado ```CPLAYBOOT```, como si hubieras conectado un pendrive. 
+
+<img src="./imagenes/cplayboot.png">
+
 5. Copia el archivo que descargaste dentro de ```CPLAYBOOT```.
-6. En este momento CircuitPython se instalará automáticamente, ```CPLAYBOOT``` desaparecerá y se conectará un nuevo disco extraible llamado ```CIRCUITPI```. <img src="./imagenes/circuitpi.png">
+6. En este momento CircuitPython se instalará automáticamente, ```CPLAYBOOT``` desaparecerá y se conectará un nuevo disco extraible llamado ```CIRCUITPI```. 
+
+<img src="./imagenes/circuitpi.png">
+
 7. Ahora abre Mu editor, la primera vez suele demorar unos 2 minutos en abrir.
-8. Si te pregunta, elije CircuitPython y debería reconocer automáticamente a tu placa.
-9. Escribe el código que se muestra en la imágen, y guarda el archivo como ```code.py``` dentro de ```CIRCUITPI```.
-10. Si todo está bien, al presionar el botón "Seriado" se debería desplegar el mensaje "hola" más un número que va creciendo. Este mensaje lo envía la placa por el cable USB y se nos muestra en el computador.
+8.  Si te pregunta, elige CircuitPython y debería reconocer automáticamente tu placa.
+9.  Escribe el código que se muestra en la imágen, y guarda el archivo como ```code.py``` dentro de 
+```CIRCUITPI```.
 
 <img src="./imagenes/mueditor-test.png">
+
+10. Si todo está bien, al presionar el botón "Seriado" se debería desplegar el mensaje "hola" más un número que va creciendo. Este mensaje lo envía la placa por el cable USB y se nos muestra en el computador.
 
 ## Introducción a programar en CircuitPython
 
