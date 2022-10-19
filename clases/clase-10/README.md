@@ -292,3 +292,57 @@ while True:
 
 ## LEDs RGB (NeoPixel)
 
+```python
+# Ejemplo 13: Usando los LEDs RGB
+from adafruit_circuitplayground import cp
+import time
+
+# Colores
+RED = (255, 0, 0)
+YELLOW = (255, 150, 0)
+GREEN = (0, 255, 0)
+CYAN = (0, 255, 255)
+BLUE = (0, 0, 255)
+PURPLE = (180, 0, 255)
+WHITE = (255, 255, 255)
+OFF = (0, 0, 0)
+
+while True:
+
+    # Configura el brillo de los LEDs
+    cp.pixels.brightness = 0.3
+    
+    # Pintamos todos los LEDs de un mismo color
+    cp.pixels.fill(YELLOW)
+    time.sleep(0.5)
+    cp.pixels.fill(RED)
+    time.sleep(0.5)
+    cp.pixels.fill(GREEN)
+    time.sleep(0.5)
+    cp.pixels.fill(CYAN)
+    time.sleep(0.5)
+    cp.pixels.fill(BLUE)
+    time.sleep(0.5)
+    cp.pixels.fill(PURPLE)
+    time.sleep(0.5)
+    cp.pixels.fill(WHITE)
+    
+    time.sleep(1)
+    
+    # Pintamos cada LED con un color distinto
+    cp.pixels[0] = RED
+    cp.pixels[1] = YELLOW
+    cp.pixels[2] = GREEN
+    cp.pixels[3] = CYAN
+    cp.pixels[4] = BLUE
+    cp.pixels[5] = PURPLE
+    cp.pixels[6] = WHITE
+    
+    time.sleep(1)
+    
+    # Apagamos los LEDs
+    cp.pixels.fill(OFF)
+    
+    time.sleep(1)
+
+```
