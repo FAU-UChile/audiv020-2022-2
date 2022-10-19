@@ -309,7 +309,7 @@ OFF = (0, 0, 0)
 
 while True:
 
-    # Configura el brillo de los LEDs
+    # Configura el brillo de los LEDs (entre 0 y 1)
     cp.pixels.brightness = 0.3
     
     # Pintamos todos los LEDs de un mismo color
