@@ -2,21 +2,21 @@
 
 ## tarjetas de desarrollo
 
-Las tarjetas de desarrollo son pequeños circuitos que pueden ser programados para correr funciones específicas.
+las tarjetas de desarrollo son pequeños circuitos que pueden ser programados para correr funciones específicas.
 
-La tarjeta de desarrollo más popular hasta ahora es el Arduino UNO, al ser el primer proyecto _open hardware_ orientado a principiantes.
+la tarjeta de desarrollo más popular hasta ahora es el Arduino UNO, al ser el primer proyecto _open hardware_ orientado a principiantes.
 
-Actualmente existen una infinidad de tarjetas de desarrollo en el mercado, cada una con sus ventajas y desventajas.
+actualmente existen una infinidad de tarjetas de desarrollo en el mercado, cada una con sus ventajas y desventajas.
 
-En nuestro curso utilizaremos la tarjeta _circuit playground_ desarrollada por la empresa Adafruit, ya que integra una gran cantidad de sensores, un micrófono y un pequeño parlante.
+en nuestro curso utilizaremos la tarjeta _circuit playground_ desarrollada por la empresa Adafruit, ya que integra una gran cantidad de sensores, un micrófono y un pequeño parlante.
 
 |              Circuit Playground Bluefruit               |              Circuit Playground Express               |
 | :-----------------------------------------------------: | :---------------------------------------------------: |
 | <img src="./imagenes/circuit-playground-bluefruit.jpg"> | <img src="./imagenes/circuit-playground-express.jpg"> |
 
-Características generales:
+características generales:
 
-- Entradas:
+- entradas:
 
   - 7x sensores de contacto (A1-A7)
   - 1x sensor de movimiento y orientación
@@ -30,24 +30,24 @@ Características generales:
 - Salidas:
 
   - 10x mini NeoPixels (LEDs RGB)
-  - 1x Mini parlante
+  - 1x mini parlante
   - 1x LED verde de encendido (ON)
   - 1x LED rojo de uso genereal (D13)
   - 1x puerto USB para programación y debugging
 
-- El puerto USB puede actuar como:
+- el puerto USB puede actuar como:
 
-  - Puerto serial (para enviar o recibir mensajes)
-  - Teclado, mouse, o joystick
-  - Interfaz MIDI
+  - puerto serial (para enviar o recibir mensajes)
+  - teclado, mouse, o joystick
+  - interfaz MIDI
 
-- 8 x Pines digitales de entrada o salida (encendidos o apagados)
+- 8 x pines digitales de entrada o salida (encendidos o apagados)
 
-Aprenderemos a utilizar los abundantes recursos que la placa _circuit playground_ pone a nuestra disposición, y a combinarlos para diseñar instrumentos musicales digitales.
+aprenderemos a utilizar los abundantes recursos que la placa _circuit playground_ pone a nuestra disposición, y a combinarlos para diseñar instrumentos musicales digitales.
 
-Estas placas son compatibles con _CircuitPython_, que facilita en gran parte su uso.
+estas placas son compatibles con _CircuitPython_, que facilita en gran parte su uso.
 
-Recursos:
+recursos:
 
 - [Sitio oficial Adafruit](https://www.adafruit.com 'Adafruit')
 - [Documentación oficial Circuit Playground Express](https://learn.adafruit.com/adafruit-circuit-playground-express 'Circuit Playground Express')
@@ -58,11 +58,11 @@ Recursos:
 
 CircuitPython es un lenguaje de programación _open source_ diseñado específicamente para programar microcontroladores (computadores pequeños).
 
-Es una versión más acotada del lenguaje de programación Python.
+es una versión más acotada del lenguaje de programación Python.
 
-Contiene un conjunto de bibliotecas que permiten programar más de 300 placas de desarrollo. Este número sigue creciendo.
+contiene un conjunto de bibliotecas que permiten programar más de 300 placas de desarrollo. este número sigue creciendo.
 
-Recursos:
+recursos:
 
 - [Web oficial de CircuitPython](https://circuitpython.org/ 'CircuitPython')
 - [Placas de desarrollo soportadas](https://circuitpython.org/downloads 'Placas')
@@ -72,64 +72,62 @@ Recursos:
 
 CircuitPython permite escribir código en cualquier editor de texto.
 
-Para hacerlo más amigable, en este curso usaremos el software _Mu Editor_ para escribir nuestros programas.
+para hacerlo más amigable, en este curso usaremos el software _Mu Editor_ para escribir nuestros programas.
 
 ![Mu Editor](./imagenes/mu-editor-2.png 'Mu Editor')
 
-Recursos:
+recursos:
 
 - [Descarga Mu Editor](https://codewith.mu/ 'Descarga Mu Editor')
 
-## Conectando nuestra placa por primera vez
+## conectando nuestra placa por primera vez
 
-Para empezar, es necesario instalar CircuitPython en tu placa.
+para empezar, es necesario instalar CircuitPython en tu placa.
 
-Sigue los siguientes pasos:
+sigue los siguientes pasos:
 
-1. Descarga CircuitPython para tu placa:
-   - [CircuitPython para Circuit Playground Bluefruit](https://circuitpython.org/board/circuitplayground_bluefruit/ 'Descarga')
-   - [CircuitPython para Circuit Playground Express](https://circuitpython.org/board/circuitplayground_express/ 'Descarga')
+1. descarga CircuitPython para tu placa:
+   - [CircuitPython para Circuit Playground Bluefruit](https://circuitpython.org/board/circuitplayground_bluefruit/ 'descarga')
+   - [CircuitPython para Circuit Playground Express](https://circuitpython.org/board/circuitplayground_express/ 'descarga')
 2. Conecta la placa por USB a tu computador.
-3. Presiona el botón RESET que se encuentra al medio de la placa. Prueba presionando una vez, o dos veces seguidas.
-4. Si todo sale bien, los LEDs se encenderán en color verde y en tu computador aparecerá un disco extraible llamado `CPLAYBOOT`, como si hubieras conectado un pendrive.
+3. presiona el botón RESET que se encuentra al medio de la placa. Prueba presionando una vez, o dos veces seguidas.
+4. si todo sale bien, los LEDs se encenderán en color verde y en tu computador aparecerá un disco extraible llamado `CPLAYBOOT`, como si hubieras conectado un pendrive.
 
 <img src="./imagenes/cplayboot.png">
 
-5. Copia el archivo que descargaste dentro de `CPLAYBOOT`.
-6. En este momento CircuitPython se instalará automáticamente, `CPLAYBOOT` desaparecerá y se conectará un nuevo disco extraible llamado `CIRCUITPI`.
+5. copia el archivo que descargaste dentro de `CPLAYBOOT`.
+6. en este momento CircuitPython se instalará automáticamente, `CPLAYBOOT` desaparecerá y se conectará un nuevo disco extraible llamado `CIRCUITPI`.
 
 <img src="./imagenes/circuitpi.png">
 
-7. Ahora abre Mu editor, la primera vez suele demorar unos 2 minutos en abrir.
-8. Si te pregunta, elige CircuitPython y debería reconocer automáticamente tu placa.
-9. Escribe `print("hola")` y guarda el archivo como `code.py` dentro de `CIRCUITPI`.
-10. Si todo está bien, al presionar el botón "Seriado" se debería desplegar el mensaje "hola". Este mensaje lo envía la placa por el cable USB y se nos muestra en el computador.
-11. Si quieres volver a ejecutar el código, presiona `CTRL + D`.
+7. ahora abre Mu editor, la primera vez suele demorar unos 2 minutos en abrir.
+8. si te pregunta, elige CircuitPython y debería reconocer automáticamente tu placa.
+9. escribe `print("hola")` y guarda el archivo como `code.py` dentro de `CIRCUITPI`.
+10. si todo está bien, al presionar el botón "Seriado" se debería desplegar el mensaje "hola". rste mensaje lo envía la placa por el cable USB y se nos muestra en el computador.
+11. si quieres volver a correr el código, presiona `CTRL + D`.
 
 <img src="./imagenes/mueditor-test.png">
 
-## Introducción a programar en CircuitPython
+## introducción a programar en CircuitPython
 
-En Python tenemos 3 entidades principales:
+en Python tenemos 3 entidades principales:
 
-- Variables
-- Funciones
-- Objetos
+- variables
+- funciones
+- objetos
 
-Explicaremos sus características y empezaremos a programar inmediatamente.
+explicaremos sus características y empezaremos a programar inmediatamente.
 
-### Variables
+### variables
 
-Las variables son _cajoncitos de memoria_ donde se pueden guardar cosas para luego usarlas.
+;as variables son _cajoncitos de memoria_ donde se puede escribir información para luego ser leída o reescrita. como pueden ser reescritas, se llaman variables.
 
-Puede ser un número, un texto, u objetos más complejos.
+una variable puede ser un número, un texto, o estructuras de datos más complejos.
 
-El valor de estos cajoncitos puede cambiar, por eso se llaman "variables".
-
-> Nota: Los nombres de las variables no pueden contener espacios, ni tampoco comenzar con un número.
+> nota: los nombres de las variables no pueden contener espacios, ni tampoco comenzar con un número.
 
 ```python
-# ejemplo 01: Definiendo variables
+# ejemplo 01: definiendo variables
 x = 5
 y = "John"
 mi_variable = 4.5
@@ -140,7 +138,7 @@ print(mi_variable)
 ```
 
 ```python
-# Ejemplo 2: Sumando números
+# ejemplo 2: sumando números
 x = 5
 y = 4.5
 z = x + y
@@ -148,23 +146,23 @@ print(z)
 ```
 
 ```python
-# Ejemplo 3: Concatenando texto
+# ejemplo 3: concatenando texto
 x = "Juan"
-y = "Gonzáles"
+y = "González"
 z = x + " " + y
 print(z)
 ```
 
-### Funciones
+### funciones
 
-Las funciones nos permiten correr acciones.
+las funciones nos permiten correr acciones.
 
 Python nos ofrece muchas funciones listas para usar. En los ejemplos anteriores ya usamos la función `print()` que permite mostrar datos en la consola.
 
-Tu también puedes crear tus propias funciones.
+tú también puedes crear tus propias funciones.
 
 ```python
-# Ejemplo 4: Usando la función str() para convertir números a texto
+# ejemplo 4: usando la función str() para convertir números a texto
 x = "Temperatura: "
 y = 27.2
 z = str(y)
@@ -174,7 +172,7 @@ print(msg)
 ```
 
 ```python
-# Ejemplo 5: Definiendo nuestra propia función y usándola
+# ejemplo 5: definiendo nuestra propia función y usándola
 def imprimeTemperatura(temp):
     msg = "Temperatura: " + str(temp) + "°C"
     print(msg)
@@ -184,22 +182,22 @@ imprimeTemperatura(26.9)
 imprimeTemperatura(26.3)
 ```
 
-### Objetos
+### objetos
 
-Los objetos nos permiten agrupar variables y funciones para darles un sentido lógico.
+los objetos nos permiten agrupar variables y funciones para darles un sentido lógico.
 
-Solo como ejemplo, Python podría tener un objeto llamado `perro` que contiene las características y acciones que pueden hacer los perros.
+solo como ejemplo, Python podría tener un objeto llamado `perro` que contiene las características y acciones que pueden hacer los perros.
 
-El operador `.` permite interactuar con los objetos en Python.
+el operador `.` permite interactuar con los objetos en Python.
 
 `perro.nombre` o `perro.edad` me permite acceder al nombre y la edad de mi perro. Si quisiera hacer que mi perro ladre, puedo escribir `perro.ladra()`.
 
-MicroPython y Adafruit nos provee una biblioteca de objetos que nos permiten interactuar con los componentes de nuestra placa de desarrollo.
+MicroPython y Adafruit nos proveen una biblioteca de objetos que nos permiten interactuar con los componentes de nuestra placa de desarrollo.
 
-En los siguientes ejemplos se muestra como encender o apagar un LED utilizando el objeto `cp` incluido en la biblioteca `adafruit_circuitplayground`.
+en los siguientes ejemplos se muestra como encender o apagar un LED utilizando el objeto `cp` incluido en la biblioteca `adafruit_circuitplayground`.
 
 ```python
-# Ejemplo 7: Encendiendo el LED de la placa
+# ejemplo 7: encendiendo el LED de la placa
 
 # importa biblioteca de Adafruit CircuitPlayground
 from adafruit_circuitplayground import cp
@@ -209,65 +207,67 @@ while True:
 ```
 
 ```python
-# Ejemplo 8: Apagando el LED de la placa
+# ejemplo 8: apagando el LED de la placa
 from adafruit_circuitplayground import cp
 
 while True:
     cp.red_led = False
 ```
 
-### Haciéndo que nuestro programa se ejecute por siempre
+### haciendo que nuestro programa corra por siempre
 
-Hasta ahora todos nuestros programas han corrido una sola vez. Es decir, el computador ha leído línea por línea de arriba hacia abajo, corriendo las instrucciones y luego deteniéndose.
+hasta ahora todos nuestros programas han corrido una sola vez. es decir, la placa ha leído línea por línea de arriba hacia abajo, corriendo las instrucciones y luego deteniéndose.
 
-Si queremos que nuestro programa corra por un tiempo indefinido podemos usar un pequeño truco: definir un bloque de código usando la notación `while True:`
+si queremos que nuestro programa corra por un tiempo indefinido podemos usar un pequeño truco: definir un bloque de código usando la notación `while True:`
 
 ```python
-# Ejemplo 9: Usando "while True" para que nuestro programa no se detenga
+# ejemplo 9: usando "while True" para que nuestro programa no se detenga
 x = 0
 while True:
     x = x + 1
     print("corrida número:", x)
 ```
 
-Notarás que estos códigos corren indefinidamente y muy rápido, haciendo que Mu Editor colapse. Necesitamos una forma para controlar los tiempos de corrida de nuestro código.
+notarás que estos códigos corren indefinidamente y muy rápido, haciendo que Mu Editor colapse. Necesitamos una forma para controlar los tiempos de corrida de nuestro código.
 
-### Haciéndo que nuestro programa tome descansos
+### haciendo que nuestro programa tome descansos
 
-Existen algunas técnicas para controlar los tiempos de corrida de nuestro código, una de las más simples es usar el objeto `time` y su función `sleep(segundos)`, que permite correr pausas en nuestro programa.
+existen técnicas para controlar los tiempos de corrida de nuestro código, una de las más simples es usar el objeto `time` y su función `sleep(segundos)`, que permite correr pausas en nuestro programa.
 
 ```python
-# Ejemplo 10: agregando pausas en nuestro programa
+# ejemplo 10: agregando pausas en nuestro programa
 import time # importar biblioteca para tiempo
 
 while True:
     print("Hola!")
-    time.sleep(1.0) # Dormimos 1.0 segundo (no se hace nada)
+    # dormimos 1.0 segundo (no se hace nada)
+    time.sleep(1.0)
 ```
 
 ```python
-# Ejemplo 11: agregando pausas en nuestro programa
+# ejemplo 11: agregando pausas en nuestro programa
 import time
 x = 0
 
 while True:
     x = x + 1
     print("Ejecución número:", x)
-    time.sleep(0.5) # Dormimos medio segundo
+    # dormimos medio segundo
+    time.sleep(0.5)
 ```
 
-## Prueba clásica: Encendiendo y apagando un LED
+## prueba clásica: encendiendo y apagando un LED
 
-Ya hemos revisado los conceptos básicos que nos permitirán crear nuestros primeros programas.
+ya hemos revisado los conceptos básicos que nos permitirán crear nuestros primeros programas.
 
-Usualmente, la prueba más simple para probar que nuestro circuito está programándose correctamente consiste en encender y apagar un LED de forma indefinida.
+usualmente, la prueba más simple para probar que nuestro circuito está programándose correctamente consiste en encender y apagar un LED de forma indefinida.
 
-¿Cómo podrías escribir un programa que encienda un LED durante un segundo y luego lo apague durante un segundo, y que esto suceda indefinidamente?
+¿cómo podrías escribir un programa que encienda un LED durante 1 segundo y luego lo apague durante 1 segundo, y que esto suceda indefinidamente?
 
-Todo lo que se necesita lo hemos visto en las secciones anteriores.
+todo lo que se necesita lo hemos visto en las secciones anteriores.
 
 ```python
-# Ejemplo 12: Encendiendo y apagando un LED
+# ejemplo 12: encendiendo y apagando un LED
 from adafruit_circuitplayground import cp
 import time
 
@@ -283,22 +283,22 @@ while True:
     time.sleep(1.0)
 ```
 
-### Ejercicios para practicar:
+### ejercicios para practicar:
 
-1. Modificar el tiempo de parpadeo, hacerlo más rápido o más lento.
-2. Hacer que el tiempo de encendido sea más largo que el tiempo de apagado.
-3. Hacer que el tiempo de encendido sea más corto que el tiempo de apagado.
+1. modificar el tiempo de parpadeo, hacerlo más rápido o más lento.
+2. hacer que el tiempo de encendido sea más largo que el tiempo de apagado.
+3. hacer que el tiempo de encendido sea más corto que el tiempo de apagado.
 4. ¿Cuál es el tiempo de parpadeo más rápido que puedes correr? ¿Qué pasa si el tiempo de parpadeo es demasiado rápido?
-5. Hacer que el LED parpadee 3 veces muy rápido y luego se apague 1 segundo.
-6. Hacer que el LED parpadee 3 veces, luego 2 veces, luego 1 vez, con una pausa de tres segundos entre cada una de ellas.
-7. Utiliza una variable para que el tiempo de encendido y apagado sean iguales y puedas cambiarlo fácilmente modificando una sola línea de código.
-8. Crea una función llamada `LED_ON(n)` que te permita encender el LED durante "n" segundos, y otra llamada `LED_OFF(n)` que permita apagar el LED durante "n" segundos.
-9. Utiliza las funciones recién creadas para generar el parpadeo.
+5. hacer que el LED parpadee 3 veces muy rápido y luego se apague 1 segundo.
+6. hacer que el LED parpadee 3 veces, luego 2 veces, luego 1 vez, con una pausa de tres segundos entre cada una de ellas.
+7. utiliza una variable para que el tiempo de encendido y apagado sean iguales y puedas cambiarlo fácilmente modificando una sola línea de código.
+8. crea una función llamada `LED_ON(n)` que te permita encender el LED durante "n" segundos, y otra llamada `LED_OFF(n)` que permita apagar el LED durante "n" segundos.
+9. utiliza las funciones recién creadas para generar el parpadeo.
 
 ## LEDs RGB (NeoPixel)
 
 ```python
-# Ejemplo 13: Usando los LEDs RGB
+# ejemplo 13: Usando los LEDs RGB
 from adafruit_circuitplayground import cp
 import time
 
