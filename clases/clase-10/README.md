@@ -43,7 +43,7 @@ Características generales:
 
 - 8 x Pines digitales de entrada o salida (encendidos o apagados)
 
-Aprenderemos a utilizar los abundantes recursos que la placa _circuit playground_ pone a nuestra disposición, y a combinarlos para diseñar dispositivos interactivos.
+Aprenderemos a utilizar los abundantes recursos que la placa _circuit playground_ pone a nuestra disposición, y a combinarlos para diseñar instrumentos musicales digitales.
 
 Estas placas son compatibles con _CircuitPython_, que facilita en gran parte su uso.
 
@@ -60,7 +60,7 @@ CircuitPython es un lenguaje de programación _open source_ diseñado específic
 
 Es una versión más acotada del lenguaje de programación Python.
 
-Contiene un conjunto de librerías que permiten programar más de 300 placas de desarrollo. Este número sigue creciendo.
+Contiene un conjunto de bibliotecas que permiten programar más de 300 placas de desarrollo. Este número sigue creciendo.
 
 Recursos:
 
