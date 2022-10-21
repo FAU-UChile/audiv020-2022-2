@@ -96,21 +96,21 @@ sigue los siguientes pasos:
 <img src="./imagenes/cplayboot.png">
 
 5. copia el archivo que descargaste dentro de `CPLAYBOOT`.
-6. en este momento CircuitPython se instalará automáticamente, `CPLAYBOOT` desaparecerá y se conectará un nuevo disco extraible llamado `CIRCUITPI`.
+6. en este momento CircuitPython se instalará automáticamente, `CPLAYBOOT` desaparecerá y se conectará un nuevo disco extraible llamado `CIRCUITPY`.
 
-<img src="./imagenes/circuitpi.png">
+<img src="./imagenes/circuitpy.png">
 
 7. ahora abre Mu editor, la primera vez suele demorar unos 2 minutos en abrir.
 8. si te pregunta, elige CircuitPython y debería reconocer automáticamente tu placa.
-9. escribe `print("hola")` y guarda el archivo como `code.py` dentro de `CIRCUITPI`.
-10. si todo está bien, al presionar el botón "Seriado" se debería desplegar el mensaje "hola". rste mensaje lo envía la placa por el cable USB y se nos muestra en el computador.
+9. escribe `print("hola")` y guarda el archivo como `code.py` dentro de `CIRCUITPY`.
+10. si todo está bien, al presionar el botón "Seriado" se debería desplegar el mensaje "hola". este mensaje lo envía la placa por el cable USB y se nos muestra en el computador.
 11. si quieres volver a correr el código, presiona `CTRL + D`.
 
 <img src="./imagenes/mueditor-test.png">
 
 ## introducción a programar en CircuitPython
 
-en Python tenemos 3 entidades principales:
+en Python usaremos 3 entidades principales:
 
 - variables
 - funciones
@@ -120,16 +120,16 @@ explicaremos sus características y empezaremos a programar inmediatamente.
 
 ### variables
 
-;as variables son _cajoncitos de memoria_ donde se puede escribir información para luego ser leída o reescrita. como pueden ser reescritas, se llaman variables.
+las variables son espacios en la memoria donde se puede escribir información para luego ser leída o reescrita. como pueden ser reescritas, se llaman variables.
 
 una variable puede ser un número, un texto, o estructuras de datos más complejos.
 
-> nota: los nombres de las variables no pueden contener espacios, ni tampoco comenzar con un número.
+ojo: los nombres de las variables no pueden contener espacios, ni tampoco comenzar con un número.
 
 ```python
 # ejemplo 01: definiendo variables
 x = 5
-y = "John"
+y = "bla"
 mi_variable = 4.5
 
 print(x)
@@ -147,8 +147,10 @@ print(z)
 
 ```python
 # ejemplo 3: concatenando texto
-x = "Juan"
-y = "González"
+x = "alguna"
+y = "cosa"
+z = x + y
+print(z)
 z = x + " " + y
 print(z)
 ```
@@ -157,25 +159,23 @@ print(z)
 
 las funciones nos permiten correr acciones.
 
-Python nos ofrece muchas funciones listas para usar. En los ejemplos anteriores ya usamos la función `print()` que permite mostrar datos en la consola.
+Python nos ofrece muchas funciones listas para usar. en los ejemplos anteriores ya usamos la función `print()` que permite mostrar datos en la consola.
 
 tú también puedes crear tus propias funciones.
 
 ```python
 # ejemplo 4: usando la función str() para convertir números a texto
-x = "Temperatura: "
+x = "temperatura: "
 y = 27.2
-z = str(y)
-
-msg = x + z + "°C"
-print(msg)
+mensaje = x + str(y) + "°C"
+print(mensaje)
 ```
 
 ```python
 # ejemplo 5: definiendo nuestra propia función y usándola
 def imprimeTemperatura(temp):
-    msg = "Temperatura: " + str(temp) + "°C"
-    print(msg)
+    mensaje = "Temperatura: " + str(temp) + "°C"
+    print(mensaje)
 
 imprimeTemperatura(27.2)
 imprimeTemperatura(26.9)
@@ -186,11 +186,11 @@ imprimeTemperatura(26.3)
 
 los objetos nos permiten agrupar variables y funciones para darles un sentido lógico.
 
-solo como ejemplo, Python podría tener un objeto llamado `perro` que contiene las características y acciones que pueden hacer los perros.
+solo como ejemplo, Python podría tener un objeto llamado `guitarra` que contiene las características y acciones que pueden hacer los perros.
 
 el operador `.` permite interactuar con los objetos en Python.
 
-`perro.nombre` o `perro.edad` me permite acceder al nombre y la edad de mi perro. Si quisiera hacer que mi perro ladre, puedo escribir `perro.ladra()`.
+`guitarra.cuerdas` o `guitarra.afinada` nos permite acceder a las variables internas de número de cuerdas y si está afinada o no. si quisiera hacer que la guitarra suene podemos usar una función interna como `guitarra.suena()`. notar la diferencia entre .x para variables y .x() para la función x().
 
 MicroPython y Adafruit nos proveen una biblioteca de objetos que nos permiten interactuar con los componentes de nuestra placa de desarrollo.
 
@@ -199,9 +199,10 @@ en los siguientes ejemplos se muestra como encender o apagar un LED utilizando e
 ```python
 # ejemplo 7: encendiendo el LED de la placa
 
-# importa biblioteca de Adafruit CircuitPlayground
+# importar biblioteca de Adafruit CircuitPlayground
 from adafruit_circuitplayground import cp
 
+# bucle infinito
 while True:
     cp.red_led = True
 ```
@@ -210,6 +211,7 @@ while True:
 # ejemplo 8: apagando el LED de la placa
 from adafruit_circuitplayground import cp
 
+# bucle infinito
 while True:
     cp.red_led = False
 ```
@@ -225,10 +227,10 @@ si queremos que nuestro programa corra por un tiempo indefinido podemos usar un 
 x = 0
 while True:
     x = x + 1
-    print("corrida número:", x)
+    print("corrida:", x)
 ```
 
-notarás que estos códigos corren indefinidamente y muy rápido, haciendo que Mu Editor colapse. Necesitamos una forma para controlar los tiempos de corrida de nuestro código.
+notarás que estos códigos corren indefinidamente y muy rápido, haciendo que Mu Editor colapse. necesitamos una forma para controlar los tiempos de corrida de nuestro código.
 
 ### haciendo que nuestro programa tome descansos
 
@@ -236,10 +238,11 @@ existen técnicas para controlar los tiempos de corrida de nuestro código, una 
 
 ```python
 # ejemplo 10: agregando pausas en nuestro programa
-import time # importar biblioteca para tiempo
+# importar biblioteca para tiempo
+import time
 
 while True:
-    print("Hola!")
+    print("hola!")
     # dormimos 1.0 segundo (no se hace nada)
     time.sleep(1.0)
 ```
@@ -247,11 +250,12 @@ while True:
 ```python
 # ejemplo 11: agregando pausas en nuestro programa
 import time
+
 x = 0
 
 while True:
     x = x + 1
-    print("Ejecución número:", x)
+    print("corrida:", x)
     # dormimos medio segundo
     time.sleep(0.5)
 ```
@@ -302,52 +306,64 @@ while True:
 from adafruit_circuitplayground import cp
 import time
 
-# Colores
+# colores
 RED = (255, 0, 0)
-YELLOW = (255, 150, 0)
 GREEN = (0, 255, 0)
-CYAN = (0, 255, 255)
 BLUE = (0, 0, 255)
-PURPLE = (180, 0, 255)
+CYAN = (0, 255, 255)
+MAGENTA = (255, 0, 255)
+YELLOW = (255, 255, 0)
 WHITE = (255, 255, 255)
+PURPLE = (255/2, 0, 255)
+SILVER = (255/2, 255/2, 255/2)
+TEAL = (0, 255/2, 255/2)
 OFF = (0, 0, 0)
+
+pausaCorta = 0.5
+pausaLarga = 5.0
 
 while True:
 
-    # Configura el brillo de los LEDs (entre 0 y 1)
+    # configura el brillo de los LEDs (entre 0.0 y 1.0)
     cp.pixels.brightness = 0.3
 
-    # Pintamos todos los LEDs de un mismo color
-    cp.pixels.fill(YELLOW)
-    time.sleep(0.5)
+    # pintamos todos los LEDs de un mismo color
     cp.pixels.fill(RED)
-    time.sleep(0.5)
+    time.sleep(pausaCorta)
     cp.pixels.fill(GREEN)
-    time.sleep(0.5)
-    cp.pixels.fill(CYAN)
-    time.sleep(0.5)
+    time.sleep(pausaCorta)
     cp.pixels.fill(BLUE)
-    time.sleep(0.5)
-    cp.pixels.fill(PURPLE)
-    time.sleep(0.5)
+    time.sleep(pausaCorta)
+    cp.pixels.fill(CYAN)
+    time.sleep(pausaCorta)
+    cp.pixels.fill(MAGENTA)
+    time.sleep(pausaCorta)
+    cp.pixels.fill(YELLOW)
+    time.sleep(pausaCorta)
     cp.pixels.fill(WHITE)
+    time.sleep(pausaCorta)
+    cp.pixels.fill(PURPLE)
+    time.sleep(pausaCorta)
+    cp.pixels.fill(SILVER)
+    time.sleep(pausaCorta)
+    cp.pixels.fill(TEAL)
+    time.sleep(pausaCorta)
 
-    time.sleep(1)
-
-    # Pintamos cada LED con un color distinto
+    # pintamos cada LED con un color distinto
     cp.pixels[0] = RED
-    cp.pixels[1] = YELLOW
-    cp.pixels[2] = GREEN
+    cp.pixels[1] = GREEN
+    cp.pixels[2] = BLUE
     cp.pixels[3] = CYAN
-    cp.pixels[4] = BLUE
-    cp.pixels[5] = PURPLE
+    cp.pixels[4] = MAGENTA
+    cp.pixels[5] = YELLOW
     cp.pixels[6] = WHITE
+    cp.pixels[7] = PURPLE
+    cp.pixels[8] = SILVER
+    cp.pixels[9] = TEAL
+    time.sleep(pausaLarga)
 
-    time.sleep(1)
-
-    # Apagamos los LEDs
+    # apagamos los LEDs
     cp.pixels.fill(OFF)
 
-    time.sleep(1)
-
+    time.sleep(pausaLarga)
 ```
