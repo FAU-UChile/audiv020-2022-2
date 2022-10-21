@@ -367,3 +367,7 @@ while True:
 
     time.sleep(pausaLarga)
 ```
+
+## ejemplos sonido
+
+https://learn.adafruit.com/circuitpython-made-easy-on-circuit-playground-express/start-and-stop-tone
