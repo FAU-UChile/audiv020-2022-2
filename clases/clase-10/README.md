@@ -129,7 +129,7 @@ El valor de estos cajoncitos puede cambiar, por eso se llaman "variables".
 > Nota: Los nombres de las variables no pueden contener espacios, ni tampoco comenzar con un número.
 
 ```python
-# Ejemplo 1: Definiendo variables
+# ejemplo 01: Definiendo variables
 x = 5
 y = "John"
 mi_variable = 4.5
@@ -157,7 +157,7 @@ print(z)
 
 ### Funciones
 
-Las funciones nos permiten ejecutar acciones.
+Las funciones nos permiten correr acciones.
 
 Python nos ofrece muchas funciones listas para usar. En los ejemplos anteriores ya usamos la función `print()` que permite mostrar datos en la consola.
 
@@ -218,26 +218,26 @@ while True:
 
 ### Haciéndo que nuestro programa se ejecute por siempre
 
-Hasta ahora todos nuestros programas se han ejecutado una sola vez. Es decir, el computador ha leído línea por línea de arriba hacia abajo, ejecutando las instrucciones y luego se deteniéndose.
+Hasta ahora todos nuestros programas han corrido una sola vez. Es decir, el computador ha leído línea por línea de arriba hacia abajo, corriendo las instrucciones y luego deteniéndose.
 
-Si queremos que nuestro programa se ejecute por un tiempo indefinido podemos usar un pequeño truco: Definir un bloque de código usando la notación `while True:`
+Si queremos que nuestro programa corra por un tiempo indefinido podemos usar un pequeño truco: definir un bloque de código usando la notación `while True:`
 
 ```python
 # Ejemplo 9: Usando "while True" para que nuestro programa no se detenga
 x = 0
 while True:
     x = x + 1
-    print("Ejecución número:", x)
+    print("corrida número:", x)
 ```
 
-Notarás que estos códigos se ejecutan indefinidamente y muy rápido, haciendo que Mu Editor colapse. Necesitamos una forma para controlar los tiempos de ejecución de nuestro código.
+Notarás que estos códigos corren indefinidamente y muy rápido, haciendo que Mu Editor colapse. Necesitamos una forma para controlar los tiempos de corrida de nuestro código.
 
 ### Haciéndo que nuestro programa tome descansos
 
-Existen algunas técnicas para controlar los tiempos de ejecución de nuestro código, una de las más simples es usar el objeto `time` y su función `sleep(segundos)`, que permite ejecutar pausas en nuestro programa.
+Existen algunas técnicas para controlar los tiempos de corrida de nuestro código, una de las más simples es usar el objeto `time` y su función `sleep(segundos)`, que permite correr pausas en nuestro programa.
 
 ```python
-# Ejemplo 10: Ejecutando pausas en nuestro programa
+# Ejemplo 10: agregando pausas en nuestro programa
 import time # importar biblioteca para tiempo
 
 while True:
@@ -246,7 +246,7 @@ while True:
 ```
 
 ```python
-# Ejemplo 11: Ejecutando pausas en nuestro programa
+# Ejemplo 11: agregando pausas en nuestro programa
 import time
 x = 0
 
