@@ -1,1 +1,189 @@
 # clase-11
+
+## introducción a los sensores
+
+los sensores nos permiten obtener mediciones de algún fenómeno que nos interese, por ejemplo:
+
+- la magnitud o frecuencia de alguna fuente de sonido
+- la velocidad del viento
+- la temperatura del agua
+- la luminosidad de cierta fuente de luz
+
+nos permiten obtener información del mundo real para poder desplegarla para su simple inspección, o reaccionar a ellas de algún modo, generando una acción.
+
+### densidad de información
+
+al tratar de medir el mundo real, los humanos han generado escalas numéricas para representar sus datos. por ejemplo, la escala de decibelios para medir el sonido, o la de grados celcius para medir temperatura.
+
+imaginemos un termómetro que es capaz de medir cambios de temperatura de 0.1°C y otro que puede detectar cambios de 0.01°C. ¿con qué termómetro obtendré más información?
+
+mientras más preciso es nuestro sensor, la escala numérica se hace más "densa", pudiendo almacenar más información.
+
+### transformando la información a números digitales
+
+actualmente lo más usual es que los datos obtenidos por sensores sean almacenados y procesados de forma digital usando computadores.
+
+para lograr esto es necesario llevar a cabo un proceso llamado *"conversión análogo digital"* que fundamentalmente lo que hace es tomar una magnitud física y transformarla a un número de *n* bits que los computadores pueden entender.
+
+mientras más bits, la escala será más densa y la información será más representativa de la realidad.
+
+<img src="./imagenes/adc_signal.jpg">
+<img src="./imagenes/ADC.gif">
+
+## sensores en circuit playground
+
+como vimos la semana pasada, la tarjeta de desarrollo circuit playground integra varios sensores que podemos utilizar inmediatamente:
+
+- 2x pulsadores (Botones A y B)
+- 7x sensores de contacto (A1-A7)
+- 1x sensor de movimiento y orientación
+- 1x sensor de temperatura
+- 1x sensor de luz
+- 1x sensor de sonido básico
+
+además los pines A1-A7 están conectados a un conversor análogo-digital, por lo que se pueden utilizar para medir un voltage analógico entre 0 volts y 5 volts.
+
+Esto permite integrar sensores externos que nos entreguen un voltaje.
+
+## usando los botones pulsadores
+
+los botones A y B solo pueden tener dos estados: apretados o sueltos. 
+
+para nuestro mini computador esto se representa con un bit que puede tener el estado ```0``` (```False```) o ```1``` (```True```).
+
+para consultar el estado de cada botón solo debemos importar el objeto ```cp``` y acceder a las propiedades ```cp.button_a``` y ```cp.button_b```.
+
+si queremos que se ejecute alguna acción cuando alguno de los botones esté en el estado ```True```, usaremos un bloque ```if``` de python.
+
+los bloques ```if``` se utilizan para tomar decisiones en base a una pregunta lógica.
+
+Ejemplos de preguntas lógicas:
+- ```if x >= 10:```
+- ```if y < 0:```
+- ```if z == 25: ```
+- ```if cp.button_a == True: ```
+- ```if cp.button_a == False: ```
+- ```if cp.button_a != True: ```
+
+en este caso como el botón solo puede tener el estado ```True``` o ```False```, solo tiene sentido preguntar por estos dos estados.
+
+```python
+# ejemplo 01: leyendo botones pulsadores con bloque if
+from adafruit_circuitplayground import cp
+
+RED = (255, 0, 0)
+BLUE = (0, 0, 255)
+
+cp.pixels.brightness = 0.1
+
+while True:
+    if cp.button_a == True:
+        cp.pixels.fill(RED)
+    
+    if cp.button_b == True:
+        cp.pixels.fill(BLUE)
+```
+
+el bloque ```if``` se puede acompañar con un bloque ```elif``` o otro bloque ```else```.
+
+el bloque ```elif``` permite ejecutar una nueva pregunta lógica si es que la anterior no resultó válida.
+
+el bloque ```else``` se ejecuta solo si ninguna de las preguntas lógicas anteriores resultó válida.
+
+en el siguiente ejemplo utilizaremos el parlante usando las funciones ```cp.start_tone()``` y ```cp.stop_tone()```.
+
+```python
+# ejemplo 02: usando botones y parlante con bloque if, elif y else.
+from adafruit_circuitplayground import cp
+
+while True:
+    if cp.button_a == True:
+        cp.start_tone(400)
+    elif cp.button_b == True:
+        cp.start_tone(300)
+    else:
+        cp.stop_tone()
+```
+
+## sensores de contacto capacitivos (*touch*)
+
+Las entradas A1 a A7 pueden ser utilizados como sensores capacitivos *touch*. Para eso tenemos la función ```cp.adjust_touch_threshold(100)``` que nos permite ajustar la sensibilidad de los botones *touch*. 
+
+Podemos escribir ```cp.touch_A1``` ... ```cp.touch_A7``` para acceder al estado de cada botón, que puede ser solamente ```True``` o ```False```.
+
+```python
+# ejemplo 03: usando botones capacitivos y parlante.
+from adafruit_circuitplayground import cp
+
+cp.adjust_touch_threshold(100)
+f_base = 200
+
+while True:
+    if cp.touch_A1 == True:
+        cp.start_tone(f_base)
+    elif cp.touch_A2 == True:
+        cp.start_tone(f_base + 25)
+    elif cp.touch_A3 == True:
+        cp.start_tone(f_base + 25*2)
+    elif cp.touch_A4 == True:
+        cp.start_tone(f_base + 25*3)
+    elif cp.touch_A5 == True:
+        cp.start_tone(f_base + 25*4)
+    elif cp.touch_A6 == True:
+        cp.start_tone(f_base + 25*5)
+    elif cp.touch_A7 == True:
+        cp.start_tone(f_base + 25*6)
+    else:
+        cp.stop_tone()
+```
+
+
+```python
+# ejemplo 00: sensor de luz
+
+from adafruit_circuitplayground import cp
+import time
+
+while True:
+    luz = cp.light
+    print(luz)
+    time.sleep(0.01)
+```
+
+```python
+# ejemplo 00: sensor de luz y despliegue en el trazador de gráficos
+
+from adafruit_circuitplayground import cp
+import time
+
+while True:
+    luz = (cp.light,)
+    print(luz)
+    time.sleep(0.01)
+```
+
+```python
+# ejemplo 00: sensor de luz controlando la frecuencia del parlante
+
+from adafruit_circuitplayground import cp
+import time
+
+while True:
+    luz = cp.light
+    cp.start_tone(luz*1.5)
+    time.sleep(0.5)
+    cp.stop_tone()
+```
+
+
+```python
+# ejemplo 00: graficando datos del acelerómetro
+import time
+from adafruit_circuitplayground import cp
+
+while True:
+    x, y, z = cp.acceleration
+    print((x, y, z)) 
+
+    time.sleep(0.1) 
+```
