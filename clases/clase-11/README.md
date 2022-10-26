@@ -104,6 +104,8 @@ la función ```cp.start_tone(freq)``` necesita la frecuencia del sonido que dese
 
 antes de cambiar la frecuencia siempre es necesario ejecutar la instrucción ```cp.stop_tone()```.
 
+también podemos usar la función ```cp.play_tone(freq, duration)``` para reproducir un tono por una duración determinada en segundos.
+
 ```python
 # ejemplo 02: usando botones y parlante con bloque if, elif y else.
 from adafruit_circuitplayground import cp
@@ -124,6 +126,35 @@ el bloque ```elif``` permite ejecutar una nueva pregunta lógica si es que la an
 el bloque ```else``` se ejecuta solo si ninguna de las preguntas lógicas anteriores resultó válida.
 
 se ejecuta solo una da las tres alternativas.
+
+## reproduciendo archivos de audio
+
+nuestra placa es capaz de reproducir sonidos más complejos.
+
+como los recursos son limitados, los archivos de audio deben seguir algunas reglas específicas.
+
+- archivos .wav
+- 16-bit
+- frecuencua de muestreo menor o igual a 22,050 hertz
+- monofónicos
+
+Adafruit tiene una guía para poder convertir tus archivos de audio a este formato en [este link.](https://learn.adafruit.com/adafruit-wave-shield-audio-shield-for-arduino/convert-files 'convertir audio')
+
+Por ahora haremos un ejemplo con dos audios ya adaptados, descárgalos y súbelos a tu placa:
+
+- [laugh.wav](./audios/laugh.wav 'laugh.wav')
+- [rimshot.wav](./audios/rimshot.wav 'rimshot.wav')
+
+```python
+# ejemplo 03: reproduciendo archivos .wav
+from adafruit_circuitplayground import cp
+
+while True:
+    if cp.button_a:
+        cp.play_file("rimshot.wav") 
+    if cp.button_b:
+        cp.play_file("laugh.wav")
+```
 
 ## sensores de contacto capacitivos (*touch*)
 
@@ -214,15 +245,12 @@ while True:
 
 ```python
 # ejemplo 00: sensor de luz controlando la frecuencia del parlante
-
 from adafruit_circuitplayground import cp
 import time
 
 while True:
     luz = cp.light
-    cp.start_tone(luz*1.5)
-    time.sleep(0.5)
-    cp.stop_tone()
+    cp.play_tone(luz*1.5, 0.2)
 ```
 
 
