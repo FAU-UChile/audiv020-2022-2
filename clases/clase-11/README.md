@@ -169,6 +169,7 @@ electrónicamente las perillas son potenciómetros (resistencias variables), que
 
 <p float="left" align="middle">
 <img src="./imagenes/pot_32_200_large.webp" width=400>
+<img src="./imagenes/esp32-potentiometer-pinout.jpg" width=400>
 </p>
 
 los potenciómetros poseen 3 pines (patitas):
@@ -180,6 +181,9 @@ los potenciómetros poseen 3 pines (patitas):
 <img src="./imagenes/cp-pot.png">
 </p>
 
+nuestra tarjeta de desarrollo puede leer ese voltaje ya que posee un conversor análogo-digital conectado en los pines A0-A7.
+
+esto significa que el pin central del potenciómetro lo podemos conectar a cualquiera de estas entradas.
 
 
 ## nn
