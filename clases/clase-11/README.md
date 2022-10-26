@@ -92,17 +92,17 @@ while True:
         cp.pixels.fill(BLUE)
 ```
 
-el bloque ```if``` se puede acompañar con un bloque ```elif``` o otro bloque ```else```.
+## combinando los botones con el parlante para hacer sonidos
 
-el bloque ```elif``` permite ejecutar una nueva pregunta lógica si es que la anterior no resultó válida.
-
-el bloque ```else``` se ejecuta solo si ninguna de las preguntas lógicas anteriores resultó válida.
-
-en el siguiente ejemplo utilizaremos el parlante usando las funciones ```cp.start_tone()``` y ```cp.stop_tone()```.
+en el siguiente ejemplo utilizaremos el parlante usando las funciones ```cp.start_tone(freq)``` y ```cp.stop_tone()```.
 
 <p float="left" align="middle">
 <img src="./imagenes/cp-speaker.jpg" width=400>
 </p>
+
+la función ```cp.start_tone(freq)``` necesita la frecuencia del sonido que deseamos reproducir. 
+
+antes de cambiar la frecuencia siempre es necesario ejecutar la instrucción ```cp.stop_tone()```.
 
 ```python
 # ejemplo 02: usando botones y parlante con bloque if, elif y else.
@@ -117,15 +117,23 @@ while True:
         cp.stop_tone()
 ```
 
+el bloque ```if``` se puede acompañar con un bloque ```elif``` y otro bloque ```else```.
+
+el bloque ```elif``` permite ejecutar una nueva pregunta lógica si es que la anterior no resultó válida.
+
+el bloque ```else``` se ejecuta solo si ninguna de las preguntas lógicas anteriores resultó válida.
+
+se ejecuta solo una da las tres alternativas.
+
 ## sensores de contacto capacitivos (*touch*)
 
 <p float="left" align="middle">
 <img src="./imagenes/cp-touch.jpg" width=400>
 </p>
 
-Las entradas A1 a A7 pueden ser utilizados como sensores capacitivos *touch*. Para eso tenemos la función ```cp.adjust_touch_threshold(100)``` que nos permite ajustar la sensibilidad de los botones *touch*. 
+las entradas A1 a A7 pueden ser utilizados como sensores capacitivos *touch*. Para eso tenemos la función ```cp.adjust_touch_threshold(100)``` que nos permite ajustar la sensibilidad de los botones *touch*. 
 
-Podemos escribir ```cp.touch_A1``` ... ```cp.touch_A7``` para acceder al estado de cada botón, que puede ser solamente ```True``` o ```False```.
+podemos escribir ```cp.touch_A1 ... cp.touch_A7``` para acceder al estado de cada botón, que puede ser solamente ```True``` o ```False```.
 
 ```python
 # ejemplo 03: usando botones capacitivos y parlante.
@@ -152,6 +160,29 @@ while True:
     else:
         cp.stop_tone()
 ```
+
+## agregando perillas (potenciómetros)
+
+un elemento clásico en los instrumentos electrónicos son las perillas, que permiten ajustar distintos parámetros musicales.
+
+electrónicamente las perillas son potenciómetros (resistencias variables), que actuan como un sensor ya que informan a nuestro mini computador su estado o posición a través de un voltaje.
+
+<p float="left" align="middle">
+<img src="./imagenes/pot_32_200_large.webp" width=400>
+</p>
+
+los potenciómetros poseen 3 pines (patitas):
+ - una de ellas se conecta a 0 volts (tierra)
+ - la otra se conecta a un voltaje, por ejemplo 3.3 volts
+ - el pin central tendrá un voltaje variable entre 0v y 3.3v, dependiendo de la posición de la perilla.
+
+<p float="left" align="middle">
+<img src="./imagenes/cp-pot.png">
+</p>
+
+
+
+## nn
 
 ```python
 # ejemplo 00: sensor de luz
