@@ -135,15 +135,17 @@ como los recursos son limitados, los archivos de audio deben seguir algunas regl
 
 - archivos .wav
 - 16-bit
-- frecuencua de muestreo menor o igual a 22,050 hertz
+- frecuencia de muestreo menor o igual a 22050 hertz
 - monofónicos
 
 Adafruit tiene una guía para poder convertir tus archivos de audio a este formato en [este link.](https://learn.adafruit.com/adafruit-wave-shield-audio-shield-for-arduino/convert-files 'convertir audio')
 
 Por ahora haremos un ejemplo con dos audios ya adaptados, descárgalos y súbelos a tu placa:
 
-- [laugh.wav](./audios/laugh.wav 'laugh.wav')
-- [rimshot.wav](./audios/rimshot.wav 'rimshot.wav')
+- [laugh.wav](https://cdn-learn.adafruit.com/assets/assets/000/047/232/original/laugh.wav?1507858014 'laugh.wav')
+- [rimshot.wav](https://cdn-learn.adafruit.com/assets/assets/000/047/231/original/rimshot.wav?1507858005 'rimshot.wav')
+
+usaremos la función  ```cp.play_file(filename)``` para reproducirlos.
 
 ```python
 # ejemplo 03: reproduciendo archivos .wav
