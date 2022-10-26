@@ -23,76 +23,79 @@ imaginemos un termómetro que es capaz de medir cambios de temperatura de 0.1°C
 
 mientras más preciso es nuestro sensor, la escala numérica se hace más "densa", pudiendo medir más información.
 
-### transformando la información a números digitales
+## transformando información análoga a digital
 
-actualmente lo más usual es que los datos obtenidos por sensores sean almacenados y procesados de forma digital usando computadores.
+en la actualidad, gran parte de los sensores que usamos están conectados a sistemas digitales (computadores, microcontroladores), por lo que debemos tomar su información del mundo real análogo y procesarla para digitalizarla y poder usarla en un sistema digital.
 
-para lograr esto es necesario llevar a cabo un proceso llamado _"conversión análogo digital"_ que fundamentalmente lo que hace es tomar una magnitud física y transformarla a un número de _n_ bits que los computadores pueden entender.
+para lograr esto es necesario llevar a cabo un proceso llamado _"conversión análogo digital"_ que fundamentalmente lo que hace es tomar un número con infinitos decimales y transformarlo a un número aproximado con una resolución de _n_ bits que los computadores pueden entender.
 
-mientras más bits, la escala será más densa y la información será más representativa de la realidad.
+mientras más bits, la escala será más densa y la información será más fiel a la realidad.
 
 <p float="left" align="middle">
 <img src="./imagenes/adc_signal.jpg" width=600>
 <img src="./imagenes/ADC.gif" width=400>
 </p>
 
-## sensores en circuit playground
+## sensores en Adafruit Circuit Playground
 
-como vimos la semana pasada, la tarjeta de desarrollo circuit playground integra varios sensores que podemos utilizar inmediatamente:
+como vimos la semana pasada, la tarjeta de desarrollo Adafruit Circuit Playground integra varios sensores que podemos utilizar inmediatamente:
 
-- 2x pulsadores (Botones A y B)
+- 2x pulsadores (botones A y B)
 - 7x sensores de contacto (A1-A7)
 - 1x sensor de movimiento y orientación
 - 1x sensor de temperatura
 - 1x sensor de luz
 - 1x sensor de sonido básico
 
-además los pines A1-A7 están conectados a un conversor análogo-digital, por lo que se pueden utilizar para medir un voltage analógico entre 0 volts y 3.3 volts.
+además los pines A1-A7 están conectados a un conversor análogo-digital, por lo que se pueden utilizar para medir un voltaje analógico entre 0 volts y 3.3 volts.
 
-esto permite integrar sensores externos que nos entreguen un voltaje.
-
-## usando los botones pulsadores
+## leyendo los botones pulsadores
 
 <p float="left" align="middle">
 <img src="./imagenes/cp-buttons.jpg" width=400>
 </p>
 
-los botones A y B solo pueden tener dos estados: apretados o sueltos.
+los botones A y B solo pueden tener dos estados: presionados o soltados.
 
-para nuestro mini computador esto se representa con un bit que puede tener el estado `0` (`False`) o `1` (`True`).
+para nuestra placa esto se representa con un bit que puede tener el estado `0` (`False`) o `1` (`True`).
 
 para consultar el estado de cada botón solo debemos importar el objeto `cp` y acceder a las propiedades `cp.button_a` y `cp.button_b`.
 
-si queremos que se ejecute alguna acción cuando alguno de los botones esté en el estado `True`, usaremos un bloque `if` de python.
+si queremos que corra alguna acción cuando alguno de los botones esté en el estado `True`, usaremos un bloque `if` de Python.
 
 los bloques `if` se utilizan para tomar decisiones en base a una pregunta lógica.
 
-Ejemplos de preguntas lógicas:
+ejemplos de preguntas lógicas:
 
-- `if x >= 10:`
-- `if y < 0:`
-- `if z == 25: `
-- `if cp.button_a == True: `
-- `if cp.button_a == False: `
-- `if cp.button_a != True: `
-
-en este caso como el botón solo puede tener el estado `True` o `False`, solo tiene sentido preguntar por estos dos estados.
+- `if x >= 10:`: si x es mayor o igual a 10
+- `if y < 0:`: si y es menor estricto que 0
+- `if z == 25: `: si z es idéntico a 25
+- `if cp.button_a == True: `: si el botón A está presionado
+- `if cp.button_a == False: ` si el botón A está soltado
+- `if cp.button_a != True: `: si el botón A no está presionado
 
 ```python
 # ejemplo 01: leyendo botones pulsadores con bloque if
+# importar biblioteca
 from adafruit_circuitplayground import cp
 
-RED = (255, 0, 0)
-BLUE = (0, 0, 255)
+ROJO = (255, 0, 0)
+AZUL = (0, 0, 255)
 
+# ajustar brillo
 cp.pixels.brightness = 0.1
 
+# bucle infinito
 while True:
+    # si el boton A esta presionado
     if cp.button_a == True:
-        cp.pixels.fill(RED)
+        # pixeles color rojo
+        cp.pixels.fill(ROJO)
 
+    # si el boton B esta presionado
     if cp.button_b == True:
-        cp.pixels.fill(BLUE)
+        # pixeles color azul
+        cp.pixels.fill(AZUL)
 ```
 
 ## combinando los botones con el parlante para hacer sonidos
