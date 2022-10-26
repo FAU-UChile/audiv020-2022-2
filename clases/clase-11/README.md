@@ -133,28 +133,28 @@ while True:
         cp.stop_tone()
 ```
 
-el bloque `if` se puede acompañar con un bloque `elif` y otro bloque `else`.
+el bloque `if` se puede acompañar con bloques `elif` y/o un bloque `else`.
 
-el bloque `elif` permite ejecutar una nueva pregunta lógica si es que la anterior no resultó válida.
+el bloque `elif` permite correr una nueva pregunta lógica si es que la anterior no resultó verdadera. puedes usar varios bloques `elif` sucesivos.
 
-el bloque `else` se ejecuta solo si ninguna de las preguntas lógicas anteriores resultó válida.
+el bloque `else` corre solamente si ninguna de las preguntas lógicas anteriores resultó verdadera.
 
-se ejecuta solo una da las tres alternativas.
+la primera de las preguntas if/elif/else que sea válida, hace que el código deje de revisar las siguientes preguntas sucesivas, y corra las siguientes líneas de código.
 
 ## reproduciendo archivos de audio
 
 nuestra placa es capaz de reproducir sonidos más complejos.
 
-como los recursos son limitados, los archivos de audio deben seguir algunas reglas específicas.
+como los recursos de memoria y de velocidad son limitados, los archivos de audio deben seguir algunas reglas específicas.
 
 - archivos .wav
-- 16-bit
+- 16 bits de resolución
 - frecuencia de muestreo menor o igual a 22050 hertz
-- monofónicos
+- monofónicos (no stereo)
 
-Adafruit tiene una guía para poder convertir tus archivos de audio a este formato en [este link.](https://learn.adafruit.com/adafruit-wave-shield-audio-shield-for-arduino/convert-files 'convertir audio')
+Adafruit tiene una guía para poder convertir tus archivos de audio a este formato en este enlace: https://learn.adafruit.com/adafruit-wave-shield-audio-shield-for-arduino/convert-files
 
-por ahora haremos un ejemplo con dos audios ya adaptados, descárgalos y súbelos a tu placa:
+por ahora haremos un ejemplo con 2 audios ya adaptados, descárgalos y súbelos a tu placa:
 
 - [laugh.wav](https://cdn-learn.adafruit.com/assets/assets/000/047/232/original/laugh.wav?1507858014 'laugh.wav')
 - [rimshot.wav](https://cdn-learn.adafruit.com/assets/assets/000/047/231/original/rimshot.wav?1507858005 'rimshot.wav')
@@ -163,11 +163,15 @@ usaremos la función `cp.play_file(filename)` para reproducirlos.
 
 ```python
 # ejemplo 03: reproduciendo archivos .wav
+# importar biblioteca
 from adafruit_circuitplayground import cp
 
+# bucle infinito
 while True:
+    # si el boton A esta presionado
     if cp.button_a:
         cp.play_file("rimshot.wav")
+    # si el boton B esta presionado
     if cp.button_b:
         cp.play_file("laugh.wav")
 ```
