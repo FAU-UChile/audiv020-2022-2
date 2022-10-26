@@ -4,28 +4,30 @@
 
 los sensores nos permiten obtener mediciones de algún fenómeno que nos interese, por ejemplo:
 
-- el estado de un botón (apretado o suelto).
-- la posición de una perilla.
-- la magnitud o frecuencia de alguna fuente de sonido.
-- la velocidad del viento.
-- la temperatura del agua.
-- la luminosidad de cierta fuente de luz.
+- el estado de un botón (presionado o soltado)
+- la posición de una perilla/potenciómetro
+- la amplitud o frecuencia de alguna fuente de sonido
+- la velocidad del viento
+- la temperatura del agua
+- la luminosidad de una fuente de luz
 
-los sensores permiten obtener información del mundo real para poder desplegarla para su simple inspección, o reaccionar a ella de algún modo, generando una acción.
+los sensores permiten obtener información del mundo real, que es análogo, y transformarla a información digital que podemos almacenar en nuestro microcontrolador.
 
-### densidad de información
+con esta información de los sensores, podemos reaccionar con modos tan simples como imprimir en consola, o generar respuestas en forma de sonido, luz, movimiento, etc.
 
-al tratar de medir el mundo real, los humanos han generado escalas numéricas para representar sus datos. por ejemplo, la escala de decibelios para medir el sonido, o la de grados celcius para medir temperatura.
+## densidad de información
 
-imaginemos un termómetro que es capaz de medir cambios de temperatura de 0.1°C y otro que puede detectar cambios de 0.01°C. ¿con qué termómetro obtendré más información?
+al tratar de medir el mundo real, las personas han generado escalas numéricas para representar sus datos. por ejemplo, la escala de decibelios para medir el sonido, o la de grados Celsius para medir temperatura.
 
-mientras más preciso es nuestro sensor, la escala numérica se hace más "densa", pudiendo almacenar más información.
+imaginemos un termómetro que es capaz de medir cambios de temperatura de 0.1°C y otro que puede detectar cambios de 0.01°C. ¿con cuál de estos termómetros obtendremos más información?
+
+mientras más preciso es nuestro sensor, la escala numérica se hace más "densa", pudiendo medir más información.
 
 ### transformando la información a números digitales
 
 actualmente lo más usual es que los datos obtenidos por sensores sean almacenados y procesados de forma digital usando computadores.
 
-para lograr esto es necesario llevar a cabo un proceso llamado *"conversión análogo digital"* que fundamentalmente lo que hace es tomar una magnitud física y transformarla a un número de *n* bits que los computadores pueden entender.
+para lograr esto es necesario llevar a cabo un proceso llamado _"conversión análogo digital"_ que fundamentalmente lo que hace es tomar una magnitud física y transformarla a un número de _n_ bits que los computadores pueden entender.
 
 mientras más bits, la escala será más densa y la información será más representativa de la realidad.
 
@@ -55,25 +57,26 @@ esto permite integrar sensores externos que nos entreguen un voltaje.
 <img src="./imagenes/cp-buttons.jpg" width=400>
 </p>
 
-los botones A y B solo pueden tener dos estados: apretados o sueltos. 
+los botones A y B solo pueden tener dos estados: apretados o sueltos.
 
-para nuestro mini computador esto se representa con un bit que puede tener el estado ```0``` (```False```) o ```1``` (```True```).
+para nuestro mini computador esto se representa con un bit que puede tener el estado `0` (`False`) o `1` (`True`).
 
-para consultar el estado de cada botón solo debemos importar el objeto ```cp``` y acceder a las propiedades ```cp.button_a``` y ```cp.button_b```.
+para consultar el estado de cada botón solo debemos importar el objeto `cp` y acceder a las propiedades `cp.button_a` y `cp.button_b`.
 
-si queremos que se ejecute alguna acción cuando alguno de los botones esté en el estado ```True```, usaremos un bloque ```if``` de python.
+si queremos que se ejecute alguna acción cuando alguno de los botones esté en el estado `True`, usaremos un bloque `if` de python.
 
-los bloques ```if``` se utilizan para tomar decisiones en base a una pregunta lógica.
+los bloques `if` se utilizan para tomar decisiones en base a una pregunta lógica.
 
 Ejemplos de preguntas lógicas:
-- ```if x >= 10:```
-- ```if y < 0:```
-- ```if z == 25: ```
-- ```if cp.button_a == True: ```
-- ```if cp.button_a == False: ```
-- ```if cp.button_a != True: ```
 
-en este caso como el botón solo puede tener el estado ```True``` o ```False```, solo tiene sentido preguntar por estos dos estados.
+- `if x >= 10:`
+- `if y < 0:`
+- `if z == 25: `
+- `if cp.button_a == True: `
+- `if cp.button_a == False: `
+- `if cp.button_a != True: `
+
+en este caso como el botón solo puede tener el estado `True` o `False`, solo tiene sentido preguntar por estos dos estados.
 
 ```python
 # ejemplo 01: leyendo botones pulsadores con bloque if
@@ -87,24 +90,24 @@ cp.pixels.brightness = 0.1
 while True:
     if cp.button_a == True:
         cp.pixels.fill(RED)
-    
+
     if cp.button_b == True:
         cp.pixels.fill(BLUE)
 ```
 
 ## combinando los botones con el parlante para hacer sonidos
 
-en el siguiente ejemplo utilizaremos el parlante usando las funciones ```cp.start_tone(freq)``` y ```cp.stop_tone()```.
+en el siguiente ejemplo utilizaremos el parlante usando las funciones `cp.start_tone(freq)` y `cp.stop_tone()`.
 
 <p float="left" align="middle">
 <img src="./imagenes/cp-speaker.jpg" width=400>
 </p>
 
-la función ```cp.start_tone(freq)``` necesita la frecuencia del sonido que deseamos reproducir. 
+la función `cp.start_tone(freq)` necesita la frecuencia del sonido que deseamos reproducir.
 
-antes de cambiar la frecuencia siempre es necesario ejecutar la instrucción ```cp.stop_tone()```.
+antes de cambiar la frecuencia siempre es necesario ejecutar la instrucción `cp.stop_tone()`.
 
-también podemos usar la función ```cp.play_tone(freq, duration)``` para reproducir un tono por una duración determinada en segundos.
+también podemos usar la función `cp.play_tone(freq, duration)` para reproducir un tono por una duración determinada en segundos.
 
 ```python
 # ejemplo 02: usando botones y parlante con bloque if, elif y else.
@@ -119,11 +122,11 @@ while True:
         cp.stop_tone()
 ```
 
-el bloque ```if``` se puede acompañar con un bloque ```elif``` y otro bloque ```else```.
+el bloque `if` se puede acompañar con un bloque `elif` y otro bloque `else`.
 
-el bloque ```elif``` permite ejecutar una nueva pregunta lógica si es que la anterior no resultó válida.
+el bloque `elif` permite ejecutar una nueva pregunta lógica si es que la anterior no resultó válida.
 
-el bloque ```else``` se ejecuta solo si ninguna de las preguntas lógicas anteriores resultó válida.
+el bloque `else` se ejecuta solo si ninguna de las preguntas lógicas anteriores resultó válida.
 
 se ejecuta solo una da las tres alternativas.
 
@@ -145,7 +148,7 @@ por ahora haremos un ejemplo con dos audios ya adaptados, descárgalos y súbelo
 - [laugh.wav](https://cdn-learn.adafruit.com/assets/assets/000/047/232/original/laugh.wav?1507858014 'laugh.wav')
 - [rimshot.wav](https://cdn-learn.adafruit.com/assets/assets/000/047/231/original/rimshot.wav?1507858005 'rimshot.wav')
 
-usaremos la función  ```cp.play_file(filename)``` para reproducirlos.
+usaremos la función `cp.play_file(filename)` para reproducirlos.
 
 ```python
 # ejemplo 03: reproduciendo archivos .wav
@@ -153,22 +156,22 @@ from adafruit_circuitplayground import cp
 
 while True:
     if cp.button_a:
-        cp.play_file("rimshot.wav") 
+        cp.play_file("rimshot.wav")
     if cp.button_b:
         cp.play_file("laugh.wav")
 ```
 
-## sensores de contacto capacitivos (*touch*)
+## sensores de contacto capacitivos (_touch_)
 
 <p float="left" align="middle">
 <img src="./imagenes/cp-touch.jpg" width=400>
 </p>
 
-las entradas A1 a A7 pueden ser utilizados como sensores capacitivos *touch*.
+las entradas A1 a A7 pueden ser utilizados como sensores capacitivos _touch_.
 
-para eso tenemos la función ```cp.adjust_touch_threshold(100)``` que nos permite ajustar la sensibilidad de los botones *touch*. 
+para eso tenemos la función `cp.adjust_touch_threshold(100)` que nos permite ajustar la sensibilidad de los botones _touch_.
 
-podemos escribir ```cp.touch_A1 ... cp.touch_A7``` para acceder al estado de cada botón, que puede ser solamente ```True``` o ```False```.
+podemos escribir `cp.touch_A1 ... cp.touch_A7` para acceder al estado de cada botón, que puede ser solamente `True` o `False`.
 
 ```python
 # ejemplo 04: usando botones capacitivos y parlante.
@@ -208,9 +211,10 @@ electrónicamente las perillas son potenciómetros (resistencias variables), que
 </p>
 
 los potenciómetros poseen 3 pines (patitas):
- - una de ellas se conecta a 0 volts (tierra)
- - la otra se conecta a un voltaje, por ejemplo 3.3 volts
- - el pin central tendrá un voltaje variable entre 0v y 3.3v, dependiendo de la posición de la perilla.
+
+- una de ellas se conecta a 0 volts (tierra)
+- la otra se conecta a un voltaje, por ejemplo 3.3 volts
+- el pin central tendrá un voltaje variable entre 0v y 3.3v, dependiendo de la posición de la perilla.
 
 <p float="left" align="middle">
 <img src="./imagenes/cp-pot.png">
@@ -228,7 +232,7 @@ import time
 
 pot = analogio.AnalogIn(board.A3) # Conectado a pin A3
 
-while True:    
+while True:
     position_1 = pot.value  # valor de 0 a 65535
     position_2 = pot.value // 256  # truco para que el valor sea de 0 a 255
     print(position_2)
@@ -243,7 +247,7 @@ import time
 
 pot = analogio.AnalogIn(board.A3) # Conectado a pin A3
 
-while True:    
+while True:
     position_1 = pot.value  # valor de 0 a 65535
     position_2 = pot.value // 256  # truco para que el valor sea de 0 a 255
     print((position_2,))
@@ -266,10 +270,10 @@ pot = analogio.AnalogIn(board.A3) # potenciómetro conectado a pin A3
 def map_range(s, a1, a2, b1, b2):
     return  b1 + ((s - a1) * (b2 - b1) / (a2 - a1))
 
-while True:    
+while True:
     pos = pot.value  # valor de 0 a 65535
     # convierte rango de 0 a 65535 al rago de 300 a 500
-    freq = map_range(pos, 0, 65535, 300, 500) 
+    freq = map_range(pos, 0, 65535, 300, 500)
     cp.play_tone(freq, 0.2)
 ```
 
@@ -309,7 +313,6 @@ while True:
     cp.play_tone(luz*1.5, 0.2)
 ```
 
-
 ```python
 # ejemplo 00: graficando datos del acelerómetro
 import time
@@ -317,7 +320,7 @@ from adafruit_circuitplayground import cp
 
 while True:
     x, y, z = cp.acceleration
-    print((x, y, z)) 
+    print((x, y, z))
 
-    time.sleep(0.1) 
+    time.sleep(0.1)
 ```
