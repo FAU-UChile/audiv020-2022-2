@@ -264,11 +264,11 @@ electrónicamente las perillas son potenciómetros (resistencias variables), que
 <img src="./imagenes/esp32-potentiometer-pinout.jpg" width=400>
 </p>
 
-los potenciómetros poseen 3 pines (patitas):
+los potenciómetros poseen 3 terminales:
 
-- una de ellas se conecta a 0 volts (tierra)
-- la otra se conecta a un voltaje, por ejemplo 3.3 volts
-- el pin central tendrá un voltaje variable entre 0v y 3.3v, dependiendo de la posición de la perilla.
+- uno de los extremos lo conectamos a 0 volts (tierra o GND por el inglés "ground")
+- el otro extremo se conecta al voltaje máximo del sistema, en nuestro caso 3.3 volts
+- el terminal central tendrá un voltaje variable entre 0V y 3.3V, dependiendo de la posición de la perilla.
 
 <p float="left" align="middle">
 <img src="./imagenes/cp-pot.png">
@@ -276,35 +276,34 @@ los potenciómetros poseen 3 pines (patitas):
 
 nuestra tarjeta de desarrollo puede leer ese voltaje ya que posee un conversor análogo-digital conectado en los pines A0-A7.
 
-esto significa que el pin central del potenciómetro lo podemos conectar a cualquiera de estas entradas.
-
 ```python
 # ejemplo 05: Leyendo posición de perilla
+# importar bibliotecas
 import board
 import analogio
 import time
 
-pot = analogio.AnalogIn(board.A3) # Conectado a pin A3
+# conectar terminal central del potenciometro a A3
+potenciometro = analogio.AnalogIn(board.A3)
 
 while True:
-    position_1 = pot.value  # valor de 0 a 65535
-    position_2 = pot.value // 256  # truco para que el valor sea de 0 a 255
-    print(position_2)
-    time.sleep(0.1)
-```
 
-```python
-# ejemplo 05: Graficando posición de perilla
-import board
-import analogio
-import time
+    # leer valor con resolucion 16 bits, en rango 0 a 65535
+    valorCrudo = potenciometro.value
 
-pot = analogio.AnalogIn(board.A3) # Conectado a pin A3
+    # dividir por 256 para bajar rango 0 a 255
+    # usamos // para lograr un valor entero
+    valorProcesado = valorCrudo // 256
 
-while True:
-    position_1 = pot.value  # valor de 0 a 65535
-    position_2 = pot.value // 256  # truco para que el valor sea de 0 a 255
-    print((position_2,))
+    # imprimir en consola
+    print(valorProcesado)
+
+    # o imprimir en Mu Editor
+    # tenemos que convertir el valor a tupla
+    # para eso lo encerramos en paréntesis y le agregamos una coma
+    # print((valorProcesado,))
+
+    # dormir 0.1 segundos
     time.sleep(0.1)
 ```
 
