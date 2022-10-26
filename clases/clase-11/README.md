@@ -98,7 +98,7 @@ while True:
         cp.pixels.fill(AZUL)
 ```
 
-## combinando los botones con el parlante para hacer sonidos
+## leyendo botones para hacer sonidos
 
 en el siguiente ejemplo utilizaremos el parlante usando las funciones `cp.start_tone(freq)` y `cp.stop_tone()`.
 
@@ -108,20 +108,28 @@ en el siguiente ejemplo utilizaremos el parlante usando las funciones `cp.start_
 
 la función `cp.start_tone(freq)` necesita la frecuencia del sonido que deseamos reproducir.
 
-antes de cambiar la frecuencia siempre es necesario ejecutar la instrucción `cp.stop_tone()`.
+antes de cambiar la frecuencia siempre es necesario correr la instrucción `cp.stop_tone()`.
 
-también podemos usar la función `cp.play_tone(freq, duration)` para reproducir un tono por una duración determinada en segundos.
+una alternativa es usar la función `cp.play_tone(freq, duration)` para reproducir un tono por una duración determinada en segundos.
 
 ```python
 # ejemplo 02: usando botones y parlante con bloque if, elif y else.
+# importar biblioteca
 from adafruit_circuitplayground import cp
 
+# bucle infinito
 while True:
+    # si el boton A esta presionado
     if cp.button_a == True:
-        cp.start_tone(400)
-    elif cp.button_b == True:
+        # emitir sonido con frecuencia 300 Hz
         cp.start_tone(300)
+    # o si el boton B esta presionado
+    elif cp.button_b == True:
+        # emitir sonido con frecuencia 600 Hz
+        cp.start_tone(600)
+    # o en otro caso
     else:
+        # detener sonido
         cp.stop_tone()
 ```
 
