@@ -4,10 +4,12 @@
 
 los sensores nos permiten obtener mediciones de algún fenómeno que nos interese, por ejemplo:
 
-- la magnitud o frecuencia de alguna fuente de sonido
-- la velocidad del viento
-- la temperatura del agua
-- la luminosidad de cierta fuente de luz
+- el estado de un botón (apretado o suelto).
+- la posición de una perilla.
+- la magnitud o frecuencia de alguna fuente de sonido.
+- la velocidad del viento.
+- la temperatura del agua.
+- la luminosidad de cierta fuente de luz.
 
 nos permiten obtener información del mundo real para poder desplegarla para su simple inspección, o reaccionar a ellas de algún modo, generando una acción.
 
@@ -27,8 +29,10 @@ para lograr esto es necesario llevar a cabo un proceso llamado *"conversión an�
 
 mientras más bits, la escala será más densa y la información será más representativa de la realidad.
 
-<img src="./imagenes/adc_signal.jpg">
-<img src="./imagenes/ADC.gif">
+<p float="left" align="middle">
+<img src="./imagenes/adc_signal.jpg" width=400>
+<img src="./imagenes/ADC.gif" width=400>
+</p>
 
 ## sensores en circuit playground
 
@@ -41,11 +45,15 @@ como vimos la semana pasada, la tarjeta de desarrollo circuit playground integra
 - 1x sensor de luz
 - 1x sensor de sonido básico
 
-además los pines A1-A7 están conectados a un conversor análogo-digital, por lo que se pueden utilizar para medir un voltage analógico entre 0 volts y 5 volts.
+además los pines A1-A7 están conectados a un conversor análogo-digital, por lo que se pueden utilizar para medir un voltage analógico entre 0 volts y 3.3 volts.
 
-Esto permite integrar sensores externos que nos entreguen un voltaje.
+esto permite integrar sensores externos que nos entreguen un voltaje.
 
 ## usando los botones pulsadores
+
+<p float="left" align="middle">
+<img src="./imagenes/cp-buttons.jpg" width=400>
+</p>
 
 los botones A y B solo pueden tener dos estados: apretados o sueltos. 
 
@@ -92,6 +100,10 @@ el bloque ```else``` se ejecuta solo si ninguna de las preguntas lógicas anteri
 
 en el siguiente ejemplo utilizaremos el parlante usando las funciones ```cp.start_tone()``` y ```cp.stop_tone()```.
 
+<p float="left" align="middle">
+<img src="./imagenes/cp-speaker.jpg" width=400>
+</p>
+
 ```python
 # ejemplo 02: usando botones y parlante con bloque if, elif y else.
 from adafruit_circuitplayground import cp
@@ -106,6 +118,10 @@ while True:
 ```
 
 ## sensores de contacto capacitivos (*touch*)
+
+<p float="left" align="middle">
+<img src="./imagenes/cp-touch.jpg" width=400>
+</p>
 
 Las entradas A1 a A7 pueden ser utilizados como sensores capacitivos *touch*. Para eso tenemos la función ```cp.adjust_touch_threshold(100)``` que nos permite ajustar la sensibilidad de los botones *touch*. 
 
@@ -136,7 +152,6 @@ while True:
     else:
         cp.stop_tone()
 ```
-
 
 ```python
 # ejemplo 00: sensor de luz
