@@ -203,28 +203,57 @@ from adafruit_circuitplayground import cp
 # numeros menores hacen que sea más sensible
 cp.adjust_touch_threshold(100)
 
-f_base = 200
+# definir frecuencia base
+f_base = 400
+# definir aumento entre frecuencias
+f_delta = 100;
 
+# crear lista vacia
+frecuencias = []
+
+# iterar contador i entre 0 y 6
+for i in range(0, 7):
+    # agregar un nuevo valor a la lista
+    frecuencias.append(f_base + f_delta * i)
+
+# bucle infinito
 while True:
+
+    # variable para almacenar numero boton presionado
+    # valor inicial es -1
+    botonPresionado = -1
+
+    # si alguno de los botones es presionado
+    # actualizar el valor de la variable
     if cp.touch_A1 == True:
-        cp.start_tone(f_base)
+        botonPresionado = 1;
     elif cp.touch_A2 == True:
-        cp.start_tone(f_base + 25)
+        botonPresionado = 2;
     elif cp.touch_A3 == True:
-        cp.start_tone(f_base + 25*2)
+        botonPresionado = 3;
     elif cp.touch_A4 == True:
-        cp.start_tone(f_base + 25*3)
+        botonPresionado = 4;
     elif cp.touch_A5 == True:
-        cp.start_tone(f_base + 25*4)
+        botonPresionado = 5;
     elif cp.touch_A6 == True:
-        cp.start_tone(f_base + 25*5)
+        botonPresionado = 6;
     elif cp.touch_A7 == True:
-        cp.start_tone(f_base + 25*6)
+        botonPresionado = 7;
+
+    # si algun boton fue presionado
+    if botonPresionado > 0:
+        print(frecuencias[botonPresionado - 1])
+        # hacer sonar la frecuencia correspondiente
+        # nota: los botones son rango 1-7
+        # pero arreglo es 0-6, asi que restamos 1
+        cp.start_tone(frecuencias[botonPresionado - 1])
+    # si ningun boton fue presionado
     else:
+        # apagar
         cp.stop_tone()
 ```
 
-## agregando perillas (potenciómetros)
+## agregando potenciómetros
 
 un elemento clásico en los instrumentos electrónicos son las perillas, que permiten ajustar distintos parámetros musicales.
 
