@@ -140,7 +140,7 @@ como los recursos son limitados, los archivos de audio deben seguir algunas regl
 
 Adafruit tiene una guía para poder convertir tus archivos de audio a este formato en [este link.](https://learn.adafruit.com/adafruit-wave-shield-audio-shield-for-arduino/convert-files 'convertir audio')
 
-Por ahora haremos un ejemplo con dos audios ya adaptados, descárgalos y súbelos a tu placa:
+por ahora haremos un ejemplo con dos audios ya adaptados, descárgalos y súbelos a tu placa:
 
 - [laugh.wav](https://cdn-learn.adafruit.com/assets/assets/000/047/232/original/laugh.wav?1507858014 'laugh.wav')
 - [rimshot.wav](https://cdn-learn.adafruit.com/assets/assets/000/047/231/original/rimshot.wav?1507858005 'rimshot.wav')
@@ -164,7 +164,9 @@ while True:
 <img src="./imagenes/cp-touch.jpg" width=400>
 </p>
 
-las entradas A1 a A7 pueden ser utilizados como sensores capacitivos *touch*. Para eso tenemos la función ```cp.adjust_touch_threshold(100)``` que nos permite ajustar la sensibilidad de los botones *touch*. 
+las entradas A1 a A7 pueden ser utilizados como sensores capacitivos *touch*.
+
+para eso tenemos la función ```cp.adjust_touch_threshold(100)``` que nos permite ajustar la sensibilidad de los botones *touch*. 
 
 podemos escribir ```cp.touch_A1 ... cp.touch_A7``` para acceder al estado de cada botón, que puede ser solamente ```True``` o ```False```.
 
@@ -248,9 +250,26 @@ while True:
     time.sleep(0.1)
 ```
 
+```python
+# ejemplo 06: controlando frecuencia de sonido con perilla
+import board
+import analogio
+import time
 
+pot = analogio.AnalogIn(board.A3) # potenciómetro conectado a pin A3
 
-## nn
+# función para convertir escala a1-a2 a escala b1-b2
+def map_range(s, a1, a2, b1, b2):
+    return  b1 + ((s - a1) * (b2 - b1) / (a2 - a1))
+
+while True:    
+    pos = pot.value  # valor de 0 a 65535
+    # convierte rango de 0 a 65535 al rago de 300 a 500
+    freq = map_range(pos, 0, 65535, 300, 500) 
+    cp.play_tone(freq, 0.2)
+```
+
+# nn
 
 ```python
 # ejemplo 00: sensor de luz
