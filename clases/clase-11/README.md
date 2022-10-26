@@ -169,7 +169,7 @@ las entradas A1 a A7 pueden ser utilizados como sensores capacitivos *touch*. Pa
 podemos escribir ```cp.touch_A1 ... cp.touch_A7``` para acceder al estado de cada botón, que puede ser solamente ```True``` o ```False```.
 
 ```python
-# ejemplo 03: usando botones capacitivos y parlante.
+# ejemplo 04: usando botones capacitivos y parlante.
 from adafruit_circuitplayground import cp
 
 cp.adjust_touch_threshold(100)
@@ -217,6 +217,37 @@ los potenciómetros poseen 3 pines (patitas):
 nuestra tarjeta de desarrollo puede leer ese voltaje ya que posee un conversor análogo-digital conectado en los pines A0-A7.
 
 esto significa que el pin central del potenciómetro lo podemos conectar a cualquiera de estas entradas.
+
+```python
+# ejemplo 05: Leyendo posición de perilla
+import board
+import analogio
+import time
+
+pot = analogio.AnalogIn(board.A3) # Conectado a pin A3
+
+while True:    
+    position_1 = pot.value  # valor de 0 a 65535
+    position_2 = pot.value // 256  # truco para que el valor sea de 0 a 255
+    print(position_2)
+    time.sleep(0.1)
+```
+
+```python
+# ejemplo 05: Graficando posición de perilla
+import board
+import analogio
+import time
+
+pot = analogio.AnalogIn(board.A3) # Conectado a pin A3
+
+while True:    
+    position_1 = pot.value  # valor de 0 a 65535
+    position_2 = pot.value // 256  # truco para que el valor sea de 0 a 255
+    print((position_2,))
+    time.sleep(0.1)
+```
+
 
 
 ## nn
