@@ -250,6 +250,10 @@ while True:
     time.sleep(0.1)
 ```
 
+<p float="left" align="middle">
+<img src="./imagenes/map-func.webp">
+</p>
+
 ```python
 # ejemplo 06: controlando frecuencia de sonido con perilla
 import board
