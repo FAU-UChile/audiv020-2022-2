@@ -176,23 +176,33 @@ while True:
         cp.play_file("laugh.wav")
 ```
 
+notamos que:
+
+- si presionamos alguno de los botones, el sonido correspondiente ocurre, y aunque soltemos el botón, el sonido llega hasta el final.
+- podemos mantener presionado algún botón, y si lo hacemos hasta que el sonido termine, el sonido se repite.
+- si un sonido está ocurriendo, no podemos interrumpirlo, ni presionando el mismo botón ni el otro.
+
 ## sensores de contacto capacitivos (_touch_)
 
 <p float="left" align="middle">
 <img src="./imagenes/cp-touch.jpg" width=400>
 </p>
 
-las entradas A1 a A7 pueden ser utilizados como sensores capacitivos _touch_.
+las entradas A1 a A7 pueden ser utilizados como sensores capacitivos _touch_, como los presentes en las pantallas de dispositivos móviles.
 
-para eso tenemos la función `cp.adjust_touch_threshold(100)` que nos permite ajustar la sensibilidad de los botones _touch_.
+cuando usamos estos sensores, debemos usar la función `cp.adjust_touch_threshold(100)` para calibrar y ajustar la sensibilidad de los botones _touch_.
 
-podemos escribir `cp.touch_A1 ... cp.touch_A7` para acceder al estado de cada botón, que puede ser solamente `True` o `False`.
+podemos llamar a las funciones `cp.touch_A1 ... cp.touch_A7` para acceder al estado de cada botón, que pueden tener solamente 2 estados posibles: `True` o `False`.
 
 ```python
-# ejemplo 04: usando botones capacitivos y parlante.
+# ejemplo 04: usando botones capacitivos y parlante
+# importar biblioteca
 from adafruit_circuitplayground import cp
 
+# ajustar sensibilidad
+# numeros menores hacen que sea más sensible
 cp.adjust_touch_threshold(100)
+
 f_base = 200
 
 while True:
