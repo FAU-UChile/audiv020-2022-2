@@ -11,7 +11,7 @@ los sensores nos permiten obtener mediciones de algún fenómeno que nos interes
 - la temperatura del agua.
 - la luminosidad de cierta fuente de luz.
 
-nos permiten obtener información del mundo real para poder desplegarla para su simple inspección, o reaccionar a ellas de algún modo, generando una acción.
+los sensores permiten obtener información del mundo real para poder desplegarla para su simple inspección, o reaccionar a ella de algún modo, generando una acción.
 
 ### densidad de información
 
@@ -30,7 +30,7 @@ para lograr esto es necesario llevar a cabo un proceso llamado *"conversión an�
 mientras más bits, la escala será más densa y la información será más representativa de la realidad.
 
 <p float="left" align="middle">
-<img src="./imagenes/adc_signal.jpg" width=400>
+<img src="./imagenes/adc_signal.jpg" width=600>
 <img src="./imagenes/ADC.gif" width=400>
 </p>
 
