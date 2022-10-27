@@ -480,7 +480,9 @@ while True:
 ## sensor de sonido (bluefruit only)
 
 <p float="left" align="middle">
-    <img src="./imagenes/microhpone.jpg" width=400>
+    <a href="https://docs.circuitpython.org/projects/circuitplayground/en/5.0.2/api.html#adafruit_circuitplayground.bluefruit.Bluefruit.sound_level">
+        <img src="./imagenes/microhpone.jpg" width=400>
+    </a>
 </p>
 
 también tenemos un pequeño micrófono que puede ser utilizado para sensar la magnitud del sonido que está recibiendo.
