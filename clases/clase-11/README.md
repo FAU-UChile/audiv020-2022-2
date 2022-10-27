@@ -308,7 +308,7 @@ while True:
 ```
 
 <p float="left" align="middle">
-<img src="./imagenes/map-func.webp">
+<img src="./imagenes/map-func.webp" width=400>
 </p>
 
 ```python
@@ -333,7 +333,7 @@ while True:
 ## sensor de luz
 
 <p float="left" align="middle">
-<img src="./imagenes/cp-light.jpg">
+<img src="./imagenes/cp-light.jpg" width=400>
 </p>
 
 nuestra placa de desarrollo integra una fotoresistencia
@@ -379,7 +379,7 @@ while True:
 
 <p float="left" align="middle">
 <img src="./imagenes/cp-acel.jpg">
-<a href="https://www.allaboutcircuits.com/news/high-stability-low-noise-3-axis-digital-accelerometer-STMicroelectronics/"><img src="./imagenes/axis.webp"></a>
+<a href="https://www.allaboutcircuits.com/news/high-stability-low-noise-3-axis-digital-accelerometer-STMicroelectronics/"><img src="./imagenes/axis.webp" width=400></a>
 </p>
 
 el acelerómetro es un chip especializado que tiene la capacidad de sensar la aceleración a la que está siendo sometido, incluída la aceleración de gravedad de la tierra.
@@ -449,7 +449,7 @@ while True:
 ## sensor de temperatura
 
 <p float="left" align="middle">
-<img src="./imagenes/cp-temp.jpg">
+<img src="./imagenes/cp-temp.jpg" width=400>
 </p>
 
 circuit playground integra un pequeño sensor de temperatura.
