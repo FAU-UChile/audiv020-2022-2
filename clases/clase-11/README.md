@@ -378,7 +378,7 @@ while True:
 ## sensor de posición y aceleración
 
 <p float="left" align="middle">
-<img src="./imagenes/cp-acel.jpg">
+<img src="./imagenes/cp-acel.jpg" width=400>
 <a href="https://www.allaboutcircuits.com/news/high-stability-low-noise-3-axis-digital-accelerometer-STMicroelectronics/"><img src="./imagenes/axis.webp" width=400></a>
 </p>
 
