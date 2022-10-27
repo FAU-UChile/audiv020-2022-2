@@ -32,8 +32,8 @@ para lograr esto es necesario llevar a cabo un proceso llamado _"conversión an�
 mientras más bits, la escala será más densa y la información será más fiel a la realidad.
 
 <p float="left" align="middle">
-<img src="./imagenes/adc_signal.jpg" width=600>
-<img src="./imagenes/ADC.gif" width=400>
+<a href="https://www.arrow.com/en/research-and-events/articles/engineering-resource-basics-of-analog-to-digital-converters"><img src="./imagenes/adc_signal.jpg" width=600></a>
+<a href="https://www.exploreembedded.com/wiki/ADC_Using_PIC16F877A"><img src="./imagenes/ADC.gif" width=400></a>
 </p>
 
 ## sensores en Adafruit Circuit Playground
@@ -330,7 +330,19 @@ while True:
     cp.play_tone(freq, 0.2)
 ```
 
-# nn
+## sensor de luz
+
+<p float="left" align="middle">
+<img src="./imagenes/cp-light.jpg">
+</p>
+
+nuestra placa de desarrollo integra una fotoresistencia
+
+las fotoresistencias son dispositivos que cambian su resistencia eléctrica según la cantidad de luz que está recibiendo.
+
+esto permite usarlo como un sensor de luz.
+
+para consultar su valor solo es necesario escribir `cp.light`
 
 ```python
 # ejemplo 00: sensor de luz
@@ -340,31 +352,41 @@ import time
 
 while True:
     luz = cp.light
+    #luz = (cp.light,)  # Para graficar en Mu Editor
     print(luz)
     time.sleep(0.01)
 ```
 
-```python
-# ejemplo 00: sensor de luz y despliegue en el trazador de gráficos
+podemos observar que nos entrega valores entre 0 (sin luz), y 310 (máxima luz).
 
-from adafruit_circuitplayground import cp
-import time
-
-while True:
-    luz = (cp.light,)
-    print(luz)
-    time.sleep(0.01)
-```
+en el siguiente ejemplo se usa el valor de luz sensado para controlar la frecuencia de salida de nuestro parlante.
 
 ```python
 # ejemplo 00: sensor de luz controlando la frecuencia del parlante
 from adafruit_circuitplayground import cp
-import time
+
+# función para convertir escala a1-a2 a escala b1-b2
+def map_range(s, a1, a2, b1, b2):
+    return  b1 + ((s - a1) * (b2 - b1) / (a2 - a1))
 
 while True:
     luz = cp.light
-    cp.play_tone(luz*1.5, 0.2)
+    freq = map_range(luz, 0, 300, 200, 1000)
+    cp.play_tone(freq, 0.2)
 ```
+
+## sensor de posición y aceleración
+
+<p float="left" align="middle">
+<img src="./imagenes/cp-acel.jpg">
+<a href="https://www.allaboutcircuits.com/news/high-stability-low-noise-3-axis-digital-accelerometer-STMicroelectronics/"><img src="./imagenes/axis.webp"></a>
+</p>
+
+el acelerómetro es un chip especializado que tiene la capacidad de sensar la aceleración a la que está siendo sometido, incluída la aceleración de gravedad de la tierra.
+
+el acelerómetro posee 3 ejes, lo que permite deducir la orientación del sensor en el espacio tridimensional.
+
+en el siguiente ejemplo graficaremos eje por eje para ver qué rangos de datos nos entrega.
 
 ```python
 # ejemplo 00: graficando datos del acelerómetro
@@ -373,7 +395,75 @@ from adafruit_circuitplayground import cp
 
 while True:
     x, y, z = cp.acceleration
-    print((x, y, z))
+    print((0, 0, z))    # eje Z
+    #print((0, y, 0))   # eje y
+    #print((x, 0, 0))   # eje x
+    #print((x, y, z))   # los 3 ejes
 
     time.sleep(0.1)
 ```
+
+si graficamos eje por eje nos damos cuenta que en reposo, los ejes nos indican un rango entre +9.8 y -9.8, que corresponde aproximadamente a la aceleración de gravedad de la tierra.
+
+podemos usar esto para controlar la frecuencia de nuestro parlante usando la gravedad de la tierra.
+
+```python
+# ejemplo 00: aceleración de gravedad controlando la frecuencia del parlante
+from adafruit_circuitplayground import cp
+
+# función para convertir escala a1-a2 a escala b1-b2
+def map_range(s, a1, a2, b1, b2):
+    return  b1 + ((s - a1) * (b2 - b1) / (a2 - a1))
+
+while True:
+    x, y, z = cp.acceleration
+    print((0, 0, z)) 
+
+    freq = map_range(z, -9.8, 9.8, 1200, 200)
+    cp.play_tone(freq, 0.2)
+```
+
+la bibliteca de circuit playground integra una forma muy simple para detectar sacudidas usando la función `cp.shake()`.
+
+podemos controlar el umbral de detección de sacudidas escribiendo `cp.shake(shake_threshold=20)`.
+
+```python
+# ejemplo 00: detectando sacudidas
+import time
+from adafruit_circuitplayground import cp
+
+ROJO = (255, 0, 0)
+AZUL = (0, 0, 255)
+
+cp.pixels.brightness = 0.1
+
+while True:
+    if cp.shake(shake_threshold=20):
+        print("Shake detected!")
+        cp.pixels.fill(ROJO)
+        time.sleep(1)
+    else:
+        cp.pixels.fill(AZUL)
+```
+
+## sensor de temperatura
+
+<p float="left" align="middle">
+<img src="./imagenes/cp-temp.jpg">
+</p>
+
+circuit playground integra un pequeño sensor de temperatura.
+
+podemos acceder a sus datos escribiendo `cp.temperature` que nos entrega la temperatura en grados celcius.
+
+```python
+# ejemplo 00: leyendo la temperatura en celcius
+import time
+from adafruit_circuitplayground import cp
+
+while True:
+    temp = cp.temperature
+    print("Temperature C:", temp)
+    time.sleep(1)
+```
+
