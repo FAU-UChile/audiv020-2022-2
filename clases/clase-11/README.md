@@ -481,7 +481,7 @@ while True:
 
 <p float="left" align="middle">
     <a href="https://docs.circuitpython.org/projects/circuitplayground/en/5.0.2/api.html#adafruit_circuitplayground.bluefruit.Bluefruit.sound_level">
-        <img src="./imagenes/microhpone.jpg" width=400>
+        <img src="./imagenes/microphone.jpg" width=400>
     </a>
 </p>
 
