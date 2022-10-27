@@ -32,8 +32,12 @@ para lograr esto es necesario llevar a cabo un proceso llamado _"conversión an�
 mientras más bits, la escala será más densa y la información será más fiel a la realidad.
 
 <p float="left" align="middle">
-<a href="https://www.arrow.com/en/research-and-events/articles/engineering-resource-basics-of-analog-to-digital-converters"><img src="./imagenes/adc_signal.jpg" width=600></a>
-<a href="https://www.exploreembedded.com/wiki/ADC_Using_PIC16F877A"><img src="./imagenes/ADC.gif" width=400></a>
+<a href="https://www.arrow.com/en/research-and-events/articles/engineering-resource-basics-of-analog-to-digital-converters">
+    <img src="./imagenes/adc_signal.jpg" width=600>
+</a>
+<a href="https://www.exploreembedded.com/wiki/ADC_Using_PIC16F877A">
+    <img src="./imagenes/ADC.gif" width=400>
+</a>
 </p>
 
 ## sensores en Adafruit Circuit Playground
@@ -260,8 +264,12 @@ un elemento clásico en los instrumentos electrónicos son las perillas, que per
 electrónicamente las perillas son potenciómetros (resistencias variables), que actuan como un sensor ya que informan a nuestro mini computador su estado o posición a través de un voltaje.
 
 <p float="left" align="middle">
-<img src="./imagenes/pot_32_200_large.webp" width=400>
-<img src="./imagenes/esp32-potentiometer-pinout.jpg" width=400>
+<a href="https://shop.rasp.io/products/10k-rotary-potentiometer-fits-breadboard-pack-of-3">
+    <img src="./imagenes/pot_32_200_large.webp" width=400>
+</a>
+<a href="https://esp32io.com/tutorials/esp32-potentiometer">
+    <img src="./imagenes/esp32-potentiometer-pinout.jpg" width=400>
+</a>
 </p>
 
 los potenciómetros poseen 3 terminales:
@@ -379,7 +387,9 @@ while True:
 
 <p float="left" align="middle">
 <img src="./imagenes/cp-acel.jpg" width=400>
-<a href="https://www.allaboutcircuits.com/news/high-stability-low-noise-3-axis-digital-accelerometer-STMicroelectronics/"><img src="./imagenes/axis.webp" width=400></a>
+<a href="https://www.allaboutcircuits.com/news/high-stability-low-noise-3-axis-digital-accelerometer-STMicroelectronics/">
+    <img src="./imagenes/axis.webp" width=400>
+</a>
 </p>
 
 el acelerómetro es un chip especializado que tiene la capacidad de sensar la aceleración a la que está siendo sometido, incluída la aceleración de gravedad de la tierra.
@@ -465,5 +475,26 @@ while True:
     temp = cp.temperature
     print("Temperature C:", temp)
     time.sleep(1)
+```
+
+## sensor de sonido (bluefruit only)
+
+<p float="left" align="middle">
+    <img src="./imagenes/microhpone.jpg" width=400>
+</p>
+
+también tenemos un pequeño micrófono que puede ser utilizado para sensar la magnitud del sonido que está recibiendo.
+
+podemos acceder a sus datos escribiendo `cpb.sound_level`, esto solo funciona en el *bluefruit*.
+
+```python
+# ejemplo 00: sensor de sonido
+from adafruit_circuitplayground.bluefruit import cpb
+import time
+
+while True:
+    print(cpb.sound_level)
+    #print((cpb.sound_level,)) # para graficar en mu editor
+    time.sleep(0.1)
 ```
 
