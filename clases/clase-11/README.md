@@ -153,7 +153,7 @@ como los recursos de memoria y de velocidad son limitados, los archivos de audio
 
 - archivos .wav
 - 16 bits de resolución
-- frecuencia de muestreo menor o igual a 22050 hertz
+- frecuencia de muestreo menor o igual a 22050 Hertz
 - monofónicos (no stereo)
 
 Adafruit tiene una guía para poder convertir tus archivos de audio a este formato en este enlace: https://learn.adafruit.com/adafruit-wave-shield-audio-shield-for-arduino/convert-files
@@ -204,7 +204,7 @@ podemos llamar a las funciones `cp.touch_A1 ... cp.touch_A7` para acceder al est
 from adafruit_circuitplayground import cp
 
 # ajustar sensibilidad
-# numeros menores hacen que sea más sensible
+# numeros menores hacen que sea mas sensible
 cp.adjust_touch_threshold(100)
 
 # definir frecuencia base
@@ -230,19 +230,19 @@ while True:
     # si alguno de los botones es presionado
     # actualizar el valor de la variable
     if cp.touch_A1 == True:
-        botonPresionado = 1;
+        botonPresionado = 1
     elif cp.touch_A2 == True:
-        botonPresionado = 2;
+        botonPresionado = 2
     elif cp.touch_A3 == True:
-        botonPresionado = 3;
+        botonPresionado = 3
     elif cp.touch_A4 == True:
-        botonPresionado = 4;
+        botonPresionado = 4
     elif cp.touch_A5 == True:
-        botonPresionado = 5;
+        botonPresionado = 5
     elif cp.touch_A6 == True:
-        botonPresionado = 6;
+        botonPresionado = 6
     elif cp.touch_A7 == True:
-        botonPresionado = 7;
+        botonPresionado = 7
 
     # si algun boton fue presionado
     if botonPresionado > 0:
@@ -261,7 +261,7 @@ while True:
 
 un elemento clásico en los instrumentos electrónicos son las perillas, que permiten ajustar distintos parámetros musicales.
 
-electrónicamente las perillas son potenciómetros (resistencias variables), que actuan como un sensor ya que informan a nuestro mini computador su estado o posición a través de un voltaje.
+electrónicamente las perillas son potenciómetros (resistencias variables), que actuan como un sensor ya que informan a nuestra placa su estado o posición a través de un voltaje.
 
 <p float="left" align="middle">
 <a href="https://shop.rasp.io/products/10k-rotary-potentiometer-fits-breadboard-pack-of-3">
@@ -282,10 +282,10 @@ los potenciómetros poseen 3 terminales:
 <img src="./imagenes/cp-pot.png">
 </p>
 
-nuestra tarjeta de desarrollo puede leer ese voltaje ya que posee un conversor análogo-digital conectado en los pines A0-A7.
+nuestra placa puede leer ese voltaje ya que posee un conversor análogo-digital conectado en los pines A0-A7.
 
 ```python
-# ejemplo 05: Leyendo posición de perilla
+# ejemplo 05: Leyendo posicion de perilla
 # importar bibliotecas
 import board
 import analogio
@@ -306,9 +306,9 @@ while True:
     # imprimir en consola
     print(valorProcesado)
 
-    # o imprimir en Mu Editor
+    # o graficar en Mu Editor
     # tenemos que convertir el valor a tupla
-    # para eso lo encerramos en paréntesis y le agregamos una coma
+    # para eso lo encerramos en parentesis y le agregamos una coma
     # print((valorProcesado,))
 
     # dormir 0.1 segundos
@@ -321,47 +321,65 @@ while True:
 
 ```python
 # ejemplo 06: controlando frecuencia de sonido con perilla
+# importar bibliotecas
 import board
 import analogio
 import time
 
-pot = analogio.AnalogIn(board.A3) # potenciómetro conectado a pin A3
+# duracion sonido
+duracion = 0.2
 
-# función para convertir escala a1-a2 a escala b1-b2
-def map_range(s, a1, a2, b1, b2):
-    return  b1 + ((s - a1) * (b2 - b1) / (a2 - a1))
+# potenciometro conectado a pin A3
+potenciometro = analogio.AnalogIn(board.A3)
 
+# funcion para convertir rango de entrada a1-a2 a rango de salida b1-b2
+def mapear(original, a1, a2, b1, b2):
+    return  b1 + ((original - a1) * (b2 - b1) / (a2 - a1))
+
+# bucle infinito
 while True:
-    pos = pot.value  # valor de 0 a 65535
+    # valor de 0 a 65535
+    posicion = potenciometro.value
     # convierte rango de 0 a 65535 al rago de 300 a 500
-    freq = map_range(pos, 0, 65535, 300, 500)
-    cp.play_tone(freq, 0.2)
+    frecuencia = mapear(posicion, 0, 65535, 300, 500)
+    # tocar sonido
+    cp.play_tone(frecuencia, duracion)
 ```
 
-## sensor de luz
+## fotoresistor: sensor de luz
 
 <p float="left" align="middle">
 <img src="./imagenes/cp-light.jpg" width=400>
 </p>
 
-nuestra placa de desarrollo integra una fotoresistencia
+nuestra placa integra una fotoresistencia, que es un dispositivo que cambian su resistencia eléctrica según la cantidad de luz que recibe.
 
-las fotoresistencias son dispositivos que cambian su resistencia eléctrica según la cantidad de luz que está recibiendo.
+esto permite usar un fotoresistor como un sensor de luz, para capturar gestualidad, como ocurre en los siguientes instrumentso y efectos:
 
-esto permite usarlo como un sensor de luz.
+- https://bleeplabs.com/product/thingamagoop-3000/
+- https://handmadeelectronicinstruments.com/product/drone-jar/
+- https://www.electrofaustus.com/ef102-photo-theremin
+- https://www.floatingforestpedals.com/shop/drifter
 
-para consultar su valor solo es necesario escribir `cp.light`
+para consultar el valor del fotoresistor de nuestra placa usamos la función `cp.light`
 
 ```python
-# ejemplo 00: sensor de luz
-
+# ejemplo 07: sensor de luz
+# importar bibliotecas
 from adafruit_circuitplayground import cp
 import time
 
+# bucle infinito
 while True:
+    # leer valor
     luz = cp.light
-    #luz = (cp.light,)  # Para graficar en Mu Editor
+    # imprimir en consola
     print(luz)
+
+    # alternativamente, graficar en Mu Editor
+    #print((luz,))
+
+    # dormir durante 0.01 segundos
     time.sleep(0.01)
 ```
 
@@ -370,17 +388,27 @@ podemos observar que nos entrega valores entre 0 (sin luz), y 310 (máxima luz).
 en el siguiente ejemplo se usa el valor de luz sensado para controlar la frecuencia de salida de nuestro parlante.
 
 ```python
-# ejemplo 00: sensor de luz controlando la frecuencia del parlante
+# ejemplo 08: sensor de luz controlando la frecuencia del parlante
+# importar biblioteca
 from adafruit_circuitplayground import cp
 
-# función para convertir escala a1-a2 a escala b1-b2
-def map_range(s, a1, a2, b1, b2):
-    return  b1 + ((s - a1) * (b2 - b1) / (a2 - a1))
+# funcion para convertir escala a1-a2 a escala b1-b2
+def mapear(original, a1, a2, b1, b2):
+    return  b1 + ((original - a1) * (b2 - b1) / (a2 - a1))
 
+duracion = 0.2
+
+# bucle infinito
 while True:
+
+    # leer valor de luz
     luz = cp.light
-    freq = map_range(luz, 0, 300, 200, 1000)
-    cp.play_tone(freq, 0.2)
+
+    # mapear valor de luz a rango de salida entre 200 y 1000
+    frecuencia = mapear(luz, 0, 300, 200, 1000)
+
+    # tocar sonido
+    cp.play_tone(frecuencia, duracion)
 ```
 
 ## sensor de posición y aceleración
@@ -396,63 +424,93 @@ el acelerómetro es un chip especializado que tiene la capacidad de sensar la ac
 
 el acelerómetro posee 3 ejes, lo que permite deducir la orientación del sensor en el espacio tridimensional.
 
-en el siguiente ejemplo graficaremos eje por eje para ver qué rangos de datos nos entrega.
+en el siguiente ejemplo graficaremos eje por eje para revisar los rangos de datos que nos entrega.
 
 ```python
-# ejemplo 00: graficando datos del acelerómetro
+# ejemplo 09: graficando datos del acelerometro
+# importar bibliotecas
 import time
 from adafruit_circuitplayground import cp
 
+# bucle infinito
 while True:
+    # leer aceleracion en 3 dimensiones
     x, y, z = cp.acceleration
-    print((0, 0, z))    # eje Z
-    #print((0, y, 0))   # eje y
-    #print((x, 0, 0))   # eje x
-    #print((x, y, z))   # los 3 ejes
 
+    # imprimir eje X
+    # print((x, 0, 0))
+
+    # imprimir eje Y
+    # print((0, y, 0))
+
+    # imprimir eje Z
+    print((0, 0, z))
+
+    # imprimir los 3 ejes
+    # print((x, y, z))
+
+    # dormir durante 0.1 segundos
     time.sleep(0.1)
 ```
 
-si graficamos eje por eje nos damos cuenta que en reposo, los ejes nos indican un rango entre +9.8 y -9.8, que corresponde aproximadamente a la aceleración de gravedad de la tierra.
+si graficamos eje por eje nos damos cuenta que en reposo, los ejes nos indican un rango entre +9.8 y -9.8, que corresponde aproximadamente a la aceleración de gravedad de la tierra, medida en metros / segundo.
 
 podemos usar esto para controlar la frecuencia de nuestro parlante usando la gravedad de la tierra.
 
 ```python
-# ejemplo 00: aceleración de gravedad controlando la frecuencia del parlante
+# ejemplo 10: aceleracion de gravedad controlando la frecuencia del parlante
+# importar biblioteca
 from adafruit_circuitplayground import cp
 
-# función para convertir escala a1-a2 a escala b1-b2
-def map_range(s, a1, a2, b1, b2):
-    return  b1 + ((s - a1) * (b2 - b1) / (a2 - a1))
+# funcion para convertir escala a1-a2 a escala b1-b2
+def mapear(original, a1, a2, b1, b2):
+    return  b1 + ((original - a1) * (b2 - b1) / (a2 - a1))
 
+duracion = 0.2
+
+# bucle infinito
 while True:
+    # leer aceleracion
     x, y, z = cp.acceleration
-    print((0, 0, z)) 
+    # graficar eje Z
+    print((0, 0, z))
 
-    freq = map_range(z, -9.8, 9.8, 1200, 200)
-    cp.play_tone(freq, 0.2)
+    # convertir a rango entre 1200 y 200
+    frecuencia = mapear(z, -9.8, 9.8, 1200, 200)
+
+    # tocar sonido
+    cp.play_tone(frecuencia, duracion)
 ```
 
-la bibliteca de circuit playground integra una forma muy simple para detectar sacudidas usando la función `cp.shake()`.
+la bibliteca de Circuit Playground integra una forma muy simple para detectar sacudidas usando la función `cp.shake()`.
 
-podemos controlar el umbral de detección de sacudidas escribiendo `cp.shake(shake_threshold=20)`.
+podemos controlar el umbral de detección de sacudidas con la función `cp.shake(shake_threshold=20)`.
 
 ```python
-# ejemplo 00: detectando sacudidas
+# ejemplo 11: detectando sacudidas
+# importar bibliotecas
 import time
 from adafruit_circuitplayground import cp
 
+# definir tuplas de colores
 ROJO = (255, 0, 0)
 AZUL = (0, 0, 255)
 
+# definir brillo de los pixeles
 cp.pixels.brightness = 0.1
 
+# bucle infinito
 while True:
+    # si hay una sacudida
     if cp.shake(shake_threshold=20):
-        print("Shake detected!")
+        print("sacudida!")
+        # pintar pixeles rojos
         cp.pixels.fill(ROJO)
-        time.sleep(1)
+        # dormir 1.0 segundo
+        time.sleep(1.0)
+    # si no hay sacudidad
     else:
+        # pintar pixeles azules
         cp.pixels.fill(AZUL)
 ```
 
@@ -462,22 +520,29 @@ while True:
 <img src="./imagenes/cp-temp.jpg" width=400>
 </p>
 
-circuit playground integra un pequeño sensor de temperatura.
+Circuit Playground integra un pequeño sensor de temperatura.
 
-podemos acceder a sus datos escribiendo `cp.temperature` que nos entrega la temperatura en grados celcius.
+podemos acceder a sus datos con la función `cp.temperature` que nos entrega la temperatura en grados Celsius.
 
 ```python
-# ejemplo 00: leyendo la temperatura en celcius
+# ejemplo 12: leyendo la temperatura en Celsius
+# importar bibliotecas
 import time
 from adafruit_circuitplayground import cp
 
+# bucle infinito
 while True:
+    # leer temperatura
     temp = cp.temperature
-    print("Temperature C:", temp)
-    time.sleep(1)
+
+    # imprimir temperatura
+    print("Temperatura Celsius: ", temp)
+
+    # dormir 1.0 segundo
+    time.sleep(1.0)
 ```
 
-## sensor de sonido (bluefruit only)
+## sensor de sonido (solamente Bluefruit)
 
 <p float="left" align="middle">
     <a href="https://docs.circuitpython.org/projects/circuitplayground/en/5.0.2/api.html#adafruit_circuitplayground.bluefruit.Bluefruit.sound_level">
@@ -487,16 +552,22 @@ while True:
 
 también tenemos un pequeño micrófono que puede ser utilizado para sensar la magnitud del sonido que está recibiendo.
 
-podemos acceder a sus datos escribiendo `cpb.sound_level`, esto solo funciona en el *bluefruit*.
+podemos acceder a sus datos escribiendo `cpb.sound_level`, esto solo funciona en la placa _bluefruit_, no la _express_.
 
 ```python
-# ejemplo 00: sensor de sonido
+# ejemplo 13: sensor de sonido
+# importar bibliotecas
 from adafruit_circuitplayground.bluefruit import cpb
 import time
 
+# bucle infinito
 while True:
+    # imprimir volumen de sonido
     print(cpb.sound_level)
-    #print((cpb.sound_level,)) # para graficar en mu editor
+
+    # o graficar en Mu editor
+    #print((cpb.sound_level,))
+
+    # dormir 0.1 segundos
     time.sleep(0.1)
 ```
-
