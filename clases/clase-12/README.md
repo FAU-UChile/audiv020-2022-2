@@ -97,6 +97,10 @@ while True:
 
 ## recibiendo mensajes MIDI personalizados
 
+para recibir la información MIDI ControlChange en pure data necesitamos crear un bloque llamado `ctlin`.
+
+el bloque nos entrega 3 elementos: el valor del parámetro, el número del parámetro y el puerto MIDI por el que llegó la información.
+
 <p float="left" align="middle">
 <img src="./imagenes/recibiendo-cc.png">
 </p>
