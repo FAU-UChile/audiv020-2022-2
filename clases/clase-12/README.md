@@ -6,6 +6,12 @@ la tarjeta de desarrollo circuit playground se puede usar como un dispositivo MI
 
 pure data es capaz de recibir mensajes MIDI sin problemas, lo que significa que podemos controlar los instrumentos que programemos en pure data a través de la información que enviemos desde nuestra tarjeta.
 
+## paso previo: agregando librerías
+
+para poder utilizar la interfaz midi es necesario integrar unas librerías a nuestra tarjeta.
+
+para eso descomprime el archivo `lib.zip`, copia la carpeta `adafruit_midi` y pégala en la carpeta `lib` dentro de tu tarjeta de desarrollo.
+
 ## enviando notas MIDI desde la tarjeta
 
 en el siguiente ejemplo se inicializa la interfaz midi, luego se enciende una nota, y luego se apaga cada 1 segundo.
@@ -97,10 +103,14 @@ while True:
 
 ## recibiendo mensajes MIDI personalizados
 
-para recibir la información MIDI ControlChange en pure data necesitamos crear un bloque llamado `ctlin`.
+para recibir la información de MIDI ControlChange en pure data necesitamos crear un bloque llamado `ctlin`.
 
 el bloque nos entrega 3 elementos: el valor del parámetro, el número del parámetro y el puerto MIDI por el que llegó la información.
 
 <p float="left" align="middle">
 <img src="./imagenes/recibiendo-cc.png">
 </p>
+
+## controlando varios parámetros al mismo tiempo
+
+# proyecto del curso
