@@ -43,7 +43,7 @@ para recibir la información de las notas MIDI en pure data necesitamos crear un
 el bloque nos entrega 3 elementos: la nota, el volumen y el puerto MIDI por el que llegó la información.
 
 <p float="left" align="middle">
-<img src="./imagenes/recibiendo-notas.png" width=400>
+<img src="./imagenes/recibiendo-notas.png">
 </p>
 
 ## enviando mensajes MIDI personalizados (ControlChange)
@@ -98,5 +98,5 @@ while True:
 ## recibiendo mensajes MIDI personalizados
 
 <p float="left" align="middle">
-<img src="./imagenes/recibiendo-cc.png" width=400>
+<img src="./imagenes/recibiendo-cc.png">
 </p>
