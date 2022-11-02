@@ -59,7 +59,7 @@ en nuestro caso, podemos usar la función `ControlChange(numero, valor)` para en
 en el siguiente ejemplo enviaremos la información del eje Z del acelerómetro a pure data utilizando la función `ControlChange(numero, valor)`
 
 ```python
-# ejemplo 2: enviando 
+# ejemplo 2: enviando datos de sensor via MIDI ControlChange
 import time
 import math
 import usb_midi
@@ -67,28 +67,24 @@ import adafruit_midi
 from adafruit_circuitplayground import cp
 
 # importar función para encender nota
-from adafruit_midi.note_on import NoteOn
+from adafruit_midi.control_change import ControlChange
 
 # inicializa puerto midi
 midi = adafruit_midi.MIDI(midi_out=usb_midi.ports[1], out_channel=0)  
 
 # funcion para convertir escala a1-a2 a escala b1-b2
 def mapear(original, a1, a2, b1, b2):
-    return  math.floor(b1 + ((original - a1) * (b2 - b1) / (a2 - a1)))
+    return min(b2, max(b1, math.ceil(b1 + ((original - a1) * (b2 - b1) / (a2 - a1)))))
 
 while True:
     # leer aceleracion en 3 dimensiones
     x, y, z = cp.acceleration
 
     # transforma el valor a la escala midi de 0 a 127
-    x_en_escala_midi = mapear(z, -10, 10, 0, 127) 
-    y_en_escala_midi = mapear(z, -10, 10, 0, 127) 
     z_en_escala_midi = mapear(z, -10, 10, 0, 127) 
 
     # enviamos mensaje
-    cc_x = ControlChange(1, x_en_escala_midi)
-    cc_y = ControlChange(1, y_en_escala_midi)
-    cc_z = ControlChange(1, z_en_escala_midi)
+    cc_z = ControlChange(3, z_en_escala_midi)
     midi.send(cc_z)
     time.sleep(0.1)
 ```
