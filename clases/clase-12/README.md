@@ -6,7 +6,7 @@ la tarjeta de desarrollo circuit playground se puede usar como un dispositivo MI
 
 pure data es capaz de recibir mensajes MIDI sin problemas, lo que significa que podemos controlar los instrumentos que programemos en pure data a través de la información que enviemos desde nuestra tarjeta.
 
-## enviando notas midi desde la tarjeta
+## enviando notas MIDI desde la tarjeta
 
 en el siguiente ejemplo se inicializa la interfaz midi, luego se enciende una nota, y luego se apaga cada 1 segundo.
 
@@ -36,13 +36,17 @@ while True:
     time.sleep(1)
 ```
 
-## recibiendo notas midi en pure data
+## recibiendo notas MIDI en pure data
+
+para recibir la información de las notas MIDI en pure data necesitamos crear un bloque llamado `notein`.
+
+el bloque nos entrega 3 elementos: la nota, el volumen y el puerto MIDI por el que llegó la información.
 
 <p float="left" align="middle">
-<img src="./imagenes/recibiendo-datos.png" width=400>
+<img src="./imagenes/recibiendo-notas.png" width=400>
 </p>
 
-## enviando mensajes midi personalizados (ControlChange)
+## enviando mensajes MIDI personalizados (ControlChange)
 
 hasta ahora solo hemos visto como encender o apagar notas de nuestro instrumento.
 
@@ -55,6 +59,8 @@ ControlChange consta de dos datos:
 - valor del parámetro
 
 en nuestro caso, podemos usar la función `ControlChange(numero, valor)` para enviar los valores de nuestros sensores a pure data. 
+
+la única limitante es que solo podemos enviar un valor entre 0 y 127, por lo que necesitamos utilizar la función `mapear()` para transformar la escala de nuestro sensor a la escala entre 0 y 127. 
 
 en el siguiente ejemplo enviaremos la información del eje Z del acelerómetro a pure data utilizando la función `ControlChange(numero, valor)`
 
@@ -88,3 +94,9 @@ while True:
     midi.send(cc_z)
     time.sleep(0.1)
 ```
+
+## recibiendo mensajes MIDI personalizados
+
+<p float="left" align="middle">
+<img src="./imagenes/recibiendo-cc.png" width=400>
+</p>
