@@ -124,6 +124,7 @@ el bloque nos entrega 3 elementos: el valor del parámetro, el número del pará
 
 hoy haremos lo siguiente:
 
+- definiremos los grupos de trabajo
 - trabajaremos en un Google Doc compartido
 - haremos lluvia de ideas sobre tipo de instrumento / gestualidad / dudas
 
