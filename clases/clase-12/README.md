@@ -1,109 +1,118 @@
 # clase-12
 
-## integrando sensores con pure data
+## integrando sensores con Pure Data
 
-la tarjeta de desarrollo circuit playground se puede usar como un dispositivo MIDI capaz de enviar mensajes a quién pueda recibirlos. 
+la placa Adafruit Circuit Playground se puede usar como un dispositivo MIDI capaz de enviar mensajes a otros dispositivos, como instrumentos musicales o computadores.
 
-pure data es capaz de recibir mensajes MIDI sin problemas, lo que significa que podemos controlar los instrumentos que programemos en pure data a través de la información que enviemos desde nuestra tarjeta.
+Pure Data es capaz de recibir mensajes MIDI, lo que significa que podemos crear instrumentos donde nuestra placa Adafruit actúa como sensor de gestualidad que envía información a nuestro computador con Pure Data, donde se genera el sonido.
 
-## paso previo: agregando librerías
+## paso previo: agregando bibliotecas
 
-para poder utilizar la interfaz midi es necesario integrar unas librerías a nuestra tarjeta.
+para poder utilizar la interfaz MIDI es necesario integrar unas bibliotecas adicionales a nuestra placa.
 
 para eso descomprime el archivo `lib.zip`, copia la carpeta `adafruit_midi` y pégala en la carpeta `lib` dentro de tu tarjeta de desarrollo.
 
-## enviando notas MIDI desde la tarjeta
+## enviando notas MIDI desde la placa
 
-en el siguiente ejemplo se inicializa la interfaz midi, luego se enciende una nota, y luego se apaga cada 1 segundo.
+en el siguiente ejemplo se inicializa la interfaz MIDI, luego se enciende una nota, y luego se apaga cada 1 segundo.
 
-se utiliza la función `NoteOn(nota, vol)` para enviar un mensaje para encender una nota midi. Recibe una nota midi (un número de 0 a 127), y el volumen asociado a esa nota (de 0 a 127).
+se utiliza la función `NoteOn(nota, vol)` para enviar un mensaje para encender una nota MIDI. Recibe una nota MIDI (un número de 0 a 127), y la velocidad asociado a esa nota (de 0 a 127), que interpretamos como volumen.
 
-si una nota se cambia a volumen cero, la nota dejará de sonar.
+si una nota tiene velocidad igual a 0, la nota dejará de sonar.
 
 ```python
-# ejemplo 1: interfaz midi básica
+# ejemplo 1: ejemplo nota MIDI
+# importar bibliotecas
 import time
 import usb_midi
 import adafruit_midi
-
-# importar función para encender nota
+# importar biblioteca para encender nota
 from adafruit_midi.note_on import NoteOn
 
 # inicializa puerto midi
-midi = adafruit_midi.MIDI(midi_out=usb_midi.ports[1], out_channel=0)  
+midi = adafruit_midi.MIDI(midi_out=usb_midi.ports[1], out_channel=0)
 
+# bucle infinito
 while True:
-    LA = NoteOn(46, 30)     # nota midi 46 = LA, volumen en 30 (de 0 a 127)
-    midi.send(LA)           # envia mensaje midi
-    time.sleep(1)
-    
-    LA_OFF = NoteOn(60, 0)  # se apaga la nota poniendo volumen en 0
-    midi.send(LA_OFF)       # envia mensaje midi
+     # nota MIDI 46 = LA, velocidad 30 (de un máximo de 127)
+    LA = NoteOn(46, 30)
+    # enviar nota MIDI
+    midi.send(LA)
+    # dormir 1 segundo
+    time.sleep(1.0)
+
+    # apagar nota MIDI, haciendo velocidad 0
+    LA_OFF = NoteOn(46, 0)
+    # enviar nota MIDI
+    midi.send(LA_OFF)
     time.sleep(1)
 ```
 
-## recibiendo notas MIDI en pure data
+## recibiendo notas MIDI en Pure Data
 
-para recibir la información de las notas MIDI en pure data necesitamos crear un bloque llamado `notein`.
+para recibir notas MIDI en Pure Data necesitamos crear un bloque llamado `notein`.
 
-el bloque nos entrega 3 elementos: la nota, el volumen y el puerto MIDI por el que llegó la información.
+el bloque nos entrega 3 elementos: el número de nota entrante, su velocidad, y el puerto MIDI por el que llegó la información.
 
 <p float="left" align="middle">
 <img src="./imagenes/recibiendo-notas.png">
 </p>
 
-## enviando mensajes MIDI personalizados (ControlChange)
+## enviando mensajes MIDI Control Change
 
-hasta ahora solo hemos visto como encender o apagar notas de nuestro instrumento.
+en esta clase ya vimos como enviar notas MIDI, y ahora veremos cómo enviar información de parámetros, mediante un mensaje llamado Control Change.
 
-el protocolo MIDI también permite enviar mensajes más personalizados con el objetivo de cambiar parámetros más específicos que se pueden usar, por ejemplo, para controlar efectos, ecualización, eco, envolventes, etc.
+estos mensajes Control Change (CC) pueden ser usados para cambiar parámetros en nuestro instrumento, por ejemplo, para controlar efectos, ecualización, eco, envolventes, etc.
 
-en MIDI, el envío de parámetros personalizados se le llama ControlChange.
+Control Change consta de 2 datos:
 
-ControlChange consta de dos datos:
-- número del parámetro
-- valor del parámetro
+- número del parámetro (0 a 127)
+- valor del parámetro (0 a 127)
 
-en nuestro caso, podemos usar la función `ControlChange(numero, valor)` para enviar los valores de nuestros sensores a pure data. 
+en CircuitPython en nuestra placa, podemos usar la función `ControlChange(numero, valor)` para enviar los valores de nuestros sensores a Pure Data.
 
-la única limitante es que solo podemos enviar un valor entre 0 y 127, por lo que necesitamos utilizar la función `mapear()` para transformar la escala de nuestro sensor a la escala entre 0 y 127. 
+la única limitante es que solo podemos enviar un valor entre 0 y 127, por lo que necesitamos utilizar la función `mapear()` para transformar la escala de nuestro sensor a la escala entre 0 y 127.
 
-en el siguiente ejemplo enviaremos la información del eje Z del acelerómetro a pure data utilizando la función `ControlChange(numero, valor)`
+en el siguiente ejemplo enviaremos la información del eje Z del acelerómetro a Pure Data utilizando la función `ControlChange(numero, valor)`
 
 ```python
-# ejemplo 2: enviando datos de sensor via MIDI ControlChange
+# ejemplo 2: enviando datos de sensor con MIDI ControlChange
+# importar bibliotecas
 import time
 import math
 import usb_midi
 import adafruit_midi
 from adafruit_circuitplayground import cp
-
 # importar función para encender nota
 from adafruit_midi.control_change import ControlChange
 
-# inicializa puerto midi
-midi = adafruit_midi.MIDI(midi_out=usb_midi.ports[1], out_channel=0)  
+# inicializar puerto midi
+midi = adafruit_midi.MIDI(midi_out=usb_midi.ports[1], out_channel=0)
 
 # funcion para convertir escala a1-a2 a escala b1-b2
 def mapear(original, a1, a2, b1, b2):
     return min(b2, max(b1, math.ceil(b1 + ((original - a1) * (b2 - b1) / (a2 - a1)))))
 
+# bucle infinito
 while True:
     # leer aceleracion en 3 dimensiones
     x, y, z = cp.acceleration
 
-    # transforma el valor a la escala midi de 0 a 127
-    z_en_escala_midi = mapear(z, -10, 10, 0, 127) 
+    # mapear valor a la escala MIDI de 0 a 127
+    z_en_escala_midi = mapear(z, -10, 10, 0, 127)
 
-    # enviamos mensaje
+    # enviar mensaje Control Change
+    # numero de controlador es 3, y su valor esta dado por acelerometro
     cc_z = ControlChange(3, z_en_escala_midi)
+    # enviar mensaje MIDI Control Change
     midi.send(cc_z)
+    # dormir por 0.1 segundos
     time.sleep(0.1)
 ```
 
-## recibiendo mensajes MIDI personalizados
+## recibiendo mensajes MIDI Control change
 
-para recibir la información de MIDI ControlChange en pure data necesitamos crear un bloque llamado `ctlin`.
+para recibir la información de MIDI ControlChange en Pure Data necesitamos crear un bloque llamado `ctlin`.
 
 el bloque nos entrega 3 elementos: el valor del parámetro, el número del parámetro y el puerto MIDI por el que llegó la información.
 
@@ -113,4 +122,4 @@ el bloque nos entrega 3 elementos: el valor del parámetro, el número del pará
 
 ## controlando varios parámetros al mismo tiempo
 
-# proyecto del curso
+## proyecto del curso
