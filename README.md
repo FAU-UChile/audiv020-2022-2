@@ -45,8 +45,8 @@ las clases son los viernes en la tarde, entre 3pm y 6:15pm, durante el segundo s
 | [08](clases/clase-08/) | 2022-10-07 | efectos de delay y reverb                                       |
 | [09](clases/clase-09/) | 2022-10-14 | aleatoriedad, ruido digital                                     |
 | [10](clases/clase-10/) | 2022-10-21 | introducción a microcontroladores y parlantes                   |
-| [11](clases/clase-11/) | 2022-10-28 | parametrización con potenciómetros y botones                    |
-| [12](clases/clase-12/) | 2022-11-04 | gestualidad y sensores                                          |
+| [11](clases/clase-11/) | 2022-10-28 | hardware, potenciómetros, botones, sensores                     |
+| [12](clases/clase-12/) | 2022-11-04 | gestualidad con sensores y MIDI                                 |
 | [13](clases/clase-13/) | 2022-11-11 | proyecto grupal final en clase                                  |
 | trabajo autónomo       | 2022-11-18 | autónomo, sin clases, con trabajos                              |
 | [14](clases/clase-14/) | 2022-11-25 | presentación proyecto grupal final en clase                     |
