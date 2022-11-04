@@ -120,6 +120,14 @@ el bloque nos entrega 3 elementos: el valor del parámetro, el número del pará
 <img src="./imagenes/recibiendo-cc.png">
 </p>
 
-## controlando varios parámetros al mismo tiempo
-
 ## proyecto del curso
+
+hoy haremos lo siguiente:
+
+- trabajaremos en un Google Doc compartido
+- haremos lluvia de ideas sobre tipo de instrumento / gestualidad / dudas
+
+próxima clase:
+
+- trabajaremos en grupo
+- el equipo docente resolverá dudas y ayudará con código
