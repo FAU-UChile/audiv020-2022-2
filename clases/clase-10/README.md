@@ -1,5 +1,7 @@
 # clase-10
 
+viernes 21 de octubre 2022, presencial
+
 ## tarjetas de desarrollo
 
 las tarjetas de desarrollo son pequeños circuitos que pueden ser programados para correr funciones específicas.

@@ -1,6 +1,6 @@
 # clase-09
 
-viernes 14 de octbure 2022, presencial
+viernes 14 de octubre 2022, presencial
 
 la clase pasada vimos:
 

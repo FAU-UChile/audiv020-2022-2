@@ -1,5 +1,7 @@
 # clase-11
 
+viernes 28 de octubre 2022, presencial
+
 ## introducción a los sensores
 
 los sensores nos permiten obtener mediciones de algún fenómeno que nos interese, por ejemplo:

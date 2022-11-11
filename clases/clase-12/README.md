@@ -1,5 +1,7 @@
 # clase-12
 
+viernes 04 de noviembre 2022, presencial
+
 ## integrando sensores con Pure Data
 
 la placa Adafruit Circuit Playground se puede usar como un dispositivo MIDI capaz de enviar mensajes a otros dispositivos, como instrumentos musicales o computadores.
